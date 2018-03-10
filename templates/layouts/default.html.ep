@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image"
+      content="<%= url_for('/assets/logo.png')->to_abs %>">
+    <meta name="twitter:image"
+      content="<%= url_for('/assets/logo.png')->to_abs %>">
+    <title><%= $title %>
+      - Rakudo Compiler for Perl 6 Programming Language</title>
+  </head>
+  <body>
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item <%= stash('active-page')//'' eq 'home' ? 'active' : '' %>" href="/">Home</a>
+          <a class="blog-nav-item feed-nav"
+            href="<%= url_for 'feed' %>">Feed</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="bg">
+      <div class="container">
+        <div class="blog-header">
+          <h1 class="blog-title"><%= $title
+            // 'Rakudo Compiler for Perl 6 Programming Language' %></h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 blog-main">
+            <%= content %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="blog-footer">
+      <p class="icons">
+        <a href="https://perl6.org" class="powered-by"
+          title="Use Perl 6">Use Perl 6.</a>
+        <a href="https://github.com/perl6/rakudo.org" class="fork-it"
+          title="Fork this blog">Repository for this site.</a>
+      </p>
+    </footer>
+  </body>
+</html>
+

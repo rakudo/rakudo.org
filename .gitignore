@@ -1,0 +1,12 @@
+*~
+.sass-cache
+.precomp
+*.map
+assets/sass/main.css
+hypnotoad.pid
+assets/assetpack.db
+assets/cache/
+pull-password
+.precomp
+/test.p6
+/out.html

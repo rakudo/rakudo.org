@@ -1,0 +1,12 @@
+% layout 'default';
+% title 'Rakudo Perl 6 Compiler';
+
+% for my $p ( @$posts ) {
+  <div class="blog-post">
+    <h2 class="blog-post-title"
+      ><a href="<%= $p->{link} %>"><%= $p->{title} %></a></h2>
+    <p class="blog-post-meta"><%= $p->{date} %></p>
+    <p class="blog-post"><%= $p->{desc} =%></p>
+  </div>
+% }
+
