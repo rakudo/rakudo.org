@@ -29,6 +29,7 @@ app->asset->process('app.js' => qw{
 
 ### Routes
 get '/' => sub {} => 'home';
+get '/about';
 
 get '/post/#post' => sub {
     my $c = shift;
