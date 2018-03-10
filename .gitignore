@@ -7,6 +7,5 @@ hypnotoad.pid
 assets/assetpack.db
 assets/cache/
 pull-password
-.precomp
 /test.p6
 /out.html
