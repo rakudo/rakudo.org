@@ -10,40 +10,54 @@
       content="<%= url_for('/assets/logo.png')->to_abs %>">
     <title><%= $title %>
       - Rakudo Compiler for Perl 6 Programming Language</title>
+    %= asset 'app.css'
   </head>
   <body>
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item <%= stash('active-page')//'' eq 'home' ? 'active' : '' %>" href="/">Home</a>
-          <a class="blog-nav-item feed-nav"
-            href="<%= url_for 'feed' %>">Feed</a>
-        </nav>
-      </div>
-    </div>
-
     <div class="bg">
-      <div class="container">
-        <div class="blog-header">
-          <h1 class="blog-title"><%= $title
-            // 'Rakudo Compiler for Perl 6 Programming Language' %></h1>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 blog-main">
-            <%= content %>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container">
+          <a class="navbar-brand" href="/"><img src="/assets/pics/logo-inverse.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Bag tracker</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Documentation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">How to help</a>
+              </li>
+            </ul>
           </div>
         </div>
+      </nav>
+
+      <div class="container">
+        <h1 class="blog-title"><%= $title
+          // 'Rakudo Compiler for Perl 6 Programming Language' %></h1>
+          <%= content %>
       </div>
     </div>
 
-    <footer class="blog-footer">
+    <footer class="container">
       <p class="icons">
         <a href="https://perl6.org" class="powered-by"
-          title="Use Perl 6">Use Perl 6.</a>
+          title="Use Perl 6">Use Perl 6</a> |
         <a href="https://github.com/perl6/rakudo.org" class="fork-it"
-          title="Fork this blog">Repository for this site.</a>
+          title="Submit changes to this site">Repository for this site</a>
       </p>
     </footer>
+    %= asset 'app.js'
   </body>
 </html>
 

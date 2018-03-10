@@ -1,0 +1,23 @@
+a {
+    text-decoration: underline;
+    color: #777;
+}
+a:hover, a:active {
+    text-decoration: none;
+}
+
+nav {
+    margin-bottom: 20px;
+    a {
+        text-decoration: none;
+    }
+}
+
+footer {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 80%;
+    p, a {
+        color: #999;
+    }
+}

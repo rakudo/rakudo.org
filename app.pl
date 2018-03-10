@@ -13,14 +13,19 @@ my $ua = Mojo::UserAgent->new;
 
 app->config({ hypnotoad => { listen => ['http://*:4242'], proxy => 1 } });
 
-# plugin 'AssetPack' => { pipes => [qw/Sass  JavaScript  Combine/] };
-# app->asset->process('app.css' => 'sass/main.scss');
-# app->asset->process('app.js' => qw{
-#         js/ie10-viewport-bug-workaround.js
-#         js/codemirror/codemirror.min.js
-#         js/codemirror/perl6-mode.js
-#         js/main.js
-#     });
+plugin 'AssetPack' => { pipes => [qw/Sass  JavaScript  Combine/] };
+app->asset->process('app.css' => qw{
+    https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+
+    sass/main.scss
+});
+app->asset->process('app.js' => qw{
+    https://code.jquery.com/jquery-3.2.1.slim.min.js
+    https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
+    https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
+
+    js/main.js
+});
 
 ### Routes
 get '/' => sub {
