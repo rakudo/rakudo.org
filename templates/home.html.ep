@@ -1,7 +1,7 @@
 % layout 'default';
 % title 'Rakudo Perl 6 Compiler';
 
-% for my $p ( @$posts ) {
+% for my $p (items_in posts) {
   <div class="blog-post">
     <h2 class="blog-post-title"
       ><a href="<%= $p->{link} %>"><%= $p->{title} %></a></h2>

@@ -1,3 +1,9 @@
+$color-body: #f6f6f6;
+
+html {
+    overflow-y: scroll;
+}
+
 a {
     text-decoration: underline;
     color: #777;
@@ -21,3 +27,48 @@ footer {
         color: #999;
     }
 }
+
+h1 {
+    font-size: 250%;
+}
+p {
+    margin-bottom: 30px;
+    line-height: 1.7em;
+}
+
+> p + pre {
+    margin-top: -20px;
+}
+
+.article-description {
+    font-style: italic;
+    opacity: .7;
+    padding-bottom: 10px;
+    border-bottom: 1px solid darken($color-body, 20%);
+}
+
+p + ul {
+    margin-top: -25px;
+    margin-bottom: 30px;
+}
+
+
+.article-list {
+    font-size: 75%;
+    li a {
+        display: inline-block;
+        border-bottom: 1px solid darken($color-body, 20%);
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.flush-list {
+     padding-left: 15px;
+}
+
+.shy-list {
+    padding-left: 0px;
+    list-style: none;
+}
+

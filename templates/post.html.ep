@@ -1,0 +1,8 @@
+% layout 'default';
+
+<article>
+  <p class="article-description">
+    <%= $date %><%= stash('desc') ? ' | ' . stash('desc') : '' %></p>
+  <%== $post %>
+</article>
+

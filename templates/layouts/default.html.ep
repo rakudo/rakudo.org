@@ -43,9 +43,21 @@
       </nav>
 
       <div class="container">
-        <h1 class="blog-title"><%= $title
-          // 'Rakudo Compiler for Perl 6 Programming Language' %></h1>
-          <%= content %>
+        <div class="row">
+          <div class="col-md-9">
+            <h1 class="blog-title"><%= $title
+              // 'Rakudo Compiler for Perl 6 Programming Language' %></h1>
+              <%= content %>
+          </div>
+          <div class="col-md-3">
+            <ul class="article-list shy-list">
+              % for my $p (items_in posts) {
+                <li><a href="<%= url_for post => $p->{post} %>"
+                  ><%= $p->{title} %></a></li>
+              % }
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 

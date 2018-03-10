@@ -1,0 +1,51 @@
+%% title: Announce: Rakudo Star Release 2017.07
+%% date: 2017-07-24
+
+A useful and usable production distribution of Perl 6
+
+On behalf of the Rakudo and Perl 6 development teams, I'm pleased to announce the July 2017 release of "Rakudo Star", a useful and usable production distribution of Perl 6. The tarball for the July 2017 release is available from <a href="https://rakudo.perl6.org/downloads/star/">https://rakudo.perl6.org/downloads/star/</a>.
+
+Binaries for macOS and Windows (64 bit) are also available.
+
+This is the eighth post-Christmas (production) release of Rakudo Star and implements Perl v6.c. It comes with support for the MoarVM backend (all module tests pass on supported platforms).
+
+IMPORTANT: "panda" is to be removed very shortly since it is deprecated. Please use "zef" instead.
+
+Currently, Star is on a quarterly release cycle and 2017.10 (October) will follow later this year.
+
+Please note that this release of Rakudo Star is not fully functional with the JVM backend from the Rakudo compiler. Please use the MoarVM backend only.
+
+In the Perl 6 world, we make a distinction between the language ("Perl 6") and specific implementations of the language such as "Rakudo Perl".
+
+This Star release includes release 2017.07 of the Rakudo Perl 6 compiler, version 2017.07 MoarVM, plus various modules, documentation, and other resources collected from the Perl 6 community.
+
+Note this Star release contains NQP version 2017.07-9-gc0abee7 rather than the release NQP 2017.07 in order to fix the --ll-exception command line flag.
+
+The Rakudo compiler changes since the last Rakudo Star release of 2017.01 are now listed in "2017.05.md", "2017.06.md" and "2017.07.md" under the "rakudo/docs/announce" directory of the source distribution.
+
+Notable changes in modules shipped with Rakudo Star:
+
++ DBIish: Doc and CI updates
++ doc: Too many to list. p6doc fixed.
++ grammar-debugger: Works again now.
++ p6-io-string: New dep for doc.
++ p6-native-resources: Removed since deprecated and not used by linenoise.
++ panda: Officially deprecate panda in favour of zef.
++ perl6-Test-When: New dep for perl6-pod-to-bigpage.
++ perl6-lwp-simple: Fix breakage due to rakudo encoding refactor.
++ tap-harness6: Replaces deprecated tap-harness6-prove6.
++ zef: Too many to list.
+
+There are some key features of Perl 6 that Rakudo Star does not yet handle appropriately, although they will appear in upcoming releases. Some of the not-quite-there features include:
+
++ advanced macros
++ non-blocking I/O (in progress)
++ some bits of Synopsis 9 and 11
+
+There is an online resource at <a href="http://perl6.org/compilers/features">http://perl6.org/compilers/features</a> that lists the known implemented and missing features of Rakudo's backends and other Perl 6 implementations.
+
+In many places we've tried to make Rakudo smart enough to inform the programmer that a given feature isn't implemented, but there are many that we've missed. Bug reports about missing and broken features are welcomed at rakudobug@perl.org.
+
+See <a href="https://perl6.org/">https://perl6.org/</a> for links to much more information about Perl 6, including documentation, example code, tutorials, presentations, reference materials, design documents, and other supporting resources. Some Perl 6 tutorials are available under the "docs" directory in the release tarball.
+
+The development team thanks all of the contributors and sponsors for making Rakudo Star possible. If you would like to contribute, see <a href="http://rakudo.org/how-to-help">http://rakudo.org/how-to-help</a>, ask on the perl6-compiler@perl.org mailing list, or join us on IRC #perl6 on freenode.

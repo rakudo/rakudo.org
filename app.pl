@@ -28,14 +28,11 @@ app->asset->process('app.js' => qw{
 });
 
 ### Routes
-get '/' => sub {
-    my $c = shift;
-    $c->stash(posts => $posts->all);
-} => 'home';
+get '/' => sub {} => 'home';
 
 get '/post/#post' => sub {
     my $c = shift;
-    my ($meta, $markdown, $html) = $posts->load($c->param('post'));
+    my ($meta, $html) = $posts->load($c->param('post'));
     $html or return $c->reply->not_found;
 
     $c->stash(%$meta, post => $html, title => $meta->{title});
@@ -67,6 +64,14 @@ get '/pull/*password' => sub {
         format => 'txt',
     );
 };
+
+helper posts => sub { $posts->all };
+helper items_in => sub {
+        my ($c, $what ) = @_;
+        return unless defined $what;
+        $what = $c->stash($what) // [] unless ref $what;
+        return @$what;
+    };
 
 app->start;
 
