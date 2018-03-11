@@ -20,6 +20,21 @@ function process_platform_specific_content() {
         $('[data-platform]').css({position: 'absolute', left: '-9999px'});
         show.css({position: 'static', left: 'auto'});
     })
+
+    if ($('.downloads-panel [data-platform-mark~=' + wanted + ']').length) {
+        $('.downloads-panel [data-platform-mark]').each(function(){
+            if ($(this).attr('data-platform-mark').indexOf(wanted) >= 0) {
+                $(this).removeClass('btn-dark').addClass('btn-primary')
+                .next('a').removeClass('btn-dark').addClass('btn-warning');
+            }
+        });
+    }
+    else {
+        $('.downloads-panel .download')
+            .removeClass('btn-dark').addClass('btn-primary')
+        .next('a')
+            .removeClass('btn-dark').addClass('btn-warning')
+    }
 }
 
 
