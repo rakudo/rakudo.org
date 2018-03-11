@@ -2,7 +2,12 @@
 % title 'Rakudo Perl 6 Compiler';
 
 <main role="main" class="inner cover">
-  <p><img src="/asset/pics/logo-inverse-300.png" alt="" id="logo"></p>
+  <div id="logo">
+    <p class="easter">"Rakudo" is short for "Rakuda-dō" (with a long 'o';
+      駱駝道), which is Japanese for "Way of the Camel". "Rakudo" (with a short
+      'o'; 楽土) also means "paradise" in Japanese.</p>
+    <p><img src="/asset/pics/logo-inverse-300.png" alt=""></p>
+  </div>
 
   <h1 class="cover-heading">Rakudo <%== p6 %> Compiler</h1>
   <p class="lead">Production-ready, stable implementation of the

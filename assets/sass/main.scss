@@ -95,12 +95,23 @@ footer,
     h1 {
         text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, .5);
     }
+
     #logo {
-        opacity: .2;
-        transition: opacity 2s;
+        .easter {
+            font-size: 90%;
+            opacity: 0;
+            transition: opacity 5s 2s;
+        }
+
+        img {
+            opacity: .2;
+            transition: opacity 2s;
+        }
     }
     #logo:hover {
-        opacity: 1;
+        img, .easter {
+            opacity: 1;
+        }
     }
 
     .masthead {
