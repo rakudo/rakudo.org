@@ -1,38 +1,24 @@
 % layout 'default';
 % title 'macOS - Install Rakudo Star';
+% make_crumbs home => 'Home', files => 'Files',
+%   'Install Rakudo Star on macOS';
 
 <h2 class="h1">
-  <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png" alt="">
-    Install Rakudo Star on Windows</h2>
+  <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png" alt="">
+    Install Rakudo Star on macOS</h2>
 
 <ol class="flush-list">
-  <li>Download the <a href="<%= url_for 'latest-star-windows-64' %>">latest Rakudo Star 64-bit Windows <code>.msi</code></a> installer file</li>
-  <li>Run the installer and follow the instructions on the screen</li>
+  <li>Download the <a href="<%= url_for 'latest-star-macos' %>">latest Rakudo Star macOS <code>.dmg</code></a> disk image file</li>
+  <li>Double click it, to open a window showing its content</li>
+  <li>Drag-and-drop the application from that window into
+    <code>/Applications</code></li>
 </ol>
-
-<p>The installer installs the files into <code>C:\rakudo\</code>, with
-  executables installed into <code>C:\rakudo\bin\</code>. Currently, it's not
-  possible to change the location
-  <%== contribute %>.</p>
 
 <h3 class="h4">Other Variants</h3>
 
 <ul class="flush-list">
-  <li>If you use
-    <%== third_party 'Chocolatey',
-      'https://chocolatey.org/packages/rakudostar' %>,
-    run <code>choco install rakudostar</code> to install Rakudo Star</li>
-  <li>For WSL (Windows Subsystem for Linux), you can
-    <a href="<%= url_for 'latest-star-source' %>">build from source</a>
-    or install the
-    <a href="<%= url_for 'files-third-party' %>">pre-built 3<sup>rd</sup>
-    party packages</a></li>
-  <li>
-    Installer for the <a href="<%= url_for 'latest-star-windows-32' %>">32-bit Rakudo Star</a> is available, but
-    <i>is severely outdated</i> <%== contribute %>.
-    You may wish to attempt to <a href="<%= url_for 'latest-star-source' %>">
-    build from source</a> instead.
-  </li>
+  <li>Rakudo Star is available from <a href="https://brew.sh/">Homebrew</a>.
+    To install, run <code>brew install rakudo-star</code></li>
 </ul>
 
 <hr>

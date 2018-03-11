@@ -37,7 +37,8 @@
         <span class="version">2018.01</span>
         <span class="details">macOS</span>
       </a>
-      <a class="btn btn-sm btn-dark btn-block" href="#"
+      <a class="btn btn-sm btn-dark btn-block"
+        href="<%= url_for 'files-star-macos' %>"
         ><span class="oi oi-document"></span> installation instructions</a>
     </div>
     <div class="col-sm-4">
@@ -151,8 +152,7 @@ It's possible your distribution already includes a <code>rakudo</code> package, 
 Up-to-date packages for CentOS, Debian, Fedora and Ubuntu can be found at <a href="https://github.com/nxadm/rakudo-pkg/releases">the releases section of nxadm's "rakudo-pkg" repository on github</a>. Following the instructions on the page, you'll install the Rakudo compiler and <code>zef</code> module installer. You can then use <code>zef</code> to install any of the <a href="https://github.com/rakudo/star/tree/master/modules">Rakudo Star</a> or <a href="http://modules.perl6.org/">ecosystem</a> modules you might wish to use. If you use the Linux Subsystem of Windows 10, you can install nxadm's Ubuntu 16.04 package (run <kbd>/opt/rakudo/bin/fix_windows10</kbd> after the install).
 
 Another alternative, is to <a href="#Installing-Rakudo-Star-Source">install Rakudo Star from source code</a>.
-<h3 id="Installing-Rakudo-Star-Cygwin">Cygwin</h3>
-Because of a not yet implemented POSIX interface in cygwin (specifically <a href="https://cygwin.com/cygwin-api/std-notimpl.html">pthread_barrier needed by libuv</a>), Rakudo can not yet be compiled on that environment. You can use the regular Windows build, however. Just use <kbd>/cygdrive/c/rakudo/bin/perl6.bat</kbd> as the perl6 executable.
+
 <h3 id="Installing-Rakudo-Star-Source">Building from source</h3>
 The recommended way to obtain rakudo is via packaged releases described above. If you issues with that method, you can build rakudo from source.
 <h4 id="Installing-Rakudo-Star-Source-Prerequisites">Prerequisites</h4>

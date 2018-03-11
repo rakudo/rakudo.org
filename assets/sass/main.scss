@@ -232,6 +232,12 @@ html {
     overflow-y: scroll;
 }
 
+h2 {
+    .os-icon {
+        vertical-align: bottom;
+    }
+}
+
 #content {
     a:not(.btn) {
         text-decoration: underline;
