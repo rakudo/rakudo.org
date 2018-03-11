@@ -1,5 +1,38 @@
 % layout 'default';
-% title 'Bug Tracker for the Rakudo Perl 6 Compiler';
+% title 'Reporting Bugs';
 
-<h2>Lorem ipsum dolor sit amet</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu erat vitae nisi facilisis ultrices at ac lectus. Aliquam porta vehicula diam sit amet facilisis. Quisque tristique imperdiet metus et faucibus. Suspendisse finibus tristique ipsum, id tincidunt nunc egestas quis. Praesent mattis fermentum ultricies. Maecenas dui ante, ornare in commodo at, lobortis sit amet sem. Aenean rutrum tortor a ligula ullamcorper, id volutpat tortor lobortis.</p>
+<h2 class="h1">Reporting bugs</h2>
+
+<p class="lead">Our
+  <a href="https://github.com/rakudo/rakudo/issues/new"
+    class="btn btn-primary">GitHub Issue
+  Tracker</a> is the main place to report problems with Rakudo
+  or to submit possible feature suggestions. You can use it even if you're
+  unsure where to file your report.</p>
+
+<p><small>If you do not have a GitHub account, you can email your report to
+  <a href="mailto:rakudobug@perl.org">rakudobug@perl.org</a>.</small></p>
+
+<h3 class="h4">Sub-Projects</h3>
+
+<p>Rakudo uses some projects that have their own repositories. If you
+  <em>know</em> the problem is in one of them, feel free to report the problem
+  there instead.</p>
+
+<ul class="flush-list">
+  <li><a href="https://github.com/perl6/nqp/issues/new">NQP</a></li>
+  <li><a href="https://github.com/MoarVM/MoarVM/issues/new">MoarVM</a></li>
+  <li><a href="https://github.com/perl6/doc/issues/new">Documentation</a></li>
+  <li><a href="https://github.com/perl6/rakudo.org/issues/new">This website</a></li>
+  <li><a href="https://rt.perl.org/">RT Issue Tracker</a> (our old tracker
+    that still contains some <a href="https://fail.rakudo.party/">open
+    tickets</a>)</li>
+</ul>
+
+
+<h3 class="h4">Alerts</h3>
+
+<p>We maintain <a href="https://alerts.perl6.org/">alerts.perl6.org</a>
+  service where we publish information on critical issues. There are
+  <a href="https://rakudo.party/post/Announcing-P6lert-Perl-6-Alerts-Directly-From-Core-Developers">several
+    ways to follow</a> these alerts.</p>

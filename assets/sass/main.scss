@@ -77,6 +77,15 @@ p + ul {
 }
 */
 
+.flush-list {
+     padding-left: 15px;
+}
+
+.shy-list {
+    padding-left: 0px;
+    list-style: none;
+}
+
 footer,
 #body_home {
     text-align: center;
