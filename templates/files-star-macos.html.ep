@@ -8,7 +8,10 @@
     Install Rakudo Star on macOS</h2>
 
 <ol class="flush-list">
-  <li>Download the <a href="<%= url_for 'latest-star-macos' %>">latest Rakudo Star macOS <code>.dmg</code></a> disk image file</li>
+  <li>Download the <a href="<%= url_for 'latest-star-macos' %>">latest Rakudo Star macOS <code>.dmg</code></a> disk image file.
+  <a href="<%= url_for 'files-star' %>" class="text-info"
+    ><small><span class="oi oi-clock"></span>
+      [older releases]</small></a></li>
   <li>Double click it, to open a window showing its content</li>
   <li>Drag-and-drop the application from that window into
     <code>/Applications</code></li>
