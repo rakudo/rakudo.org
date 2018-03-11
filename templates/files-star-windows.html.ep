@@ -1,5 +1,7 @@
 % layout 'default';
 % title 'Windows - Install Rakudo Star';
+% make_crumbs home => 'Home', files => 'Files',
+%   'files-star' => 'Rakudo Star', 'Windows';
 
 <h2 class="h1">
   <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png" alt="">

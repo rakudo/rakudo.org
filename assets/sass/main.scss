@@ -356,3 +356,16 @@ code {
     padding-top: 2rem;
     padding-bottom: 1rem;
 }
+.breadcrumb {
+    font-size: 80%;
+    opacity: .4;
+    transition: opacity 1s;
+    padding-left: 0;
+    background: none!important;
+    clear: both;
+}
+
+.breadcrumb:hover {
+    opacity: 1;
+    transition: opacity .5s;
+}

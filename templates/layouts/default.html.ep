@@ -57,6 +57,7 @@
                 href="<%= url_for 'people' %>">People</a>
             </nav>
           </div>
+          <%== stash('crumbs')//'' %>
         </header>
       % }
 

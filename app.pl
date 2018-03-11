@@ -86,6 +86,27 @@ get '/pull/*password' => sub {
     );
 };
 
+helper make_crumbs => sub {
+    my ($self, @raw_crumbs) = @_;
+    my @crumbs;
+    my $current;
+    for (grep !($_ % 2), 0..$#raw_crumbs) {
+        $_ < $#raw_crumbs-1
+            ? push(@crumbs, [$raw_crumbs[$_], $raw_crumbs[$_+1]])
+            : ($current = $raw_crumbs[$_])
+    }
+    $current // die 'Missing "current" page in breadcrumbs helper';
+
+    my $c = join "\n",
+        '<nav aria-label="breadcrumb"><ol class="breadcrumb bg-dark">',
+        (map '<li class="breadcrumb-item"><a href="'
+            . xml_escape($self->url_for($_->[0]))
+            . '">' . xml_escape($_->[1]) . '</a></li>', @crumbs),
+
+        '<li class="breadcrumb-item active" aria-current="page">'
+        . xml_escape($current) . '</li></ol></nav>';
+    $self->stash(crumbs => $c);
+};
 helper third_party => sub {
     my ($self, $text, $url) = @_;
     q|<a data-toggle="tooltip" href="| . xml_escape($url) . q|"|
@@ -95,7 +116,8 @@ helper third_party => sub {
 },
 helper contribute => sub {
     my $self = shift;
-    q|<a href="| . $self->url_for('people') . q|" data-toggle="tooltip"|
+    q|<a href="| . xml_escape($self->url_for('people'))
+    . q|" data-toggle="tooltip"|
     . q| title="Would you like to help us fix that? Contribute ♥"|
     . q| class="text-primary"><span class="oi oi-wrench"></span></a>|
 };
