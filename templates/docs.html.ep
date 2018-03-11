@@ -1,7 +1,7 @@
 % layout 'default';
 % title 'Documentation';
 
-<h2>Documentation</h2>
+<h2 class="h1">Documentation</h2>
 <p>Since Rakudo is a compiler, you have to distinguish between documentation
   for the compiler itself, and the language it implements.</p>
 
