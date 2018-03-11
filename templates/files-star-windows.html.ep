@@ -1,7 +1,7 @@
 % layout 'default';
-% title 'Windows - Build Windows Rakudo Star';
+% title 'Windows - Install Rakudo Star';
 
-<h2 class="h1">Install Rakudo Star—Windows</h2>
+<h2 class="h1">Install Rakudo Star on Windows</h2>
 
 <ol class="flush-list">
   <li>Download the <a href="<%= url_for 'latest-star-windows-64' %>">latest Rakudo Star 64-bit Windows <code>.msi</code></a> installer file</li>
