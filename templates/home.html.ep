@@ -2,9 +2,11 @@
 % title 'Rakudo Perl 6 Compiler';
 
 <main role="main" class="inner cover">
+  <p><img src="/asset/pics/logo-inverse-300.png" alt="" id="logo"></p>
+
   <h1 class="cover-heading">Rakudo <%== p6 %> Compiler</h1>
   <p class="lead">Production-ready, stable implementation of the
-    <a href="https://perl6.org/"><%== p6 %></a> programming language.</p>
+    <a href="https://perl6.org/"><%== p6 %></a> language.</p>
   <p class="lead">
     <span class="platform-options">
       <a href="<%= url_for 'files' %>" data-platform="ubuntu debian"

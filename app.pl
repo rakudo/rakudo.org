@@ -18,7 +18,6 @@ app->asset->process('app.css' => qw{
     https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
 
     sass/open-iconic-bootstrap.css
-    sass/cover.scss
     sass/main.scss
 });
 app->asset->process('app.js' => qw{
