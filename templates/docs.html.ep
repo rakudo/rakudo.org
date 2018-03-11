@@ -1,5 +1,22 @@
 % layout 'default';
-% title 'Perl 6 Documentation';
+% title 'Documentation';
 
-<h2>Lorem ipsum dolor sit amet</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu erat vitae nisi facilisis ultrices at ac lectus. Aliquam porta vehicula diam sit amet facilisis. Quisque tristique imperdiet metus et faucibus. Suspendisse finibus tristique ipsum, id tincidunt nunc egestas quis. Praesent mattis fermentum ultricies. Maecenas dui ante, ornare in commodo at, lobortis sit amet sem. Aenean rutrum tortor a ligula ullamcorper, id volutpat tortor lobortis.</p>
+<h2>Documentation</h2>
+<p>Since Rakudo is a compiler, you have to distinguish between documentation
+  for the compiler itself, and the language it implements.</p>
+
+<p>The main documentation for the compiler itself is
+  <a href="https://github.com/rakudo/rakudo/blob/nom/docs/running.pod">its
+    manual page</a>.</p>
+
+<p>Documentation for the <%== p6 %> language can be found on the
+  <a href="https://doc.perl6.org/">main documentation website</a>, which
+  includes <a href="https://docs.perl6.org/language.html">tutorials for
+  programmers who know other languages</a>. There also exist
+  an <a href="http://perl6intro.com/">introductory tutorial</a> and
+  many <a href="https://perl6.org/resources/">other learning resources</a>.
+</p>
+
+<p>Our <a href="https://webchat.freenode.net/?channels=#perl6">IRC chat
+  channel</a> is an excellent way to get help from the members of the
+  community, if you're having trouble with anything.</p>
