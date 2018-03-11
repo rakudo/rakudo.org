@@ -6,8 +6,18 @@
   <p class="lead">Production-ready, stable implementation of the
     <a href="https://perl6.org/"><%== p6 %></a> programming language.</p>
   <p class="lead">
-    <a href="<%= url_for 'files' %>"
-      class="btn btn-lg btn-primary">Download 64-bit <code>.deb</code></a>
+    <span class="platform-options">
+      <a href="<%= url_for 'files' %>" data-platform="ubuntu debian"
+        class="btn btn-lg btn-primary">Download 64-bit <code>.deb</code></a>
+      <a href="<%= url_for 'files' %>" data-platform="red_hat fedora"
+        class="btn btn-lg btn-primary">Download 64-bit <code>.rpm</code></a>
+      <a href="<%= url_for 'files' %>" data-platform="windows"
+        class="btn btn-lg btn-primary">Download 64-bit <code>.msi</code></a>
+      <a href="<%= url_for 'files' %>" data-platform="generic"
+        class="btn btn-lg btn-primary">Download source code</a>
+    </span>
   </p>
+
+
   <p><a href="/" style="color: #fff; opacity: .7;">(other download options)</a></p>
 </main>

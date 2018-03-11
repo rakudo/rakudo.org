@@ -212,3 +212,8 @@ body:not(#body_home) nav {
 .nb {
     white-space: nowrap;
 }
+
+[data-platform]:not([data-platform=generic]) {
+    position: absolute;
+    left: -9999px;
+}

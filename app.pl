@@ -26,6 +26,7 @@ app->asset->process('app.js' => qw{
     https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
     https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
 
+    js/platform.js
     js/main.js
 });
 

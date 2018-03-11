@@ -2,6 +2,13 @@
 
 This is the source code for <https://rakudo.org>.
 
+### Debug Aid
+
+Some areas of the site are platform-specific (e.g. showing a download
+link to a `.deb` file if the visitor is using Ubuntu). You can force a view
+for a specific platform by using `platform` query parameter. See
+`process_platform_specific_content()` in `assets/main.js` for valid values.
+
 ### LICENSE
 
 See [LICENSE](LICENSE) file for the details of the license of the code in this repository.
