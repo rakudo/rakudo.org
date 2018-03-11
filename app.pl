@@ -4,7 +4,7 @@ use lib qw<lib>;
 use Mojolicious::Lite;
 use Mojo::UserAgent;
 use Mojo::File qw/path/;
-use Mojo::Util qw/trim/;
+use Mojo::Util qw/trim  xml_escape/;
 use Time::Moment;
 use RakudoOrg::Posts;
 
@@ -35,6 +35,20 @@ get '/' => sub {
     $self->stash(body_class => 'home');
 }, => 'home';
 get $_ for qw{/about /bugs /docs /files /people};
+get '/files/star/windows' => 'files-star-windows';
+get '/files/star/source'  => 'files-star-source';
+
+get '/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi'
+    => 'latest-star-windows-64';
+get '/downloads/star/rakudo-star-latest-x86 (no JIT).msi'
+    => 'latest-star-windows-32';
+
+get '/people/irc' => sub {
+    shift->redirect_to('https://webchat.freenode.net/?channels=#perl6');
+} => 'people-irc';
+get '/people/irc-dev' => sub {
+    shift->redirect_to('https://webchat.freenode.net/?channels=#perl6-dev');
+} => 'people-irc-dev';
 
 get '/post/#post' => sub {
     my $c = shift;
@@ -71,9 +85,20 @@ get '/pull/*password' => sub {
     );
 };
 
-helper p6 => sub {
-    '<span class="nb">Perl 6</span>'
+helper third_party => sub {
+    my ($self, $text, $url) = @_;
+    q|<a data-toggle="tooltip" href="| . xml_escape($url) . q|"|
+    . q| title="⚠ This package was prepared by a 3rd party,|
+    . q| not the core Rakudo team"><span class="oi oi-people"></span>|
+    . q| | . xml_escape($text) . q|</a>|;
+},
+helper contribute => sub {
+    my $self = shift;
+    q|<a href="| . $self->url_for('people') . q|" data-toggle="tooltip"|
+    . q| title="Would you like to help us fix that? Contribute ♥"|
+    . q| class="text-primary"><span class="oi oi-wrench"></span></a>|
 };
+helper p6 => sub { '<span class="nb">Perl 6</span>' };
 helper nav_active => sub {
     my ($self, $nav) = @_;
     $self->url_for('current')->to_abs eq $self->url_for($nav)->to_abs

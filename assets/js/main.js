@@ -1,5 +1,6 @@
 $(function(){
     process_platform_specific_content();
+    $(function () { $('[data-toggle="tooltip"]').tooltip() })
 });
 
 function process_platform_specific_content() {

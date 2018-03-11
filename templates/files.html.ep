@@ -1,9 +1,9 @@
 % layout 'default';
-% title 'Download Rakudo Perl 6 Compiler';
+% title 'Download';
 
 <h2 class="h1">Downloads</h2>
 
-<h3 class="h4">Rakudo Star</h3>
+<h3 class="h4" id="Star">Rakudo Star Collection</h3>
 
 <p>This option contains the Rakudo <%== p6 %> Compiler,
   a <a href="https://github.com/rakudo/star/tree/master/modules">collection
@@ -24,7 +24,8 @@
       <span class="version">2018.01</span>
       <span class="details">Windows 64-bit</span>
     </a>
-    <a class="btn btn-sm btn-dark btn-block" href="#"
+    <a class="btn btn-sm btn-dark btn-block"
+      href="<%= url_for 'files-star-windows' %>"
       ><span class="oi oi-document"></span> installation instructions</a>
   </div>
   <div class="col-sm-4">
@@ -57,7 +58,31 @@
   </div>
 </div>
 
-<p>You can also download from the <a href="http://rakudo.org/downloads/star/">list of older releases</a>.</p>
+<p>You can also download one of the <a href="http://rakudo.org/downloads/star/">older releases</a>.</p>
+
+
+<h3 class="h4">Rakudo Compiler Only</h3>
+<p>A light-weight alternative to <a href="#Star">Rakudo Star collection</a>
+  is to install the Rakudo compiler and module manager only. The
+  <a href="https://docs.perl6.org/">language documentation</a> is <i>not</i>
+  included and all the modules you may need will need to be installed from
+  <a href="http://modules.perl6.org/">the ecosystem</a>.</p>
+
+<div class="row compiler-downloads-panel">
+  <div class="col-sm-4">
+    <a class="btn btn-sm btn-primary btn-block" href="#"
+      ><span class="oi oi-box"></span> pre-built 3<sup>rd</sup> party
+      packages</a>
+  </div>
+  <div class="col-sm-4">
+    <a class="btn btn-sm btn-dark btn-block" href="#"
+      ><span class="oi oi-document"></span> build on Windows</a>
+  </div>
+  <div class="col-sm-4">
+    <a class="btn btn-sm btn-dark btn-block" href="#"
+      ><span class="oi oi-document"></span> build on *nix</a>
+  </div>
+</div>
 
 
 <h2>Detailed Instructions</h2>

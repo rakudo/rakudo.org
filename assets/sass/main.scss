@@ -80,6 +80,9 @@ p + ul {
 .flush-list {
      padding-left: 15px;
 }
+ol.flush-list {
+    padding-left: 20px;
+}
 
 .shy-list {
     padding-left: 0px;
@@ -341,4 +344,9 @@ pre {
     }
 
     padding-bottom: 20px;
+}
+
+code {
+    color: darken($color-body, 30%);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
