@@ -6,7 +6,7 @@
   <a href="https://rakudo.party/post/On-Troll-Hugging-Hole-Digging-and-Improving-Open-Source-Communities">hugtastic</a>
   community is the flagship "feature" of <%== p6 %>.</p>
 
-<p>The <a href="https://webchat.freenode.net/?channels=#perl6"
+<p>The <a href="<%= url_for 'people-irc' %>"
     class="btn btn-primary btn-sm">#perl6 IRC</a>
   chat channel on Freenode
   is the primary means of communication among
@@ -23,7 +23,7 @@
     StackOverflow questions</a></li>
   <li><a href="https://lists.perl.org/list/perl6-users.html">perl6-users
     mailing list</a></li>
-  <li><a href="https://webchat.freenode.net/?channels=#perl6-dev">#perl6-dev
+  <li><a href="<%= url_for 'people-irc-dev' %>">#perl6-dev
     IRC channel</a> <small>(mostly for Rakudo core development)</small></li>
 </ul>
 
@@ -34,5 +34,5 @@
   Check out
   our <a href="https://perl6.org/community/#Getting-Involved">Getting
   Involved</a> page or
-  <a href="https://webchat.freenode.net/?channels=#perl6">ask us</a> how your
+  <a href="<%= url_for 'people-irc' %>">ask us</a> how your
   skills can be best applied.</p>
