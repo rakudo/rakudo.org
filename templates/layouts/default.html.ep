@@ -5,70 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image"
-      content="<%= url_for('/assets/logo.png')->to_abs %>">
+      content="<%= url_for('/asset/logo.png')->to_abs %>">
     <meta name="twitter:image"
-      content="<%= url_for('/assets/logo.png')->to_abs %>">
+      content="<%= url_for('/asset/logo.png')->to_abs %>">
     <title><%= $title %>
       - Rakudo Compiler for Perl 6 Programming Language</title>
     %= asset 'app.css'
   </head>
-  <body>
-    <div class="bg">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <div class="container">
-          <a class="navbar-brand" href="/"><img src="/assets/pics/logo-inverse.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Bag tracker</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Community</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Documentation</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">How to help</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9">
-            <h1 class="blog-title"><%= $title
-              // 'Rakudo Compiler for Perl 6 Programming Language' %></h1>
-              <%= content %>
-          </div>
-          <div class="col-md-3">
-            <ul class="article-list shy-list">
-              % for my $p (items_in posts) {
-                <li><a href="<%= url_for post => $p->{post} %>"
-                  ><%= $p->{title} %></a></li>
-              % }
-            </ul>
-          </div>
+
+
+  <body<%== stash('body_class')
+    ? q| id="body_|. stash('body_class') .q|"| : '' %>>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">
+            <a href="<%= url_for 'home' %>"><img
+              src="/asset/pics/logo-inverse.png" alt=""></a>
+          </h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link<%= nav_active 'home' %>"
+              href="<%= url_for 'home' %>"
+              ><span class="oi oi-home"></span></a>
+            <a class="nav-link<%= nav_active 'files' %>"
+              href="<%= url_for 'files' %>">Files</a>
+            <a class="nav-link<%= nav_active 'docs' %>"
+              href="<%= url_for 'docs' %>">Docs</a>
+            <a class="nav-link<%= nav_active 'bugs' %>"
+              href="<%= url_for 'bugs' %>">Bugs</a>
+            <a class="nav-link<%= nav_active 'people' %>"
+              href="<%= url_for 'people' %>">People</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <%= content %>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>github/<a href="https://github.com/perl6/rakudo.org">perl6/rakudo.org</a>
+            | <a href="https://twitter.com/perl6org">@perl6org</a>
+            | <a href="https://webchat.freenode.net/?channels=#perl6"
+              >#perl6</a>
+          </p>
+        </div>
+      </footer>
     </div>
-
-    <footer class="container">
-      <p class="icons">
-        <a href="https://perl6.org" class="powered-by"
-          title="Use Perl 6">Use Perl 6</a> |
-        <a href="https://github.com/perl6/rakudo.org" class="fork-it"
-          title="Submit changes to this site">Repository for this site</a>
-      </p>
-    </footer>
     %= asset 'app.js'
   </body>
 </html>

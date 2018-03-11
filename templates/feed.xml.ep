@@ -16,7 +16,7 @@
     	<lastBuildDate><%= $last_update %></lastBuildDate>
     	<language>en</language>
         <image>
-    		<url><%= url_for('/assets/pics/logo.png')->to_abs %></url>
+    		<url><%= url_for('/asset/pics/logo.png')->to_abs %></url>
     		<title>Perl 6 Compiler</title>
     		<link><%= url_for('home')->to_abs %></link>
     	</image>

@@ -17,6 +17,8 @@ plugin 'AssetPack' => { pipes => [qw/Sass  JavaScript  Combine/] };
 app->asset->process('app.css' => qw{
     https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
 
+    sass/open-iconic-bootstrap.css
+    sass/cover.scss
     sass/main.scss
 });
 app->asset->process('app.js' => qw{
@@ -28,8 +30,11 @@ app->asset->process('app.js' => qw{
 });
 
 ### Routes
-get '/' => sub {} => 'home';
-get '/about';
+get '/' => sub {
+    my $self = shift;
+    $self->stash(body_class => 'home');
+}, => 'home';
+get $_ for qw{/about /bugs /docs /files /people};
 
 get '/post/#post' => sub {
     my $c = shift;
@@ -66,6 +71,11 @@ get '/pull/*password' => sub {
     );
 };
 
+helper nav_active => sub {
+    my ($self, $nav) = @_;
+    $self->url_for('current')->to_abs eq $self->url_for($nav)->to_abs
+        ? ' active' : ''
+};
 helper posts => sub { $posts->all };
 helper items_in => sub {
         my ($c, $what ) = @_;
