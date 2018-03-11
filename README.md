@@ -19,7 +19,8 @@ files indicate the copyright and license terms at the top of the file. Currently
 * jQuery and jQuery UI libraries: Copyright 2015 jQuery Foundation and other contributors; [MIT License](http://creativecommons.org/licenses/MIT)
 * The Camelia image is copyright 2009 by Larry Wall. Permission to use is granted under the [Artistic License 2.0](License), or any subsequent version
 of the Artistic License.
-* Cover template for Bootstrap, by [`@mdo`](https://twitter.com/mdo)
+* [Cover template](http://getbootstrap.com/docs/4.0/examples/cover/)
+    for Bootstrap, by [`@mdo`](https://twitter.com/mdo)
 * [OpenIconic](https://useiconic.com/open/) icons are licensed under
     [MIT License](http://creativecommons.org/licenses/MIT) and its fonts
     are licensed under SIL OPEN FONT LICENSE Version 1.1.

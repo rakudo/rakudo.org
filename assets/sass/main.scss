@@ -237,7 +237,6 @@ html {
         text-decoration: underline;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
         color: #aaa;
-        text-decoration-color: #888;
     }
     a:hover:not(.btn), a:active:not(.btn) {
         text-decoration: none;
@@ -349,4 +348,11 @@ pre {
 code {
     color: darken($color-body, 30%);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+.jumbotron-wiry {
+    background: none;
+    border: 1px solid darken($color-body, 60%);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 }

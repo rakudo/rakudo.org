@@ -35,6 +35,7 @@ get '/' => sub {
     $self->stash(body_class => 'home');
 }, => 'home';
 get $_ for qw{/about /bugs /docs /files /people};
+get '/files/star' => 'files-star';
 get '/files/star/windows' => 'files-star-windows';
 get '/files/star/source'  => 'files-star-source';
 

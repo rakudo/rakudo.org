@@ -3,63 +3,62 @@
 
 <h2 class="h1">Downloads</h2>
 
-<h3 class="h4" id="Star">Rakudo Star Collection</h3>
+<div class="jumbotron jumbotron-wiry">
+  <h3 class="h4" id="Star">Rakudo Star Collection</h3>
 
-<p>This option contains the Rakudo <%== p6 %> Compiler,
-  a <a href="https://github.com/rakudo/star/tree/master/modules">collection
-  of modules</a> from the <%== p6 %>
-  <a href="http://modules.perl6.org/">ecosystem</a>,
-  and <a href="https://docs.perl6.org/">language documentation</a>.
-  This is the most thoroughly tested release and is the recommended
-  way to use Rakudo <%== p6 %>.</p>
+  <p>This option contains the Rakudo <%== p6 %> Compiler,
+    a <a href="https://github.com/rakudo/star/tree/master/modules">collection
+    of modules</a> from the <%== p6 %>
+    <a href="http://modules.perl6.org/">ecosystem</a>,
+    and <a href="https://docs.perl6.org/">language documentation</a>.
+    This is the most thoroughly tested release and is the recommended
+    way to use Rakudo <%== p6 %>.</p>
 
-<div class="row downloads-panel">
-  <div class="col-sm-4">
-    <a class="download btn btn-dark btn-block" data-platform-mark="windows"
-      href="http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi">
-      <img class="os-icon" height=50
-        src="http://rakudo.org/wp/wp-content/uploads/2016/02/OS_Windows_8.png"
-        alt="">
-      <span class="rakudo">Rakudo Star</span>
-      <span class="version">2018.01</span>
-      <span class="details">Windows 64-bit</span>
-    </a>
-    <a class="btn btn-sm btn-dark btn-block"
-      href="<%= url_for 'files-star-windows' %>"
-      ><span class="oi oi-document"></span> installation instructions</a>
+  <div class="row downloads-panel">
+    <div class="col-sm-4">
+      <a class="download btn btn-dark btn-block" data-platform-mark="windows"
+        href="http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi">
+        <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png" alt="">
+        <span class="rakudo">Rakudo Star</span>
+        <span class="version">2018.01</span>
+        <span class="details">Windows 64-bit</span>
+      </a>
+      <a class="btn btn-sm btn-dark btn-block"
+        href="<%= url_for 'files-star-windows' %>"
+        ><span class="oi oi-document"></span> installation instructions</a>
+    </div>
+    <div class="col-sm-4">
+      <a class="download btn btn-dark btn-block"
+        data-platform-mark="ios"
+        href="http://rakudo.org/downloads/star/rakudo-star-latest.dmg">
+        <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png"
+          alt="">
+        <span class="rakudo">Rakudo Star</span>
+        <span class="version">2018.01</span>
+        <span class="details">macOS</span>
+      </a>
+      <a class="btn btn-sm btn-dark btn-block" href="#"
+        ><span class="oi oi-document"></span> installation instructions</a>
+    </div>
+    <div class="col-sm-4">
+      <a class="download btn btn-dark btn-block"
+        data-platform-mark="ubuntu debian fedora red hat suse generic"
+        href="http://rakudo.org/downloads/star/rakudo-star-latest.tar.gz">
+        <img class="os-icon" height=50 src="/asset/pics/os-icon-source.png"
+          alt="">
+        <span class="rakudo">Rakudo Star</span>
+        <span class="version">2018.01</span>
+        <span class="details">Source (Linux, others)</span>
+      </a>
+      <a class="btn btn-sm btn-dark btn-block" href="#"
+        ><span class="oi oi-document"></span> installation instructions</a>
+    </div>
   </div>
-  <div class="col-sm-4">
-    <a class="download btn btn-dark btn-block"
-      data-platform-mark="ios"
-      href="http://rakudo.org/downloads/star/rakudo-star-latest.dmg">
-      <img class="os-icon" height=50
-        src="http://rakudo.org/wp/wp-content/uploads/2016/02/Apple-logo.png"
-        alt="">
-      <span class="rakudo">Rakudo Star</span>
-      <span class="version">2018.01</span>
-      <span class="details">Mac OS X</span>
-    </a>
-    <a class="btn btn-sm btn-dark btn-block" href="#"
-      ><span class="oi oi-document"></span> installation instructions</a>
-  </div>
-  <div class="col-sm-4">
-    <a class="download btn btn-dark btn-block"
-      data-platform-mark="ubuntu debian fedora red hat suse generic"
-      href="http://rakudo.org/downloads/star/rakudo-star-latest.tar.gz">
-      <img class="os-icon" height=50
-        src="http://rakudo.org/wp/wp-content/uploads/2016/02/tux-258x300.png"
-        alt="">
-      <span class="rakudo">Rakudo Star</span>
-      <span class="version">2018.01</span>
-      <span class="details">Source (Linux, others)</span>
-    </a>
-    <a class="btn btn-sm btn-dark btn-block" href="#"
-      ><span class="oi oi-document"></span> installation instructions</a>
-  </div>
+
+  <p><small><span class="oi oi-clock"></span>
+    You can also download one of the
+    <a href="<%= url_for 'files-star' %>">older releases</a>.</small></p>
 </div>
-
-<p>You can also download one of the <a href="http://rakudo.org/downloads/star/">older releases</a>.</p>
-
 
 <h3 class="h4">Rakudo Compiler Only</h3>
 <p>A light-weight alternative to <a href="#Star">Rakudo Star collection</a>

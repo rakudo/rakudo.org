@@ -1,15 +1,12 @@
 % layout 'default';
-% title 'Windows - Install Rakudo Star';
+% title 'macOS - Install Rakudo Star';
 
 <h2 class="h1">
   <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png" alt="">
     Install Rakudo Star on Windows</h2>
 
 <ol class="flush-list">
-  <li>Download the <a href="<%= url_for 'latest-star-windows-64' %>">latest Rakudo Star 64-bit Windows <code>.msi</code></a> installer file.
-    <a href="<%= url_for 'files-star' %>" class="text-info"
-      ><small><span class="oi oi-clock"></span>
-        [older releases]</small></a></li>
+  <li>Download the <a href="<%= url_for 'latest-star-windows-64' %>">latest Rakudo Star 64-bit Windows <code>.msi</code></a> installer file</li>
   <li>Run the installer and follow the instructions on the screen</li>
 </ol>
 
@@ -25,10 +22,11 @@
     <%== third_party 'Chocolatey',
       'https://chocolatey.org/packages/rakudostar' %>,
     run <code>choco install rakudostar</code> to install Rakudo Star</li>
-  <li>For WSL (Windows Subsystem for Linux), you can install
+  <li>For WSL (Windows Subsystem for Linux), you can
+    <a href="<%= url_for 'latest-star-source' %>">build from source</a>
+    or install the
     <a href="<%= url_for 'files-third-party' %>">pre-built 3<sup>rd</sup>
-    party packages</a> or <a href="<%= url_for 'latest-star-source' %>">build
-    from source</a></li>
+    party packages</a></li>
   <li>
     Installer for the <a href="<%= url_for 'latest-star-windows-32' %>">32-bit Rakudo Star</a> is available, but
     <i>is severely outdated</i> <%== contribute %>.
