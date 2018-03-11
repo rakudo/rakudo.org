@@ -71,6 +71,9 @@ get '/pull/*password' => sub {
     );
 };
 
+helper p6 => sub {
+    '<span class="nb">Perl 6</span>'
+};
 helper nav_active => sub {
     my ($self, $nav) = @_;
     $self->url_for('current')->to_abs eq $self->url_for($nav)->to_abs

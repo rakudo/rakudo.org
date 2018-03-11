@@ -1,10 +1,10 @@
 % layout 'default';
 % title 'About the Rakudo Perl 6 Compiler';
 
-<h2>Rakudo Perl 6</h2>
+<h2>Rakudo <%== p6 %></h2>
 
-<p>Rakudo Perl 6, or simply <strong>Rakudo</strong>, is a compiler for the
-  <a title="Perl 6" href="https://perl6.org/">Perl 6</a> programming
+<p>Rakudo <%== p6 %>, or simply <strong>Rakudo</strong>, is a compiler for the
+  <a title="Perl&nbsp;6" href="https://perl6.org/"><%== p6 %></a> programming
   language.</p>
 
 <p>Rakudo is licensed under the terms of the
@@ -19,7 +19,7 @@
 
 <h2>Rakudo Star</h2>
 The Rakudo Star distribution combines the Rakudo
-Perl 6 compiler with additional resources, such
+<%== p6 %> compiler with additional resources, such
 as <a href="https://docs.perl6.org/">documentation</a>,
 <a href="http://perl6intro.com/">introductory materials</a>,
 and a selection of modules.
