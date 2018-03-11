@@ -77,6 +77,7 @@ p + ul {
 }
 */
 
+footer,
 #body_home {
     text-align: center;
 }
@@ -179,12 +180,16 @@ html {
     overflow-y: scroll;
 }
 
-main a:not(.btn) {
-    text-decoration: underline;
-    color: #777;
-}
-a:hover:not(.btn), a:active:not(.btn) {
-    text-decoration: none;
+#content {
+    a:not(.btn) {
+        text-decoration: underline;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+        color: #aaa;
+        text-decoration-color: #888;
+    }
+    a:hover:not(.btn), a:active:not(.btn) {
+        text-decoration: none;
+    }
 }
 
 body:not(#body_home) nav {
