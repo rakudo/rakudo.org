@@ -5,7 +5,7 @@
 
 <p class="lead">Our
   <a href="https://github.com/rakudo/rakudo/issues/new"
-    class="btn btn-primary">GitHub Issue
+    class="btn btn-primary btn-sm">GitHub Issue
   Tracker</a> is the main place to report problems with Rakudo
   or to submit possible feature suggestions. You can use it even if you're
   unsure where to file your report.</p>

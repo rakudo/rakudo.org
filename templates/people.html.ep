@@ -7,7 +7,7 @@
   community is the flagship "feature" of <%== p6 %>.</p>
 
 <p>The <a href="https://webchat.freenode.net/?channels=#perl6"
-    class="btn btn-primary">#perl6 IRC</a>
+    class="btn btn-primary btn-sm">#perl6 IRC</a>
   chat channel on Freenode
   is the primary means of communication among
   <%== p6 %> contributors, which makes it a great place to receive expert help
