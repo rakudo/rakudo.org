@@ -17,8 +17,9 @@
   <div class="row downloads-panel">
     <div class="col-sm-4">
       <a class="download btn btn-dark btn-block" data-platform-mark="windows"
-        href="http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi">
-        <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png" alt="">
+        href="<%= url_for 'latest-star-windows-64' %>">
+        <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png"
+          alt="">
         <span class="rakudo">Rakudo Star</span>
         <span class="version">2018.01</span>
         <span class="details">Windows 64-bit</span>
@@ -30,7 +31,7 @@
     <div class="col-sm-4">
       <a class="download btn btn-dark btn-block"
         data-platform-mark="ios"
-        href="http://rakudo.org/downloads/star/rakudo-star-latest.dmg">
+        href="<%= url_for 'latest-star-macos' %>">
         <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png"
           alt="">
         <span class="rakudo">Rakudo Star</span>
@@ -44,21 +45,23 @@
     <div class="col-sm-4">
       <a class="download btn btn-dark btn-block"
         data-platform-mark="ubuntu debian fedora red hat suse generic"
-        href="http://rakudo.org/downloads/star/rakudo-star-latest.tar.gz">
+        href="<%= url_for 'latest-star-source' %>">
         <img class="os-icon" height=50 src="/asset/pics/os-icon-source.png"
           alt="">
         <span class="rakudo">Rakudo Star</span>
         <span class="version">2018.01</span>
         <span class="details">Source (Linux, others)</span>
       </a>
-      <a class="btn btn-sm btn-dark btn-block" href="#"
+      <a class="btn btn-sm btn-dark btn-block"
+        href="<%= url_for 'files-star-source' %>"
         ><span class="oi oi-document"></span> installation instructions</a>
     </div>
   </div>
 
-  <p><small><span class="oi oi-clock"></span>
+  <p class="text-info"><small><span class="oi oi-clock"></span>
     You can also download one of the
-    <a href="<%= url_for 'files-star' %>">older releases</a>.</small></p>
+    <a class="text-info"
+      href="<%= url_for 'files-star' %>">older releases</a>.</small></p>
 </div>
 
 <h3 class="h4">Rakudo Compiler Only</h3>

@@ -275,12 +275,6 @@ body:not(#body_home) nav {
     left: -9999px;
 }
 
-pre {
-    background: $color-body;
-    padding: 10px;
-    border-radius: 4px;
-}
-
 /*.downloads a.button {
     display: block;
     border: 1px solid #000033;
@@ -351,7 +345,8 @@ pre {
     padding-bottom: 20px;
 }
 
-code {
+code,
+pre, code {
     color: darken($color-body, 30%);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
@@ -374,4 +369,19 @@ code {
 .breadcrumb:hover {
     opacity: 1;
     transition: opacity .5s;
+}
+
+.accordion {
+    padding-bottom: 1rem;
+    .card-header {
+        padding: 0;
+    }
+    .btn-link {
+        text-decoration: none;
+        padding: 1rem;
+    }
+}
+
+.suck-b {
+    margin-bottom: 0;
 }

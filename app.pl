@@ -34,18 +34,13 @@ get '/' => sub {
     my $self = shift;
     $self->stash(body_class => 'home');
 }, => 'home';
-get $_ for qw{/about /bugs /docs /files /people};
+get $_ for qw{/about /bugs /docs /files /people
+    /latest-star-windows-64 /latest-star-windows-32
+    /latest-star-macos      /latest-star-source};
 get '/files/star' => 'files-star';
 get '/files/star/windows' => 'files-star-windows';
 get '/files/star/macos'   => 'files-star-macos';
 get '/files/star/source'  => 'files-star-source';
-
-get '/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi'
-    => 'latest-star-windows-64';
-get '/downloads/star/rakudo-star-latest-x86 (no JIT).msi'
-    => 'latest-star-windows-32';
-get '/downloads/star/rakudo-star-latest.dmg'
-    => 'latest-star-macos';
 
 get '/people/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#perl6');
