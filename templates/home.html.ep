@@ -13,17 +13,8 @@
   <p class="lead">Production-ready, stable implementation of the
     <a href="https://perl6.org/"><%== p6 %></a> language.</p>
   <p class="lead">
-    <span class="platform-options">
-      <a href="<%= url_for 'files' %>" data-platform="ios"
-        class="btn btn-lg btn-primary">Download 64-bit <code>.dmg</code></a>
-      <a href="<%= url_for 'files' %>" data-platform="windows"
-        class="btn btn-lg btn-primary">Download 64-bit <code>.msi</code></a>
       <a href="<%= url_for 'files' %>" data-platform="generic"
-        class="btn btn-lg btn-primary">Download source code</a>
-    </span>
+        class="btn btn-lg btn-primary">
+        <span class="oi oi-data-transfer-download"></span> Download</a>
   </p>
-
-
-  <p><a href="<%= url_for 'files' %>"
-      style="color: #fff; opacity: .7;">(other download options)</a></p>
 </main>
