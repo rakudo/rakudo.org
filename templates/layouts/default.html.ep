@@ -25,6 +25,8 @@
               <a class="nav-link<%= nav_active 'home' %>"
                 href="<%= url_for 'home' %>"
                 ><span class="oi oi-home"></span></a>
+              <a class="nav-link<%= nav_active 'posts' %>"
+                href="<%= url_for 'posts' %>">Posts</a>
               <a class="nav-link<%= nav_active 'files' %>"
                 href="<%= url_for 'files' %>">Files</a>
               <a class="nav-link<%= nav_active 'docs' %>"
@@ -47,6 +49,8 @@
               <a class="nav-link<%= nav_active 'home' %>"
                 href="<%= url_for 'home' %>"
                 ><span class="oi oi-home"></span></a>
+              <a class="nav-link<%= nav_active 'posts' %>"
+                href="<%= url_for 'posts' %>">Posts</a>
               <a class="nav-link<%= nav_active 'files' %>"
                 href="<%= url_for 'files' %>">Files</a>
               <a class="nav-link<%= nav_active 'docs' %>"

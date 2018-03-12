@@ -1,0 +1,16 @@
+% layout 'default';
+% title 'Posts';
+
+<h2 class="h1">Posts</h2>
+
+<div class="article-list">
+% for my $p ( @$posts ) {
+  <div class="blog-post">
+    <h2 class="blog-post-title"
+      ><a href="<%= url_for post => post => $p->{post} %>"
+        ><%= $p->{title} %></a></h2>
+    <p class="blog-post-meta"><%= $p->{date} %></p>
+    <p class="blog-post"><%= $p->{desc} =%></p>
+  </div>
+% }
+</div>

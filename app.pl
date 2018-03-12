@@ -34,6 +34,10 @@ get '/' => sub {
     my $self = shift;
     $self->stash(body_class => 'home');
 }, => 'home';
+get '/posts' => sub {
+    my $self = shift;
+    $self->stash(posts => $posts->all);
+};
 get $_ for qw{/about /bugs /docs /files /people
     /latest-star-windows-64 /latest-star-windows-32
     /latest-star-macos      /latest-star-source};
@@ -96,7 +100,8 @@ helper make_crumbs => sub {
     $current // die 'Missing "current" page in breadcrumbs helper';
 
     my $c = join "\n",
-        '<nav aria-label="breadcrumb"><ol class="breadcrumb bg-dark">',
+        '<nav aria-label="breadcrumb" class="breadcrumbs">'
+        . '<ol class="breadcrumb bg-dark">',
         (map '<li class="breadcrumb-item"><a href="'
             . xml_escape($self->url_for($_->[0]))
             . '">' . xml_escape($_->[1]) . '</a></li>', @crumbs),

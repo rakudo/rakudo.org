@@ -1,6 +1,8 @@
 % layout 'default';
+% make_crumbs home => 'Home', posts => 'Posts', $title;
 
 <article>
+  <h2 class="h1"><%= $title %></h2>
   <p class="article-description">
     <%= $date %><%= stash('desc') ? ' | ' . stash('desc') : '' %></p>
   <%== $post %>
