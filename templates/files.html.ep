@@ -64,7 +64,7 @@
       href="<%= url_for 'files-star' %>">older releases</a>.</small></p>
 </div>
 
-<h3 class="h4">Rakudo Compiler Only</h3>
+<h3 class="h4">Installing Rakudo Compiler Only</h3>
 <p>A light-weight alternative to <a href="#Star">Rakudo Star collection</a>
   is to install the Rakudo compiler and module manager only. The
   <a href="https://docs.perl6.org/">language documentation</a> is <i>not</i>
@@ -88,117 +88,10 @@
 </div>
 
 
-<h2>Detailed Instructions</h2>
-<ul>
-  <li><a href="#Definitions">Definitions</a></li>
-  <li><a href="#Installing-Rakudo-Star">Installing Rakudo Star
-</a>
-<ul>
-  <li><a href="#Installing-Rakudo-Star-Windows">Windows</a></li>
-  <li><a href="#Installing-Rakudo-Star-OS-X">OS X</a></li>
-  <li><a href="#Installing-Rakudo-Star-Linux">Linux &amp;
-Unix-like operating systems</a></li>
-  <li><a href="#Installing-Rakudo-Star-Source">Building from source
-</a>
-<ul>
-  <li><a href="#Installing-Rakudo-Star-Source-Prerequisites">Prerequisites
-</a>
-<ul>
-  <li><a href="#Installing-Rakudo-Star-Source-Prerequisites-Debian">Debian / Ubuntu</a></li>
-  <li><a href="#Installing-Rakudo-Star-Source-Prerequisites-Red-Hat">Red Hat / CentOS / Fedora</a></li>
-</ul>
-</li>
-  <li><a href="#Installing-Rakudo-Star-Source-Installation">Installation</a></li>
-</ul>
-</li>
-</ul>
-</li>
-  <li><a href="#Using-Rakudo">Using Rakudo</a></li>
-  <li><a href="#Discouraged-Tools">Discouraged Tools
-</a>
-<ul>
-  <li><a href="#Discouraged-Tools-Rakudobrew">rakudobrew</a></li>
-  <li><a href="#Discouraged-Tools-Panda">panda</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="Definitions">Definitions</h2>
-Some grossly over-simplified definitions:
-<ul>
-  <li>Perl 6 is a language specification.</li>
-  <li>Rakudo is a compiler for Perl 6.</li>
-  <li>Rakudo Star (or Rakudo *) is a distribution that contains the Rakudo compiler, documentation and some useful modules.</li>
-  <li><a href="http://moarvm.com/">MoarVM</a> and <a href="http://docs.oracle.com/javase/specs/jvms/se7/html/">JVM</a> are Process Virtual Machines. They provide an interface between the compiler and the underlying operating system or machine. MoarVM generally offers more support and is a preferred choice.</li>
-</ul>
-<h2 id="Installing-Rakudo-Star">Installing Rakudo Star</h2>
-Rakudo Star is the recommended way to obtain Perl 6 for most users.
-It comes with <a href="https://github.com/rakudo/star/tree/master/modules">several modules</a>, but none of them are essential. If you already installed the Rakudo compiler,
-you can simply browse <a href="http://modules.perl6.org/">the modules ecosystem</a> and install only the modules you plan to use.
-<h3 id="Installing-Rakudo-Star-Windows">Windows</h3>
-Windows Installer packages are available as MSI files here:
+<h3 class="h4">Using Rakudo</h3>
 
-<a title="Rakudo Star downloads" href="https://rakudo.perl6.org/downloads/star/">https://rakudo.perl6.org/downloads/star/</a>
+<p>To run a <%== p6 %> program with Rakudo, issue a command like:
+<code>perl6 hello.pl</code></p>
 
-As of the 2015.02 version, the MSI installs Rakudo Star with MoarVM under <code>C:\rakudo\</code>. The executable files can be found under <code>C:\rakudo\bin\</code>, and a shortcut will be placed under your menu.
-
-If you want to use the Linux Subsystem of Windows 10, see below in <a href="#Installing-Rakudo-Star-Linux">the section about nxadm's rakudo-pkg repository</a>
-<h3 id="Installing-Rakudo-Star-OS-X">OS X</h3>
-Rakudo Star is available from Homebrew, and Rakudo from MacPorts. If you want to check the version before installing:
-<pre><code>brew info rakudo-star</code></pre>
-To install:
-<pre><code>brew install rakudo-star</code></pre>
-And on MacPorts (Rakudo only):
-<pre><code>sudo port install rakudo</code></pre>
-<h3 id="Installing-Rakudo-Star-Linux">Linux &amp; Unix-like operating systems</h3>
-It's possible your distribution already includes a <code>rakudo</code> package, however, ensure the available version is a recent one. Rakudo compiler gets released every month and Rakudo Star distribution every three months. The versioning is based on release dates, e.g. <code>version 2017.07</code>.
-
-Up-to-date packages for CentOS, Debian, Fedora and Ubuntu can be found at <a href="https://github.com/nxadm/rakudo-pkg/releases">the releases section of nxadm's "rakudo-pkg" repository on github</a>. Following the instructions on the page, you'll install the Rakudo compiler and <code>zef</code> module installer. You can then use <code>zef</code> to install any of the <a href="https://github.com/rakudo/star/tree/master/modules">Rakudo Star</a> or <a href="http://modules.perl6.org/">ecosystem</a> modules you might wish to use. If you use the Linux Subsystem of Windows 10, you can install nxadm's Ubuntu 16.04 package (run <kbd>/opt/rakudo/bin/fix_windows10</kbd> after the install).
-
-Another alternative, is to <a href="#Installing-Rakudo-Star-Source">install Rakudo Star from source code</a>.
-
-<h3 id="Installing-Rakudo-Star-Source">Building from source</h3>
-The recommended way to obtain rakudo is via packaged releases described above. If you issues with that method, you can build rakudo from source.
-<h4 id="Installing-Rakudo-Star-Source-Prerequisites">Prerequisites</h4>
-To install Rakudo Star from source you'll need Perl 5.10 or newer, <code>git</code>, <code>make</code> and <code>gcc</code>. Many distributions provide package groups that install common build tools. Here are examples for some popular Linux distributions:
-<h5 id="Installing-Rakudo-Star-Source-Prerequisites-Debian">Debian / Ubuntu</h5>
-<pre><code>apt-get install build-essential git libssl-dev</code></pre>
-<h5 id="Installing-Rakudo-Star-Source-Prerequisites-Red-Hat">Red Hat / CentOS / Fedora</h5>
-<pre><code>yum install git
-yum groupinstall 'Development Tools'</code></pre>
-<strong>Fedora</strong>:<em> perl-ExtUtils-Command</em> must be installed as well:
-<pre><code>yum install perl-ExtUtils-Command</code></pre>
-<strong>CentOS 7</strong> (and perhaps other versions too), Perl 5 <code>autodie</code> must be installed too:
-<pre><code>yum install perl-autodie</code></pre>
-<h4 id="Installing-Rakudo-Star-Source-Installation">Installation</h4>
-The exact steps required may differ depending on your operating system. This example uses Rakudo Star 2017.07; ensure you're installing <a href="https://rakudo.perl6.org/downloads/star/">the latest available version</a>. You should consult the <code>README</code> file contained in the tarball for more up-to-date and detailed information.
-<pre><code>mkdir ~/rakudo &amp;&amp; cd $_
-curl -O https://rakudo.perl6.org/downloads/star/rakudo-star-2017.07.tar.gz
-tar -xvzf rakudo-star-2017.07.tar.gz
-cd rakudo-star-2017.07/
-
-perl Configure.pl --backend=moar --gen-moar
-make
-
-# If you wish, you can run the tests
-# Depending on your machine, they could take over half an hour to run
-make rakudo-test
-make rakudo-spectest
-
-make install
-
-echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH" &gt;&gt; ~/.bashrc
-source ~/.bashrc</code></pre>
-<h2 id="Using-Rakudo">Using Rakudo</h2>
-To run a Perl 6 program with Rakudo, include the install directory in your system PATH variable and issue a command like:
-<pre><code>perl6 hello.pl</code></pre>
-If the Rakudo compiler is invoked without an explicit script to run, it enters a small interactive mode that allows Perl 6 statements to be executed from the command line. Each line entered is treated as a separate compilation unit, which means that subroutines are preserved after they are defined, but variables are not.
-<h2 id="Discouraged-Tools">Discouraged Tools</h2>
-At some point in the past, the following tools were in wide use and recommended. Their use now is discouraged.
-<h3 id="Discouraged-Tools-Rakudobrew">rakudobrew</h3>
-Rakudobrew was originally designed for core developers to run multiple versions of Rakudo at the same time. Upon its utilization by many regular users, we found common reports of issues that were caused by rakudobrew itself, rather than problems in Rakudo. Its default instructions also build the latest, minimally-tested Rakudo commit, rather than a well-tested release, and rakudobrew also requires running `rakudobrew rehash` after installing any binaries.
-
-Rakudobrew is still available from <a href="https://github.com/tadzik/rakudobrew">its GitHub repository</a>, however, its use is discouraged. Regular users should <a href="#Installing-Rakudo-Star">install Rakudo Star</a>. Users who wish to build latest, minimally-tested Rakudo commits should simply <a href="https://github.com/zoffixznet/r#table-of-contents">build rakudo from a GitHub checkout</a>, without using rakudobrew.
-<h3 id="Discouraged-Tools-Panda">panda</h3>
-Panda used to be the primary module installer. Now <a href="https://modules.perl6.org/dist/zef:github"><code>zef</code></a> is the installer of choice. It is more actively maintained and offers more features (among others, features like installation of modules from CPAN).
-
-Panda is still available from <a href="https://github.com/tadzik/panda"> its GitHub repository</a>, but it's deprecated and may be broken on newer versions of Rakudo.
+<p>To enter an interactive mode where each line of code is evaluated as soon
+  as you enter it, run <code>perl6</code> without any arguments.</p>
