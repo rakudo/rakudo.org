@@ -65,11 +65,11 @@
 </div>
 
 <h3 class="h4">Installing Rakudo Compiler Only</h3>
-<p>A light-weight alternative to <a href="#Star">Rakudo Star collection</a>
-  is to install the Rakudo compiler and module manager only. The
-  <a href="https://docs.perl6.org/">language documentation</a> is <i>not</i>
-  included and all the modules you may need will need to be installed from
-  <a href="http://modules.perl6.org/">the ecosystem</a>.</p>
+<p>A alternative to <a href="#Star">Rakudo Star collection</a>
+  is to install the Rakudo compiler only (with separate, manual installation
+  of the module manager). The <a href="https://docs.perl6.org/">language 
+  documentation</a> is <i>not</i> included and all the modules you may need
+  will need to be installed from <a href="http://modules.perl6.org/">the ecosystem</a>.</p>
 
 <div class="row compiler-downloads-panel">
   <div class="col-sm-4">
