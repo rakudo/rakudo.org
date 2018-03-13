@@ -29,7 +29,7 @@
     run <code>choco install rakudostar</code> to install Rakudo Star</li>
   <li>For WSL (Windows Subsystem for Linux), you can install
     <a href="<%= url_for 'files-third-party' %>">pre-built 3<sup>rd</sup>
-    party packages</a> or <a href="<%= url_for 'latest-star-source' %>">build
+    party packages</a> or <a href="<%= url_for 'files-star-source' %>">build
     from source</a></li>
   <li>
     Installer for the <a href="<%= url_for 'latest-star-windows-32' %>">32-bit Rakudo Star</a> is available, but
