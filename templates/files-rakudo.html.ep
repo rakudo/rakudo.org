@@ -1,0 +1,26 @@
+% layout 'default';
+% title 'Rakudo Compiler Only';
+
+<h2 class="h1">Rakudo Compiler Only</h2>
+
+<p>An alternative to <a href="#Star">Rakudo Star collection</a>
+  is to install the Rakudo compiler only (with separate, manual installation
+  of the module manager). The <a href="https://docs.perl6.org/">language
+  documentation</a> is <i>not</i> included and all the modules you may need
+  will need to be installed from <a href="http://modules.perl6.org/">the ecosystem</a>.</p>
+
+<div class="row compiler-downloads-panel">
+  <div class="col-sm-4">
+    <a class="btn btn-sm btn-primary btn-block" href="#"
+      ><span class="oi oi-box"></span> pre-built 3<sup>rd</sup> party
+      packages</a>
+  </div>
+  <div class="col-sm-4">
+    <a class="btn btn-sm btn-dark btn-block" href="#"
+      ><span class="oi oi-document"></span> build on Windows</a>
+  </div>
+  <div class="col-sm-4">
+    <a class="btn btn-sm btn-dark btn-block" href="#"
+      ><span class="oi oi-document"></span> build on *nix</a>
+  </div>
+</div>

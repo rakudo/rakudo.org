@@ -64,29 +64,33 @@
       href="<%= url_for 'files-star' %>">older releases</a>.</small></p>
 </div>
 
-<h3 class="h4">Installing Rakudo Compiler Only</h3>
-<p>An alternative to <a href="#Star">Rakudo Star collection</a>
-  is to install the Rakudo compiler only (with separate, manual installation
-  of the module manager). The <a href="https://docs.perl6.org/">language 
-  documentation</a> is <i>not</i> included and all the modules you may need
-  will need to be installed from <a href="http://modules.perl6.org/">the ecosystem</a>.</p>
+<h3 class="h4">Alternative Options</h3>
 
-<div class="row compiler-downloads-panel">
-  <div class="col-sm-4">
-    <a class="btn btn-sm btn-primary btn-block" href="#"
-      ><span class="oi oi-box"></span> pre-built 3<sup>rd</sup> party
-      packages</a>
+
+<div class="row kick-b">
+  <div class="col-sm-7">
+    <div class="card bg-dark border-dark">
+      <div class="card-body">
+        <h5 class="card-title">Pre-Built 3<sup>rd</sup> Party Packages</h5>
+        <p class="card-text">Install Rakudo Star using your favourite
+          package manager.</p>
+        <a href="#" class="btn btn-primary"
+        ><span class="oi oi-eye"></span> View options</a>
+      </div>
+    </div>
   </div>
-  <div class="col-sm-4">
-    <a class="btn btn-sm btn-dark btn-block" href="#"
-      ><span class="oi oi-document"></span> build on Windows</a>
-  </div>
-  <div class="col-sm-4">
-    <a class="btn btn-sm btn-dark btn-block" href="#"
-      ><span class="oi oi-document"></span> build on *nix</a>
+  <div class="col-sm-5">
+    <div class="card bg-dark border-dark">
+      <div class="card-body">
+        <h5 class="card-title">Compiler Only Installation</h5>
+        <p class="card-text">Install all the components separately.</p>
+        <a href="<%= url_for 'files-rakudo' %>"
+          class="btn btn-dark border-light"><span class="oi oi-eye"></span>
+          View options</a>
+      </div>
+    </div>
   </div>
 </div>
-
 
 <h3 class="h4">Using Rakudo</h3>
 

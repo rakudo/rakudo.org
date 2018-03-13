@@ -91,7 +91,7 @@ footer,
     h1 {
         text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, .5);
     }
-    
+
     .oi-data-transfer-download {
         font-size: 90%;
         top: 2px;
@@ -383,7 +383,22 @@ pre, code {
 .suck-b {
     margin-bottom: 0;
 }
+.kick-b {
+    margin-bottom: 30px;
+}
 
 .compiler-downloads-panel {
     padding-bottom: 2rem;
+}
+
+.btn-secondary {
+    transition-property: background, border-color, text-shadow color;
+    transition-duration: .1s;
+}
+.btn-secondary:hover,
+.btn-secondary:active, {
+    background: #d3d3d3;
+    color: #222;
+    border-color: #bbb;
+    text-shadow: .1px .1px .1px rgba(0, 0, 0, .4);
 }

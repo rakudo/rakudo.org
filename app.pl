@@ -41,10 +41,12 @@ get '/posts' => sub {
 get $_ for qw{/about /bugs /docs /files /people
     /latest-star-windows-64 /latest-star-windows-32
     /latest-star-macos      /latest-star-source};
-get '/files/star' => 'files-star';
-get '/files/star/windows' => 'files-star-windows';
-get '/files/star/macos'   => 'files-star-macos';
-get '/files/star/source'  => 'files-star-source';
+get '/files/star'             => 'files-star';
+get '/files/star/windows'     => 'files-star-windows';
+get '/files/star/macos'       => 'files-star-macos';
+get '/files/star/source'      => 'files-star-source';
+get '/files/star/third-party' => 'files-star-third-party';
+get '/files/rakudo'           => 'files-rakudo';
 
 get '/people/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#perl6');
