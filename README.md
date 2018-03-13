@@ -26,3 +26,8 @@ of the Artistic License.
     are licensed under SIL OPEN FONT LICENSE Version 1.1.
 * [platform.js](https://github.com/bestiejs/platform.js) is licensed under
     [MIT License](http://creativecommons.org/licenses/MIT)
+* Twitter footer icon by `blk` from
+    [ShareIcon](https://www.shareicon.net/twitter-93943),
+    [MIT License](http://creativecommons.org/licenses/MIT)
+* IRC people icon
+    from [ShareIcon](https://www.shareicon.net/people-queue-crowd-line-stick-man-722560)

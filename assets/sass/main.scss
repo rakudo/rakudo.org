@@ -87,6 +87,29 @@ footer,
     text-align: center;
 }
 
+footer {
+    a:before {
+        transition: opacity 2s;
+        opacity: .3;
+        padding-right: 20px;
+        margin-right: 4px;
+        content: "";
+        background: url(/asset/pics/irc-icon.svg) no-repeat right/20px;
+    }
+    a[href*="github.com"]:before {
+        background-image: url(/asset/pics/github-logo.svg);
+    }
+    a[href*="twitter.com"]:before {
+        background-image: url(/asset/pics/twitter-logo.svg);
+    }
+}
+footer:hover {
+    a:before {
+        transition: opacity .7s;
+        opacity: 1;
+    }
+}
+
 #body_home {
     h1 {
         text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, .5);
