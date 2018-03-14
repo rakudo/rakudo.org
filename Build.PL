@@ -11,18 +11,22 @@ my $build = Module::Build->new(
     dist_version => '0.1',
     recursive_test_files => 1,
     requires => {
+      'CSS::Minifier::XS'                => '0.09',
+      'CSS::Sass'                        => '3.4.10',
       'File::Glob'                       => '0',
+      'IO::Socket::SSL'                  => '2.056',
+      'JavaScript::Minifier::XS'         => '0.11',
       'Mojo::Base'                       => '0',
-      'Time::Moment'                     => '0.43',
       'Mojo::File'                       => '0',
       'Mojo::Util'                       => '0',
+      'Mojo::SQLite'                     => '3.000',
       'Mojolicious'                      => '7.31',
       'Mojolicious::Lite'                => '0',
       'Mojolicious::Plugin::AssetPack'   => '1.42',
-      'Text::MultiMarkdown'              => '1.000035',
       'strict'                           => '0',
+      'Text::MultiMarkdown'              => '1.000035',
+      'Time::Moment'                     => '0.43',
       'warnings'                         => '0',
-
     }
 );
 $build->create_build_script;
