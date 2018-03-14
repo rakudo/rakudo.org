@@ -2,14 +2,12 @@
 
 use lib qw<lib>;
 use Mojolicious::Lite;
-use Mojo::UserAgent;
 use Mojo::File qw/path/;
 use Mojo::Util qw/trim  xml_escape/;
 use Time::Moment;
 use RakudoOrg::Posts;
 
 my $posts = RakudoOrg::Posts->new;
-my $ua = Mojo::UserAgent->new;
 
 app->config({ hypnotoad => { listen => ['http://*:4242'], proxy => 1 } });
 
