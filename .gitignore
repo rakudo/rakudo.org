@@ -9,3 +9,7 @@ assets/cache/
 pull-password
 /test.p6
 /out.html
+Build
+MYMETA.json
+MYMETA.yml
+_build/
