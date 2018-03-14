@@ -82,10 +82,11 @@ sudo yum groupinstall 'Development Tools'</code></pre>
 
 <h3 class="h4">Build</h3>
 
-<p class="text-warning"><span class="oi oi-warning"></span> You will need about
-  1.5GB of free
-  RAM to compile Rakudo. Swap disk space can be used on low-memory machines,
-  but build time will be significantly slower (1+ hour)</p>
+<p class="alert alert-warning border-warning bg-none" role="alert">
+  You will need about 1.5GB of free RAM to compile Rakudo. Swap disk space
+  can be used on low‑memory machines, but build time will be significantly
+  slower (1+ hour)
+</p>
 
 <div id="build-accordion" class="accordion">
   <div class="card bg-dark">
