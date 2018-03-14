@@ -2,6 +2,24 @@
 
 This is the source code for <https://rakudo.org>.
 
+## Installation
+
+To install into `rakudo.org` dir in current directory run:
+
+    git clone https://github.com/perl6/rakudo.org &&
+    cd rakudo.org &&
+    cpanm -vn --installdeps .
+
+To star development server, run:
+
+    ./morbo
+
+To start production server, run:
+
+    ./hyp
+
+The servers listen on localhost, port `4242`: http://localhost:4242
+
 ### Debug Aid
 
 Some areas of the site are platform-specific (e.g. showing a download
