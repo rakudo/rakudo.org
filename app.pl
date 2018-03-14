@@ -9,9 +9,9 @@ use RakudoOrg::Posts;
 
 my $posts = RakudoOrg::Posts->new;
 
-app->config({ hypnotoad => { listen => ['http://*:4242'], proxy => 1 } });
+plugin Config    => { file => 'conf.conf' };
+plugin AssetPack => { pipes => [qw/Sass  JavaScript  Combine/] };
 
-plugin 'AssetPack' => { pipes => [qw/Sass  JavaScript  Combine/] };
 app->asset->process('app.css' => qw{
     https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
 
