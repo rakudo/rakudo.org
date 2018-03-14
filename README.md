@@ -10,6 +10,13 @@ To install into `rakudo.org` dir in current directory run:
     cd rakudo.org &&
     cpanm -vn --installdeps .
 
+*Optionally*, copy the Rakudo Star, Rakudo, and NQP binaries into `binaries/`
+directory. You can use a different directory, but ensure to change it
+accordingly in `conf.conf` file, under `binaries_dir` key.
+
+    mkdir binaries
+    cp -R ~/some-location-with-binaries/* binaries/
+
 To star development server, run:
 
     ./morbo
@@ -17,6 +24,8 @@ To star development server, run:
 To start production server, run:
 
     ./hyp
+
+If you need to stop it entirely later, run `hypnotoad app.pl --stop`
 
 The servers listen on localhost, port `4242`: http://localhost:4242
 
