@@ -19,7 +19,9 @@
         <button class="btn btn-link collapsed btn-block text-left"
           data-toggle="collapse"
           data-target="#collapse-debian" aria-expanded="false"
-          aria-controls="prereq-debian">Debian / Ubuntu</button>
+          aria-controls="prereq-debian">Debian / Ubuntu /
+          <abbr title="Windows Subsystem for Linux">WSL</abbr>
+
       </h5>
     </div>
 
@@ -95,7 +97,8 @@ sudo yum groupinstall 'Development Tools'</code></pre>
         <button class="btn btn-link collapsed btn-block text-left"
           data-toggle="collapse"
           data-target="#collapse-nix" aria-expanded="false"
-          aria-controls="build-nix">*nix</button>
+          aria-controls="build-nix">*nix /
+          <abbr title="Windows Subsystem for Linux">WSL</abbr></button>
       </h5>
     </div>
     <div id="collapse-nix" class="collapse"
