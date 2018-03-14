@@ -6,12 +6,14 @@ use Mojo::File qw/path/;
 use Mojo::Util qw/trim  xml_escape/;
 use Time::Moment;
 use RakudoOrg::Posts;
+use RakudoOrg::Binaries;
 
-my $posts = RakudoOrg::Posts->new;
+plugin Config => { file => 'conf.conf' };
 
-plugin Config    => { file => 'conf.conf' };
+my $posts    = RakudoOrg::Posts->new;
+my $binaries = Perl6Org::Binaries->new(dir => app->config('binaries_dir'));
+
 plugin AssetPack => { pipes => [qw/Sass  JavaScript  Combine/] };
-
 app->asset->process('app.css' => qw{
     https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
 
