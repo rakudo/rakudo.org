@@ -75,6 +75,23 @@ get '/latest/:product/:os' => sub {
     $self->reply->static($bin->path);
 } => 'latest';
 
+get '/dl/:product/*bin' => sub {
+    my $self = shift;
+    my $bin = $binaries->bin($self->stash('product'), $self->stash('bin'))
+        or return $self->reply->not_found;
+
+    if ($bin->ext =~ /\.(?:txt|asc)/) {
+        $self->res->headers->content_type('text/plain');
+    }
+    else {
+        $self->res->headers->content_type('application/octet-stream');
+        $self->res->headers->content_disposition(
+            'attachment; filename="' . $bin->bin . '"'
+        );
+    }
+    $self->reply->static($bin->path);
+} => 'dl';
+
 ### </FILES ROUTES>
 
 

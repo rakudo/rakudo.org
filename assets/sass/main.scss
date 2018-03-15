@@ -489,10 +489,20 @@ pre, code {
     background-image: url(/asset/pics/os-icon-source.png)
 }
 
-table {
+.files-list {
+    td, th {
+        padding: 5px 10px;
+        vertical-align: middle;
+    }
     .ver td {
         padding-top: 13px;
         padding-bottom: 3px;
+    }
+
+    td:first-child + td,
+    th:first-child + th {
+        opacity: .8;
+        font-size: 80%;
     }
 }
 

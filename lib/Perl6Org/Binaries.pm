@@ -13,13 +13,13 @@ use Perl6Org::Binaries::Ver;
 has 'binaries_dir';
 
 sub all {
-    my ($self, $bin) = @_;
-    $bin or die "Must specify product to fetch all binaries for";
+    my ($self, $product) = @_;
+    $product or die "Must specify product to fetch all binaries for";
 
     my $products = $self->products('as_hashref');
-    $products->{$bin} or die "Unknown product `$bin`. "
+    $products->{$product} or die "Unknown product `$product`. "
         . 'Did you specify the correct binaries dir?';
-    $self->_get_vers_for($bin);
+    $self->_get_vers_for($product);
 }
 
 sub products {
@@ -51,10 +51,22 @@ sub latest {
     return;
 }
 
-sub _get_vers_for {
-    my ($self, $bin) = @_;
+sub bin {
+    my ($self, $product, $wanted_bin) = @_;
+    for my $ver ($self->all($product)->each) {
+        for my $bin ($ver->bins->each) {
+            use Acme::Dump::And::Dumper;
+            print DnD [$bin->bin, $wanted_bin];
+            return $bin if $bin->bin eq $wanted_bin
+        }
+    }
+    return
+}
 
-    my $dir = catfile $self->binaries_dir, $bin;
+sub _get_vers_for {
+    my ($self, $product) = @_;
+
+    my $dir = catfile $self->binaries_dir, $product;
     my $prefix = 1 + length $dir;
     my @exts = qw/
         .tar.gz.sha256.txt  .tar.gz.asc
@@ -87,7 +99,7 @@ sub _get_vers_for {
             bin  => $file,
             ext  => $ext,
             name => $name,
-            path => catfile($bin, $file),
+            path => catfile($product, $file),
             ver  => $ver,
             is32 => $is32,
             full_path => $full_path,

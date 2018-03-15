@@ -29,7 +29,7 @@
 <div class="row">
   <div class="col-sm-6">
     <h3>Rakudo Files</h3>
-    %= include '_files-list', vers => $rakudo_vers;
+    %= include '_files-list', vers => $rakudo_vers, product => 'rakudo';
   </div>
   <div class="col-sm-6 small">
     <h3 class="h4">NQP Files</h3>
@@ -38,6 +38,6 @@
       NQP version
       and <a class="text-warning" href="http://moarvm.org/releases.html"
       >MoarVM release</a> from online repositories.</p>
-    %= include '_files-list', vers => $nqp_vers;
+    %= include '_files-list', vers => $nqp_vers, product => 'nqp';
   </div>
 </div>

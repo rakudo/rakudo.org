@@ -5,4 +5,4 @@
 
 <h2 class="h1">Rakudo Star Releases</h2>
 
-%= include '_files-list'
+%= include '_files-list', product => 'star';
