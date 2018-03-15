@@ -7,7 +7,7 @@ use Test::Most tests =>
         *(1 # product test
             + 5 # versions for each product
                 *(5)) # version tests
-    + 6 # binary tests
+    + 7 # binary tests
       * (11*5), 'die'; #total binaries * number of versions
 use File::Temp qw/tempdir/;
 use File::Spec::Functions qw/catfile/;
@@ -52,12 +52,12 @@ for my $p ($bins->products->each) {
             state $j = 0;
             $j++;
             isa_ok $_, 'Perl6Org::Binaries::Bin', '$bin';
-            ok +(-e $_->path),                   "->path [$p/$i/$j]";
+            ok +(-e $_->full_path),              "->full_path [$p/$i/$j]";
             is   $_->ver,  $ver->ver,            "->ver  [$p/$i/$j]";
             like $_->name, qr/\Q$p\E/,           "->name [$p/$i/$j]";
             like $_->path, qr/\Q${\$_->ext}\E$/, "->ext  [$p/$i/$j]";
             like $_->path, qr/\Q${\$_->bin}\E$/, "->bin  [$p/$i/$j]";
-
+            like $_->full_path, qr/\Q${\$_->path}\E$/, "->path [$p/$i/$j]";
         });
     });
 }
