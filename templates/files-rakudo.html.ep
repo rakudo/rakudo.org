@@ -33,11 +33,11 @@
   </div>
   <div class="col-sm-6 small">
     <h3 class="h4">NQP Files</h3>
-    <p class="text-warning">Download NQP files is optional, as Rakudo build
-      instructions will automatically
-      checkout the needed version from
-      <a href="https://github.com/perl6/nqp/"
-       class="text-warning">NQP repository</a>.</p>
+    <p class="text-warning">Downloading NQP files is optional, as Rakudo
+      build instructions will automatically checkout the needed
+      NQP version
+      and <a class="text-warning" href="http://moarvm.org/releases.html"
+      >MoarVM release</a> from online repositories.</p>
     %= include '_files-list', vers => $nqp_vers;
   </div>
 </div>
