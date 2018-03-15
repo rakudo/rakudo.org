@@ -30,6 +30,27 @@ sub products {
     $as_hashref ? +{map +($_ => 1), @prods } : c sort @prods;
 }
 
+sub latest {
+    my ($self, $product, $os) = @_;
+    my %os_to_ext = (
+        win64  => {qw/.msi 1  .exe 1/},
+        win32  => {qw/.msi 1  .exe 1/},
+        macos  => {qw/.dmg 1  .AppImage 1/},
+        source => {qw/.tar.gz 1}/},
+    );
+    $os_to_ext{$os} or return;
+
+    for my $ver ($self->all($product)->each) {
+        for my $bin ($ver->bins->each) {
+            if ($os_to_ext{$os}{$bin->ext}) {
+                next if $os eq 'win32' and not $bin->is32;
+                return $bin
+            }
+        }
+    }
+    return;
+}
+
 sub _get_vers_for {
     my ($self, $bin) = @_;
 
@@ -56,11 +77,8 @@ sub _get_vers_for {
             next;
         }
         my ($name, $ver) = $file =~ /(.+?)[.-](\d{4}(?:.\d+)+)/;
-        if ($ver) {
-            $ver
-            =~ s/(?: \Q-x86_64 (JIT)\E | \Q-x86_64\E | \Q-x86 (no JIT)\E)//x;
-        }
-        else {
+        my $is32 = ($file =~ /\Q-x86 (no JIT)\E/) ? 1 : 0;
+        unless ($ver) {
             warn "Unknown version on file $full_path; skipping";
             next;
         }
@@ -71,6 +89,7 @@ sub _get_vers_for {
             name => $name,
             path => $full_path,
             ver  => $ver,
+            is32 => $is32,
         );
     }
 

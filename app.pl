@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 
 use lib qw<lib>;
+use File::Spec::Functions qw/catfile/;
 use Mojolicious::Lite;
 use Mojo::File qw/path/;
 use Mojo::Util qw/trim  xml_escape/;
@@ -14,6 +15,7 @@ my $posts    = RakudoOrg::Posts->new;
 my $binaries = Perl6Org::Binaries->new(
     binaries_dir => app->config('binaries_dir')
 );
+push app->static->paths->@*, app->config('binaries_dir');
 
 plugin AssetPack => { pipes => [qw/Sass  JavaScript  Combine/] };
 app->asset->process('app.css' => qw{
@@ -40,9 +42,10 @@ get '/posts' => sub {
     my $self = shift;
     $self->stash(posts => $posts->all);
 };
-get $_ for qw{/about /bugs /docs /files /people
-    /latest-star-windows-64 /latest-star-windows-32
-    /latest-star-macos      /latest-star-source};
+get $_ for qw{/about /bugs /docs /files /people};
+
+
+### FILES ROUTES
 get '/files/star/windows'     => 'files-star-windows';
 get '/files/star/macos'       => 'files-star-macos';
 get '/files/star/source'      => 'files-star-source';
@@ -59,6 +62,21 @@ get '/files/rakudo' => sub {
         nqp_vers    => $binaries->all('nqp')
     );
 } => 'files-rakudo';
+
+get '/latest-star-(:os)' => sub {
+    my $self = shift;
+    my $bin = $binaries->latest('star', $self->stash('os'))
+        or return $self->reply->not_found;
+
+    $self->res->headers->content_type('application/octet-stream');
+    $self->res->headers->content_disposition(
+        'attachment; filename="' . $bin->bin . '"'
+    );
+    $self->reply->static(catfile 'star', $bin->bin);
+} => 'latest-star';
+
+### </FILES ROUTES>
+
 
 get '/people/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#perl6');

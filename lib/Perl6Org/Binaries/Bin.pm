@@ -2,7 +2,7 @@ package Perl6Org::Binaries::Bin;
 
 use Mojo::Base -base;
 use POSIX qw/strftime  floor  round  pow/;
-has [qw/bin  ext  name  path  ver/];
+has [qw/bin  ext  name  path  ver  is32/];
 
 my @types = qw/B KB MB GB TB PB/;
 sub size {
