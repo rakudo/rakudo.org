@@ -1,5 +1,6 @@
 package Perl6Org::Binaries;
 
+use 5.026;
 use Mojo::Base -base;
 use Mojo::Collection qw/c/;
 use File::Glob qw/bsd_glob/;
@@ -15,12 +16,11 @@ has 'binaries_dir';
 sub all {
     my ($self, $bin) = @_;
     $bin or die "Must specify product to fetch all binaries for";
+
     my $products = $self->products('as_hashref');
-    if ($bin) {
-        $products->{$bin} or die "Unknown product `$bin`. "
-            . 'Did you specify the correct binaries dir?';
-        $self->_get_vers_for($bin);
-    }
+    $products->{$bin} or die "Unknown product `$bin`. "
+        . 'Did you specify the correct binaries dir?';
+    $self->_get_vers_for($bin);
 }
 
 sub products {
@@ -52,13 +52,18 @@ sub _get_vers_for {
             warn "Unknown extension on file $full_path; skipping";
             next;
         }
-        my ($name, $ver) = $file =~ /(.+)-(\d+.+)/;
-        unless ($ver) {
+        my ($name, $ver) = $file =~ /(.+?)(?<!perl6)[.-](\d+.+)/;
+        if ($ver) {
+            $ver
+            =~ s/(?: \Q-x86_64 (JIT)\E | \Q-x86_64\E | \Q-x86 (no JIT)\E)//x;
+        }
+        else {
             warn "Unknown version on file $full_path; skipping";
             next;
         }
+        say "VERSION for $full_path is $ver";
 
-        $vers{$ver} = Perl6Org::Binaries::Bin->new(
+        push $vers{$ver}->@*, Perl6Org::Binaries::Bin->new(
             bin  => $file,
             ext  => $ext,
             name => $name,
@@ -67,8 +72,12 @@ sub _get_vers_for {
         );
     }
 
-    c map Perl6Org::Binaries::Ver->new(ver => $_, bins => $vers{$_}),
-        sort { versioncmp($b, $a) } keys %vers;
+    my $marked_latest = 0;
+    c map Perl6Org::Binaries::Ver->new(
+        ver    => $_,
+        bins   => c($vers{$_}->@*),
+        latest => ($marked_latest++ ? 0 : 1),
+    ), sort { versioncmp($b, $a) } keys %vers;
 }
 
 1;

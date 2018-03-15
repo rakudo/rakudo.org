@@ -6,7 +6,7 @@ use Mojo::File qw/path/;
 use Mojo::Util qw/trim  xml_escape/;
 use Time::Moment;
 use RakudoOrg::Posts;
-use RakudoOrg::Binaries;
+use Perl6Org::Binaries;
 
 plugin Config => { file => 'conf.conf' };
 

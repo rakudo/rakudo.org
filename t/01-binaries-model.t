@@ -1,6 +1,15 @@
 #!perl
 
-use Test::Most tests => 11, 'die';
+use 5.026;
+use Test::Most tests =>
+    4 # starting tests
+    + 3 # different products
+        *(1 # product test
+            + 5 # versions for each product
+                *(4) # version tests
+            + 4 *(1)) # "latest version is smaller" tests
+    + 6 # binary tests
+      * (11*5), 'die'; #total binaries * number of versions
 use File::Temp qw/tempdir/;
 use File::Spec::Functions qw/catfile/;
 
@@ -13,12 +22,45 @@ my $bins = Perl6Org::Binaries->new(binaries_dir => setup_temp_binaries_dir());
 is_deeply $bins->products->to_array, \@products, 'found right products';
 isa_ok $bins->products, 'Mojo::Collection', '->products';
 
-for my $p ($bins->products->each) {
-    dies_ok sub { $bins->all }, '->all without args dies';
-    dies_ok sub { $bins->all("blaaeassr") }, '->all with unknown product dies';
+dies_ok sub { $bins->all                  }, '->all without args dies';
+dies_ok sub { $bins->all("blaaeassrrrrr") }, '->all with unknown product dies';
 
-    my $all = $bins->all('rakudo');
-    isa_ok $all, 'Mojo::Collection', '->all';
+for my $p ($bins->products->each) {
+    my $all = $bins->all($p);
+    isa_ok $all, 'Mojo::Collection', "->all [$p]";
+
+    my $seen_latest = 0;
+    my $last_ver;
+    diag "Got ${\scalar $all->@*} versions of product $p";
+    $all->each(sub {
+        my $ver = $_;
+        state $i = 0;
+        $i++;
+        isa_ok $ver, 'Perl6Org::Binaries::Ver', '$ver';
+        is $ver->latest, ($seen_latest++ ? 0 : 1),
+            "latest is marked correctly [$p/$i]";
+        if ($last_ver) {
+            is +($last_ver cmp $ver->ver), 1,
+                "later version ${\$ver->ver} is smaller than last"
+                . " version $last_ver [$p/$i ${\$ver->name}]";
+        }
+        $last_ver = $ver->ver;
+        like   $ver->name, qr/\Q$p\E/, "->name appears to be right [$p/$i]";
+        isa_ok $ver->bins, 'Mojo::Collection', "->bins [$p/$i]";
+
+        $ver->bins->each(sub {
+            state $j = 0;
+            $j++;
+            isa_ok $_, 'Perl6Org::Binaries::Bin', '$bin';
+            ok +(-e $_->path),                   "->path [$p/$i/$j]";
+            is   $_->ver,  $ver->ver,            "->ver  [$p/$i/$j]";
+            like $_->name, qr/\Q$p\E/,           "->name [$p/$i/$j]";
+            like $_->path, qr/\Q${\$_->ext}\E$/, "->ext  [$p/$i/$j]";
+            like $_->path, qr/\Q${\($_->bin . $_->ext)}\E$/,
+                "->bin  [$p/$i/$j]";
+
+        });
+    });
 }
 
 #############################################
@@ -27,7 +69,7 @@ for my $p ($bins->products->each) {
 sub setup_temp_binaries_dir {
     my $bin_dir = tempdir CLEANUP => 1;
 
-    for my $ver (qw/2018.02.1  2018.02.1  2018.02  2018.01  2017.12/) {
+    for my $ver (qw/2018.02.2  2018.02.1  2018.02  2018.01  2017.12/) {
         my @bins;
         # rakudo
         {
