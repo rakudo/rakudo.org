@@ -1,7 +1,16 @@
 $(function(){
     process_platform_specific_content();
+    setup_show_archived_versions_button();
     $(function () { $('[data-toggle="tooltip"]').tooltip() })
 });
+
+function setup_show_archived_versions_button() {
+    $('.show-archived-versions').on('click', function(){
+        $(this).parents('table').find('.archived').css({opacity: 0})
+            .removeClass('archived').animate({opacity: 1}, 1000);
+        $(this).remove();
+    });
+}
 
 function process_platform_specific_content() {
     var fam    = query_param('platform', platform.os.family).toLowerCase(),

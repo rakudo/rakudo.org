@@ -7,11 +7,11 @@
   </thead>
   <tbody>
     % for my $ver ($vers->@*) {
-      <tr class="ver">
+      <tr class="ver<%= $ver->archived ? ' archived' : '' %>">
         <td colspan=2><%= $ver->ver %></td>
       </tr>
         % for my $bin ($ver->bins->@*) {
-          <tr>
+          <tr<%== $ver->archived ? ' class="archived"' : '' %>>
             <td>
               <a href="<%= url_for dl => $bin->path %>"
                 class="file-icon-<%= icon_for $bin->bin %>">
@@ -24,5 +24,12 @@
           </tr>
         % }
     % }
+    <tr>
+      <td colspan=2>
+        <button class="btn btn-dark btn-block show-archived-versions"
+          ><span class="oi oi-timer"></span>
+            Show archived versions</button>
+      </td>
+    </tr>
   </tbody>
 </table>
