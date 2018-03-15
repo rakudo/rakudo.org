@@ -17,7 +17,6 @@ use Perl6Org::Binaries;
 
 my @products = sort qw/rakudo  nqp  star/;
 my $bins = Perl6Org::Binaries->new(binaries_dir => setup_temp_binaries_dir());
-
 is_deeply $bins->products->to_array, \@products, 'found right products';
 isa_ok $bins->products, 'Mojo::Collection', '->products';
 
@@ -57,8 +56,7 @@ for my $p ($bins->products->each) {
             is   $_->ver,  $ver->ver,            "->ver  [$p/$i/$j]";
             like $_->name, qr/\Q$p\E/,           "->name [$p/$i/$j]";
             like $_->path, qr/\Q${\$_->ext}\E$/, "->ext  [$p/$i/$j]";
-            like $_->path, qr/\Q${\($_->bin . $_->ext)}\E$/,
-                "->bin  [$p/$i/$j]";
+            like $_->path, qr/\Q${\$_->bin}\E$/, "->bin  [$p/$i/$j]";
 
         });
     });

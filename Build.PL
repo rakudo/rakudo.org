@@ -27,6 +27,7 @@ my $build = Module::Build->new(
       'Mojolicious::Lite'                => '0',
       'Mojolicious::Plugin::AssetPack'   => '1.42',
       'Sort::Versions'                   => '1.62',
+      'POSIX'                            => '0',
       'strict'                           => '0',
       'Text::MultiMarkdown'              => '1.000035',
       'Test::Most'                       => '0.35',

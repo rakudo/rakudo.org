@@ -1,0 +1,8 @@
+% layout 'default';
+% title 'Rakudo Star Releases';
+% make_crumbs home => 'Home', files => 'Files',
+%   'Rakudo Star Releases';
+
+<h2 class="h1">Rakudo Star Releases</h2>
+
+%= include '_files-list'

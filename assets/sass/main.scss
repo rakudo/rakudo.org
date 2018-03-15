@@ -468,3 +468,30 @@ pre, code {
 .bg-none {
     background: none;
 }
+
+[class^="file-icon-"] {
+    padding-left: 25px;
+    min-height: 20px;
+    display: inline-block;
+    background: url(/asset/pics/file-icon-signature.png) no-repeat left;
+    background-size: auto 20px;
+}
+
+[class^="file-icon-windows"] {
+    background-image: url(/asset/pics/os-icon-windows.png)
+}
+
+[class^="file-icon-macos"] {
+    background-image: url(/asset/pics/os-icon-apple.png)
+}
+
+[class^="file-icon-source"] {
+    background-image: url(/asset/pics/os-icon-source.png)
+}
+
+table {
+    .ver td {
+        padding-top: 13px;
+        padding-bottom: 3px;
+    }
+}

@@ -11,7 +11,9 @@ use Perl6Org::Binaries;
 plugin Config => { file => 'conf.conf' };
 
 my $posts    = RakudoOrg::Posts->new;
-my $binaries = Perl6Org::Binaries->new(dir => app->config('binaries_dir'));
+my $binaries = Perl6Org::Binaries->new(
+    binaries_dir => app->config('binaries_dir')
+);
 
 plugin AssetPack => { pipes => [qw/Sass  JavaScript  Combine/] };
 app->asset->process('app.css' => qw{
@@ -41,12 +43,22 @@ get '/posts' => sub {
 get $_ for qw{/about /bugs /docs /files /people
     /latest-star-windows-64 /latest-star-windows-32
     /latest-star-macos      /latest-star-source};
-get '/files/star'             => 'files-star';
 get '/files/star/windows'     => 'files-star-windows';
 get '/files/star/macos'       => 'files-star-macos';
 get '/files/star/source'      => 'files-star-source';
 get '/files/star/third-party' => 'files-star-third-party';
-get '/files/rakudo'           => 'files-rakudo';
+
+get '/files/star' => sub {
+    my $self = shift;
+    $self->stash(vers => $binaries->all('star'));
+} => 'files-star';
+get '/files/rakudo' => sub {
+    my $self = shift;
+    $self->stash(
+        rakudo_vers => $binaries->all('rakudo'),
+        nqp_vers    => $binaries->all('nqp')
+    );
+} => 'files-rakudo';
 
 get '/people/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#perl6');
@@ -111,6 +123,15 @@ helper make_crumbs => sub {
         '<li class="breadcrumb-item active" aria-current="page">'
         . xml_escape($current) . '</li></ol></nav>';
     $self->stash(crumbs => $c);
+};
+
+my %exts = qw/
+    .gz source  .msi windows  .exe windows
+    .dmg macos  .AppImage macos   .asc sig    .txt sig
+/;
+helper icon_for => sub {
+    my ($self, $path) = @_;
+    $exts{($path =~ /(.[^.]+)$/)[0]//''}//''
 };
 helper third_party => sub {
     my ($self, $text, $url) = @_;

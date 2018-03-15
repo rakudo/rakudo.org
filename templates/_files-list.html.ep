@@ -1,0 +1,28 @@
+<table class="table table-sm table-bordered table-dark">
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    % for my $ver ($vers->@*) {
+      <tr class="ver">
+        <td colspan=2><%= $ver->ver %></td>
+      </tr>
+        % for my $bin ($ver->bins->@*) {
+          <tr>
+            <td>
+              <a href="<%= url_for dl => $bin->path %>"
+                class="file-icon-<%= icon_for $bin->bin %>">
+                <%= $bin->bin %>
+              </a>
+            </td>
+            <td>
+                <%= $bin->size %>
+            </td>
+          </tr>
+        % }
+    % }
+  </tbody>
+</table>

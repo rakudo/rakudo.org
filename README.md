@@ -58,3 +58,5 @@ of the Artistic License.
     [MIT License](http://creativecommons.org/licenses/MIT)
 * IRC people icon
     from [ShareIcon](https://www.shareicon.net/people-queue-crowd-line-stick-man-722560)
+* Signed file icon is by `Sergei Kokota` from
+    [ShareIcon](https://www.shareicon.net/document-business-file-signature-agreement-contract-paper-105338)
