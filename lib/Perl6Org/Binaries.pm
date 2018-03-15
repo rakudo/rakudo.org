@@ -87,7 +87,7 @@ sub _get_vers_for {
             bin  => $file,
             ext  => $ext,
             name => $name,
-            path => $full_path,
+            path => catfile($bin, $file),
             ver  => $ver,
             is32 => $is32,
         );

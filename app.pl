@@ -63,17 +63,17 @@ get '/files/rakudo' => sub {
     );
 } => 'files-rakudo';
 
-get '/latest-star-(:os)' => sub {
+get '/latest/:product/:os' => sub {
     my $self = shift;
-    my $bin = $binaries->latest('star', $self->stash('os'))
+    my $bin = $binaries->latest($self->stash('product'), $self->stash('os'))
         or return $self->reply->not_found;
 
     $self->res->headers->content_type('application/octet-stream');
     $self->res->headers->content_disposition(
         'attachment; filename="' . $bin->bin . '"'
     );
-    $self->reply->static(catfile 'star', $bin->bin);
-} => 'latest-star';
+    $self->reply->static($bin->path);
+} => 'latest';
 
 ### </FILES ROUTES>
 
