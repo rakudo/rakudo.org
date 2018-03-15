@@ -92,7 +92,10 @@ footer {
     a:before {
         transition: opacity 2s;
         opacity: .3;
-        padding-right: 20px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        display: inline-block;
         margin-right: 4px;
         content: "";
         background: url(/asset/pics/irc-icon.svg) no-repeat right/20px;
