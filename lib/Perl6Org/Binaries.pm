@@ -61,7 +61,6 @@ sub _get_vers_for {
             warn "Unknown version on file $full_path; skipping";
             next;
         }
-        say "VERSION for $full_path is $ver";
 
         push $vers{$ver}->@*, Perl6Org::Binaries::Bin->new(
             bin  => $file,

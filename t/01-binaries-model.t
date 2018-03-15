@@ -6,8 +6,7 @@ use Test::Most tests =>
     + 3 # different products
         *(1 # product test
             + 5 # versions for each product
-                *(4) # version tests
-            + 4 *(1)) # "latest version is smaller" tests
+                *(5)) # version tests
     + 6 # binary tests
       * (11*5), 'die'; #total binaries * number of versions
 use File::Temp qw/tempdir/;
@@ -31,7 +30,6 @@ for my $p ($bins->products->each) {
 
     my $seen_latest = 0;
     my $last_ver;
-    diag "Got ${\scalar $all->@*} versions of product $p";
     $all->each(sub {
         my $ver = $_;
         state $i = 0;
@@ -43,6 +41,9 @@ for my $p ($bins->products->each) {
             is +($last_ver cmp $ver->ver), 1,
                 "later version ${\$ver->ver} is smaller than last"
                 . " version $last_ver [$p/$i ${\$ver->name}]";
+        }
+        else {
+            is $ver->ver, '2018.02.2', 'latest version is right';
         }
         $last_ver = $ver->ver;
         like   $ver->name, qr/\Q$p\E/, "->name appears to be right [$p/$i]";
