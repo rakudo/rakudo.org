@@ -1,8 +1,21 @@
 $(function(){
     process_platform_specific_content();
     setup_show_archived_versions_button();
+    setup_accordion_scroller();
     $(function () { $('[data-toggle="tooltip"]').tooltip() })
 });
+
+function setup_accordion_scroller() {
+    $('.accordion').on('shown.bs.collapse', function() {
+        var el = $(this).find('.collapse.show');
+        var offset = el.offset();
+        var scroll = $(window).scrollTop();
+        if (offset.top < scroll || offset.top + el.height()
+            > scroll + $(window).height()) {
+            $('html, body').animate({ scrollTop: offset.top });
+        }
+    });
+}
 
 function setup_show_archived_versions_button() {
     $('.show-archived-versions').on('click', function(){
