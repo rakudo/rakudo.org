@@ -95,7 +95,10 @@
 <h3 class="h4">Using Rakudo</h3>
 
 <p>To run a <%== p6 %> program with Rakudo, issue a command like:
-<code>perl6 hello.pl</code></p>
+  <code>perl6 hello.pl</code>. To enter an interactive mode where each line of
+  code is evaluated as soon as you enter it, run <code>perl6</code>
+  without any arguments.</p>
 
-<p>To enter an interactive mode where each line of code is evaluated as soon
-  as you enter it, run <code>perl6</code> without any arguments.</p>
+<p>You can try out Rakudo <%== p6 %> without installing anything, using online
+  code execution services like <a href="https://glot.io/new/perl6">Glot.IO</a>
+  and <a href="https://tio.run/#perl6">TIO</a></p>
