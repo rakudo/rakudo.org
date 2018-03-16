@@ -74,7 +74,8 @@
         <h5 class="card-title">Pre-Built 3<sup>rd</sup> Party Packages</h5>
         <p class="card-text">Install Rakudo Star using your favourite
           package manager.</p>
-        <a href="#" class="btn btn-primary"
+        <a href="<%= url_for 'files-star-third-party' %>"
+          class="btn btn-primary"
         ><span class="oi oi-eye"></span> View options</a>
       </div>
     </div>
