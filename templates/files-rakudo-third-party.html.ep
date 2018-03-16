@@ -1,0 +1,57 @@
+% layout 'default';
+% title 'Third Party Packages - Install Rakudo Compiler Only';
+% make_crumbs home => 'Home', files => 'Files',
+%   'Install Rakudo Compiler Only from Third Party Packages';
+
+<h2 class="h1">Rakudo Compiler 3<sup>rd</sup>-Party Packages</h2>
+
+<p>These packages are built by third-party volunteers some of whom may not be
+  directly associated with the Rakudo Core Team. As such, these packages
+  are often hosted on 3<sup>rd</sup>-party websites and the Core Team has
+  limited ability to troubleshoot any issues you may encounter with them.</p>
+
+<p class="alert-warning border border-warning bg-none"
+  >Depending on the option you choose, you may
+  require a separate installation of
+  <a href="https://modules.perl6.org/dist/zef:github"><code>zef</code>
+  module manager</a> along with any modules you may require from the
+  <a href="http://modules.perl6.org/"><%== p6 %> ecosystem</a>.</p>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card bg-dark">
+      <div class="card-body">
+        <h5 class="card-title">Docker</h5>
+        <div class="card-text">
+          <p>To install, run: <br> <code>docker pull rakudo-star</code></p>
+          <a href="https://hub.docker.com/_/rakudo-star/"
+            class="btn btn-dark border-secondary">Visit Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card bg-dark">
+      <div class="card-body">
+        <h5 class="card-title">Chocolately</h5>
+        <div class="card-text">
+          <p>To install, run: <br> <code>choco install rakudostar</code></p>
+          <a href="https://chocolatey.org/packages/rakudostar"
+            class="btn btn-dark border-secondary">Visit Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card bg-dark">
+      <div class="card-body">
+        <h5 class="card-title">macOS Homebrew</h5>
+        <div class="card-text">
+          <p>To install, run: <br> <code>brew install rakudo-star</code></p>
+          <a href="https://github.com/Homebrew/homebrew-core/blob/master/Formula/rakudo-star.rb"
+            class="btn btn-dark border-secondary">Visit Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

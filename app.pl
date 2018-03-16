@@ -46,10 +46,12 @@ get $_ for qw{/about /bugs /docs /files /people};
 
 
 ### FILES ROUTES
-get '/files/star/windows'     => 'files-star-windows';
-get '/files/star/macos'       => 'files-star-macos';
-get '/files/star/source'      => 'files-star-source';
-get '/files/star/third-party' => 'files-star-third-party';
+get '/files/star/windows'       => 'files-star-windows';
+get '/files/star/macos'         => 'files-star-macos';
+get '/files/star/source'        => 'files-star-source';
+get '/files/star/third-party'   => 'files-star-third-party';
+get '/files/rakudo/third-party' => 'files-rakudo-third-party';
+
 
 get '/files/star' => sub {
     my $self = shift;

@@ -393,7 +393,10 @@ pre, code {
 .compiler-downloads-panel {
     padding-bottom: 1rem;
 
-    > [class*="col-"] {
+    > [class*="col-"]:first-child {
+        padding-bottom: 0;
+    }
+    [class*="col-"] {
         padding-bottom: 1rem;
     }
 }
@@ -492,4 +495,10 @@ pre, code {
 
 .container {
     width: 100%;
+}
+
+.text-warning, .alert-warning {
+    a {
+        color: inherit!important;
+    }
 }

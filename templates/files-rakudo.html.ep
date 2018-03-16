@@ -10,28 +10,33 @@
   will need to be installed from <a href="http://modules.perl6.org/">the ecosystem</a>.</p>
 
 <div class="row compiler-downloads-panel">
-  <div class="col-sm-12 col-md-4">
-    <a class="btn btn-sm btn-primary btn-block" href="#"
+  <div class="col-md-7">
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
+        <a class="btn btn-dark btn-block" href="#"
+          ><span class="oi oi-document"></span> build on *nix</a>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <a class="btn btn-dark btn-block" href="#"
+          ><span class="oi oi-document"></span> build on Windows</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-5">
+    <a class="btn btn-primary btn-block"
+      href="<%= url_for 'files-rakudo-third-party' %>"
       ><span class="oi oi-box"></span> pre-built 3<sup>rd</sup> party
       packages</a>
-  </div>
-  <div class="col-sm-6 col-md-4">
-    <a class="btn btn-sm btn-dark btn-block" href="#"
-      ><span class="oi oi-document"></span> build on Windows</a>
-  </div>
-  <div class="col-sm-6 col-md-4">
-    <a class="btn btn-sm btn-dark btn-block" href="#"
-      ><span class="oi oi-document"></span> build on *nix</a>
   </div>
 </div>
 
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-6 col-md-7">
     <h3>Rakudo Files</h3>
     %= include '_files-list', vers => $rakudo_vers, product => 'rakudo';
   </div>
-  <div class="col-sm-6 small">
+  <div class="col-sm-6 col-md-5 small">
     <h3 class="h4">NQP Files</h3>
     <p class="text-warning">Downloading NQP files is optional, as Rakudo
       build instructions will automatically checkout the needed
