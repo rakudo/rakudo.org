@@ -178,14 +178,36 @@ body {
     }
 }
 
-@media (min-width: 48em) {
+body:not(#body_home) {
+    .masthead-brand {
+        float: left;
+    }
+    .nav-masthead {
+        float: right;
+    }
+}
+
+@media (max-width: 28em) {
     body:not(#body_home) {
         .masthead-brand {
-            float: left;
+            float: none;
+            text-align: center;
         }
         .nav-masthead {
-            float: right;
+            float: none;
+            text-align: center;
         }
+    }
+}
+
+@media (min-width: 830px) {
+    #content {
+        width: 800px;
+    }
+}
+@media (max-width: 799px) {
+    #content {
+        width: 100%;
     }
 }
 
@@ -319,7 +341,9 @@ body:not(#body_home) nav:not(.breadcrumbs) {
         font-size: 120%;
     }
 
-    padding-bottom: 20px;
+    > [class*="col-"] {
+        padding-bottom: 1rem;
+    }
 }
 
 code,
@@ -367,7 +391,11 @@ pre, code {
 }
 
 .compiler-downloads-panel {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
+
+    > [class*="col-"] {
+        padding-bottom: 1rem;
+    }
 }
 
 .btn-secondary {
@@ -460,4 +488,8 @@ pre, code {
 
 .archived {
     display: none;
+}
+
+.container {
+    width: 100%;
 }

@@ -10,16 +10,16 @@
   will need to be installed from <a href="http://modules.perl6.org/">the ecosystem</a>.</p>
 
 <div class="row compiler-downloads-panel">
-  <div class="col-sm-4">
+  <div class="col-sm-12 col-md-4">
     <a class="btn btn-sm btn-primary btn-block" href="#"
       ><span class="oi oi-box"></span> pre-built 3<sup>rd</sup> party
       packages</a>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-6 col-md-4">
     <a class="btn btn-sm btn-dark btn-block" href="#"
       ><span class="oi oi-document"></span> build on Windows</a>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-6 col-md-4">
     <a class="btn btn-sm btn-dark btn-block" href="#"
       ><span class="oi oi-document"></span> build on *nix</a>
   </div>
