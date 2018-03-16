@@ -6,6 +6,8 @@ use Text::MultiMarkdown qw/markdown/;
 use File::Glob qw/bsd_glob/;
 use Mojo::File qw/path/;
 use Mojo::Util qw/decode  encode  xml_escape/;
+use Mojo::DOM;
+use utf8;
 
 sub all {
     my @posts = bsd_glob 'post/*.md';
@@ -17,7 +19,6 @@ sub all {
         push @return, {
             date  => $meta->{date},
             title => $meta->{title},
-            desc  => $meta->{desc},
             post  => (substr $_, length 'post/'),
        };
     }
@@ -29,7 +30,9 @@ sub load {
     my $post_file = "post/$post.md";
     return unless -f $post_file and -r _;
     my ($meta, $content) = process(decode 'UTF-8', path($post_file)->slurp);
-    return $meta, markdown $content;
+    my $html = Mojo::DOM->new(markdown $content);
+    $html->find('ul')->each(sub { $_->{class} = 'flush-list' });
+    return $meta, $html;
 }
 
 sub process {
@@ -37,6 +40,7 @@ sub process {
     my %meta;
     $meta{$1} = $2 while $post =~ s/^%%\s*(\w+)\s*:\s*([^\n]+)\n//;
     $post =~ s/^```$//gm;
+    $meta{title} =~ s/Announce:/ℹ/;
     return \%meta, $post;
 }
 

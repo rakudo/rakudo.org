@@ -4,7 +4,8 @@
 <article>
   <h2 class="h1"><%= $title %></h2>
   <p class="article-description">
-    <%= $date %><%= stash('desc') ? ' | ' . stash('desc') : '' %></p>
+    <span class="date"><%= $date %></span>
+    <%= stash('desc') ? ' | ' . stash('desc') : '' %></p>
   <%== $post %>
 </article>
 
