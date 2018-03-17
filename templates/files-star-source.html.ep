@@ -73,7 +73,7 @@ source ~/.bashrc</code></pre>
           instead of <code>gmake</code>)</p>
         <ol class="flush-list suck-b">
           <li>Download <a href="<%=
-              url_for latest => product => 'start', os => 'source' %>"
+              url_for latest => product => 'star', os => 'source' %>"
             >latest Rakudo Star source <code>.tar.gz</code> archive</a></li>
           <li>Extract it into a temporary location, like
             <code>C:\Temp\rakudo-star\</code>
