@@ -14,3 +14,4 @@ MYMETA.json
 MYMETA.yml
 _build/
 /binaries
+/download.log.sqlite.db

@@ -8,12 +8,16 @@ use Mojo::Util qw/trim  xml_escape/;
 use Time::Moment;
 use RakudoOrg::Posts;
 use Perl6Org::Binaries;
+use Perl6Org::Binaries::Logger;
 
 plugin Config => { file => 'conf.conf' };
 
 my $posts    = RakudoOrg::Posts->new;
 my $binaries = Perl6Org::Binaries->new(
     binaries_dir => app->config('binaries_dir')
+);
+my $logger   = Perl6Org::Binaries::Logger->new(
+    db_file => app->config('logger_db')
 );
 push app->static->paths->@*, app->config('binaries_dir');
 
@@ -79,6 +83,8 @@ get '/latest/:product/:os' => sub {
     my $bin = $binaries->latest($self->stash('product'), $self->stash('os'))
         or return $self->reply->not_found;
 
+    $logger->log($self->stash('product'), $bin->ver, $bin->os);
+
     $self->res->headers->content_type('application/octet-stream');
     $self->res->headers->content_disposition(
         'attachment; filename="' . $bin->bin . '"'
@@ -95,6 +101,8 @@ get '/dl/:product/*bin' => sub {
         $self->res->headers->content_type('text/plain');
     }
     else {
+        $logger->log($self->stash('product'), $bin->ver, $bin->os);
+
         $self->res->headers->content_type('application/octet-stream');
         $self->res->headers->content_disposition(
             'attachment; filename="' . $bin->bin . '"'

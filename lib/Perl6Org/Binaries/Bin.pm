@@ -12,5 +12,22 @@ sub size {
     sprintf '%.2f %s', $bytes/pow(1025, $e), $types[$e];
 }
 
+sub os {
+    my $self = shift;
+    my $ext = $self->ext;
+    if ($ext eq '.msi' or $ext eq '.exe') {
+        'win' . ($self->is32 ? '32' : '64')
+    }
+    elsif ($ext eq '.tar.gz') {
+        'source'
+    }
+    elsif ($ext eq '.dmg' or $ext eq '.appImage') {
+        'macOS'
+    }
+    else {
+        '<unknown; extension ' . $ext . '>'
+    }
+}
+
 1;
 
