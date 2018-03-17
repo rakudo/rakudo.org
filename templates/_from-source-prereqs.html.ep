@@ -1,0 +1,74 @@
+<h3 class="h4">Prerequisites</h3>
+<p>You'll need Perl 5.10 or newer, <code>git</code>, <code>make</code>,
+  <code>gcc</code>, and headers for <code>libssl</code>.
+  To obtain these tools:</p>
+
+<div id="prepreqs-accordion" class="accordion">
+  <div class="card bg-dark">
+    <div class="card-header" id="prereq-debian">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse"
+          data-target="#collapse-debian" aria-expanded="false"
+          aria-controls="prereq-debian">Debian / Ubuntu /
+          <abbr title="Windows Subsystem for Linux">WSL</abbr>
+
+      </h5>
+    </div>
+
+    <div id="collapse-debian" class="collapse"
+      aria-labelledby="prereq-debian" data-parent="#prepreqs-accordion">
+      <div class="card-body">
+        <p class="suck-b">Run:
+          <code>sudo apt-get install build-essential git libssl-dev</code></p>
+      </div>
+    </div>
+  </div
+
+  ><div class="card bg-dark">
+    <div class="card-header" id="prereq-redhat">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse" data-target="#collapse-redhat"
+          aria-expanded="false" aria-controls="collapse-redhat">
+          Red Hat / CentOS / Fedora
+        </button>
+      </h5>
+    </div>
+    <div id="collapse-redhat" class="collapse" aria-labelledby="prereq-redhat"
+      data-parent="#prepreqs-accordion">
+      <div class="card-body">
+        <p class="suck-b">Run:</p>
+        <pre><code>sudo yum install git
+sudo yum groupinstall 'Development Tools'</code></pre>
+
+        <p>On Fedora, also run:
+          <code>sudo yum install perl-ExtUtils-Command</code></p>
+
+        <p class="suck-b">On CentOS 7, also run:
+          <code>sudo yum install perl-autodie</code></p>
+      </div>
+    </div>
+  </div
+
+  ><div class="card bg-dark">
+    <div class="card-header" id="prereq-windows">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse" data-target="#collapse-windows"
+          aria-expanded="false" aria-controls="collapse-windows">
+          Windows
+        </button>
+      </h5>
+    </div>
+    <div id="collapse-windows" class="collapse"
+      aria-labelledby="prereq-windows" data-parent="#prepreqs-accordion">
+      <div class="card-body">
+        <p class="suck-b">Download and install
+          <a href="https://git-scm.com/download/win">git</a> and
+          <a href="http://strawberryperl.com/">Strawberry Perl 5</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
