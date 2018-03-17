@@ -1,7 +1,8 @@
 % layout 'default';
 % title 'Third Party Packages - Install Rakudo Compiler Only';
 % make_crumbs home => 'Home', files => 'Files',
-%   'Install Rakudo Compiler Only from Third Party Packages';
+%   'files-rakudo' => 'Compiler Only Installation',
+%   'Install from Third Party Packages';
 
 <h2 class="h1">Rakudo Compiler 3<sup>rd</sup>-Party Packages</h2>
 

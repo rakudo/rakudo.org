@@ -1,7 +1,8 @@
 % layout 'default';
-% title 'Source - Install Rakudo Star';
+% title 'Source - Install Rakudo Compiler-Only';
 % make_crumbs home => 'Home', files => 'Files',
-%   'Install Rakudo Star from Source';
+%   'files-rakudo' => 'Compiler Only Installation',
+%   'Install from Source';
 
 <h2 class="h1">
   <img class="os-icon" height=50 src="/asset/pics/os-icon-source.png" alt="">

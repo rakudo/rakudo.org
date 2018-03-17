@@ -1,7 +1,9 @@
 % layout 'default';
-% title 'Rakudo Compiler Only';
+% title 'Install Rakudo Compiler Only';
+% make_crumbs home => 'Home', files => 'Files',
+%   'Compiler Only Installation';
 
-<h2 class="h1">Rakudo Compiler Only</h2>
+<h2 class="h1">Compiler Only Installation</h2>
 
 <p>An alternative to <a href="#Star">Rakudo Star collection</a>
   is to install the Rakudo compiler only (with separate, manual installation
