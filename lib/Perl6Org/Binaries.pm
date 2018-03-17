@@ -55,8 +55,6 @@ sub bin {
     my ($self, $product, $wanted_bin) = @_;
     for my $ver ($self->all($product)->each) {
         for my $bin ($ver->bins->each) {
-            use Acme::Dump::And::Dumper;
-            print DnD [$bin->bin, $wanted_bin];
             return $bin if $bin->bin eq $wanted_bin
         }
     }
