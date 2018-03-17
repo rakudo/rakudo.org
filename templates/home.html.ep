@@ -3,9 +3,9 @@
 
 <main role="main" class="inner cover">
  <div class="row">
-    <p class="easter">"Rakudo" is short for "Rakuda-dō" (with a long 'o';
-          駱駝道), which is Japanese for "Way of the Camel". "Rakudo" (with a short
-          'o'; 楽土) also means "paradise" in Japanese.</p>
+    <p class="easter" hidden>"Rakudo" is short for "Rakuda-dō" (with a
+      long 'o'; 駱駝道), which is Japanese for "Way of the Camel". "Rakudo"
+      (with a short 'o'; 楽土) also means "paradise" in Japanese.</p>
     <div class="col-md-6">
       <div id="logo">
         <p><img src="/asset/pics/logo-inverse-300.png" alt=""></p>
