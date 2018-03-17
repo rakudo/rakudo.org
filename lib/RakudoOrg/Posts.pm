@@ -31,7 +31,7 @@ sub load {
     return unless -f $post_file and -r _;
     my ($meta, $content) = process(decode 'UTF-8', path($post_file)->slurp);
     my $html = Mojo::DOM->new(markdown $content);
-    $html->find('ul')->each(sub { $_->{class} = 'flush-list' });
+    $html->find('ul,ol')->each(sub { $_->{class} = 'flush-list' });
     return $meta, $html;
 }
 
