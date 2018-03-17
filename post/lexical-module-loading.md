@@ -11,26 +11,26 @@
 
 <p>For example, given a module Foo:</p>
 
-<div class="highlight highlight-source-perl6fe"><pre style="font-size: 14px; font-family: monospace">unit <span style="color: blue;">class</span> <span class="pl-en">Foo</span>;
-<span style="color: blue;">use</span> Bar;</pre></div>
+<div class="highlight highlight-source-perl6fe"><pre style="font-size: 14px; font-family: monospace">unit class Foo;
+use Bar;</pre></div>
 
 <p>And your own program:</p>
 
-<div class="highlight highlight-source-perl6fe"><pre style="font-size: 14px; font-family: monospace"><span style="color: blue;">use</span> Foo;
-<span style="color: blue;">my</span> <span style="color: #440;">$</span><span style="color: #440;">foo</span> <span style="color: blue;">=</span> Foo<span style="color: blue;">.</span><span style="color: #449;">new</span>; <span style="color: #999;"># works as expected</span>
-<span style="color: blue;">my</span> <span style="color: #440;">$</span><span style="color: #440;">bar</span> <span style="color: blue;">=</span> Bar<span style="color: blue;">.</span><span style="color: #449;">new</span>; <span style="color: #999;"># huh!? Where is Bar coming from?</span></pre></div>
+<div class="highlight highlight-source-perl6fe"><pre style="font-size: 14px; font-family: monospace">use Foo;
+my $foo = Foo.new; # works as expected
+my $bar = Bar.new; # huh!? Where is Bar coming from?</pre></div>
 
 <h2>Why</h2>
 
 <p>This doesn't sound so bad (it at least saves you some typing), except for that it makes another feature of Perl 6 impossible to have: <em>the ability to load multiple versions of a module at the same time in different parts of your program:</em></p>
 
 <div class="highlight highlight-source-perl6fe"><pre style="font-size: 14px; font-family: monospace">{
-    <span style="color: blue;">use</span> Baz<span style="color: blue;">:</span>ver(v1);
-    <span style="color: blue;">my</span> <span style="color: #440;">$</span><span style="color: #440;">old-baz</span> <span style="color: blue;">=</span> Baz<span style="color: blue;">.</span><span style="color: #449;">new</span>;
+    use Baz:ver(v1);
+    my $old-baz = Baz.new;
 }
 {
-    <span style="color: blue;">use</span> Baz<span style="color: blue;">:</span>ver(v2);
-    <span style="color: blue;">my</span> <span style="color: #440;">$</span><span style="color: #440;">shiny-new-baz</span> <span style="color: blue;">=</span> Baz<span style="color: blue;">.</span><span style="color: #449;">new</span>;
+    use Baz:ver(v2);
+    my $shiny-new-baz = Baz.new;
 }</pre></div>
 
 <p>This will explode as on loading <code>Baz:ver(v2)</code>, rakudo will complain about "Baz" already being defined.</p>
@@ -39,9 +39,9 @@
 
 <p>To fix this, we no longer register loaded classes globally but only in the scope which loaded them in the first place. Coming back to our first example, we would <strong>need to explicitly load</strong> Bar in the main program:</p>
 
-<div class="highlight highlight-source-perl6fe"><pre style="font-size: 14px; font-family: monospace"><span style="color: blue;">use</span> Foo;
-<span style="color: blue;">use</span> Bar;
-<span style="color: blue;">my</span> <span style="color: #440;">$</span><span style="color: #440;">foo</span> <span style="color: blue;">=</span> Foo<span style="color: blue;">.</span><span style="color: #449;">new</span>; <span style="color: #999;"># still works of course</span>
-<span style="color: blue;">my</span> <span style="color: #440;">$</span><span style="color: #440;">bar</span> <span style="color: blue;">=</span> Bar<span style="color: blue;">.</span><span style="color: #449;">new</span>; <span style="color: #999;"># now it's clear where Bar is coming from</span></pre></div>
+<div class="highlight highlight-source-perl6fe"><pre style="font-size: 14px; font-family: monospace">use Foo;
+use Bar;
+my $foo = Foo.new; # still works of course
+my $bar = Bar.new; # now it's clear where Bar is coming from</pre></div>
 
 <p>So if you suddenly get an "Undeclared name: Bar" error message after upgrading to a newer Perl 6 compiler, you will most probably <strong>just need to add</strong> a: "use Bar;" to your code.</p>
