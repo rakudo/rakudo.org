@@ -3,7 +3,7 @@ $(function(){
     setup_show_archived_versions_button();
     setup_accordion_scroller();
     $(function () { $('[data-toggle="tooltip"]').tooltip() })
-    $('.easter').removeAttr('hidden');
+    $('.easter').css({visibility: 'visible'});
 });
 
 function setup_accordion_scroller() {
