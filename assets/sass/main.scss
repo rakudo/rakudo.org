@@ -210,7 +210,6 @@ body {
     .nav-masthead {
         float: left;
         padding-top: 3px;
-        padding-left: 2rem;
     }
 }
 
@@ -218,11 +217,9 @@ body {
     body:not(#body_home) {
         .masthead-brand {
             float: none;
-            text-align: center;
         }
         .nav-masthead {
             float: none;
-            text-align: center;
             padding-left: 0;
         }
     }
@@ -231,6 +228,14 @@ body {
 @media (min-width: 830px) {
     #content {
         width: 800px;
+    }
+}
+@media (min-width: 936px) {
+    #body_home main {
+        position: relative;
+        left: -61px;
+        padding-left: 0;
+        margin-left: 0;
     }
 }
 @media (max-width: 799px) {
@@ -276,10 +281,15 @@ h2 {
     }
 }
 
-body:not(#body_home) nav:not(.breadcrumbs) {
-    margin-bottom: 20px;
-    a {
-        text-decoration: none;
+body:not(#body_home) {
+    .nav-masthead {
+        padding-left: 2rem;
+    }
+    nav:not(.breadcrumbs) {
+        margin-bottom: 20px;
+        a {
+            text-decoration: none;
+        }
     }
 }
 
