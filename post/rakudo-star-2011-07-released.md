@@ -1,0 +1,49 @@
+%% title: Rakudo Star 2011.07 released
+%% date: 2011-07-29
+
+Announce: Rakudo Star - a useful, usable, "early adopter" distribution of Perl 6
+
+On behalf of the Rakudo and Perl 6 development teams, I'm happy to announce the July 2011 release of "Rakudo Star", a useful and usable distribution of Perl 6.  The tarball for the July 2011 release is available from <a href="http://github.com/rakudo/star/downloads">http://github.com/rakudo/star/downloads</a>.
+
+IMPORTANT NOTE ABOUT UPCOMING RELEASES: This is the last Rakudo Star release to use a compiler from the current "master" branch of Rakudo. For the past several months, Rakudo compiler development has primarily occurred in a separate "nom" ("New Object Model") branch of its repository.  Shortly after this release, the "nom" branch will become the new "master" branch and will be the source for future compiler and Star releases.
+
+In the Perl 6 world, we make a distinction between the language ("Perl 6") and specific implementations of the language such as "Rakudo Perl".  The July 2011 Star release includes release #43 of the <a href="http://github.com/rakudo/rakudo">Rakudo Perl 6 compiler</a> [1], version 3.6.0 of the <a href="http://parrot.org/">Parrot Virtual Machine</a> [2], and various modules, documentation, and other resources collected from the Perl 6 community.
+
+The Rakudo team plans to issue another distribution release in August 2011 based on the new "nom" compiler.  The new compiler contains many improvements over the current line of development (including vastly improved performance), but also will not be 100% backwards-compatible due to changes in the Perl 6 language specification and elimination of some workarounds. Existing Rakudo Star users looking for stability should continue to use the July 2011 release as the new distribution releases stabilize over the next several months.
+
+Details about deprecations and migration guidelines will be provided in future releases and on rakudo.org .
+
+This release of Rakudo Star adds the following features over the previous Star release:
+  * 10%-30% improvement in compile and execution speed
+  * New gcd (greatest common divisor) and lcm (largest common multiple) operators
+  * Int.base
+  * Call counter for Perl 6-level subroutines
+  * Better handling of &infix:<=> right associativity
+  * Fix bug in exponentiation of negative numbers
+  * Fix building on systems with smaller RAM
+
+There are some key features of Perl 6 that Rakudo Star does not yet handle appropriately, although they will appear in upcoming releases.  Some of the not-quite-there features include:
+  * nested package definitions
+  * binary objects, native types, pack and unpack
+  * typed arrays
+  * macros
+  * state variables
+  * threads and concurrency
+  * Unicode strings at levels other than codepoints
+  * pre and post constraints, and some other phasers
+  * interactive readline that understands Unicode
+  * backslash escapes in regex <[...]> character classes
+  * non-blocking I/O
+  * most of Synopsis 9
+  * perl6doc or pod manipulation tools
+
+There is a new online resource at <a href="http://perl6.org/compilers/features">http://perl6.org/compilers/features</a> that lists the known implemented and missing features of Rakudo Star 2011.07 and other Perl 6 implementations.
+
+In many places we've tried to make Rakudo smart enough to inform the programmer that a given feature isn't implemented, but there are many that we've missed.  Bug reports about missing and broken features are welcomed at <rakudobug@perl.org>.
+
+See <a href="http://perl6.org/ ">http://perl6.org/ </a>for links to much more information about Perl 6, including documentation, example code, tutorials, reference materials, specification documents, and other supporting resources. An updated draft of a Perl 6 book is available as docs/UsingPerl6-draft.pdf in the release tarball.
+
+The development team thanks all of the contributors and sponsors for making Rakudo Star possible.  If you would like to contribute, see <a href="http://rakudo.org/how-to-help">http://rakudo.org/how-to-help</a>, ask on the perl6-compiler@perl.org mailing list, or join us on IRC #perl6 on freenode.
+
+[1] <a href="http://github.com/rakudo/rakudo">http://github.com/rakudo/rakudo</a><br />
+[2] <a href="http://parrot.org/">http://parrot.org/</a>

@@ -1,0 +1,46 @@
+%% title: Rakudo Star 2011.04 released
+%% date: 2011-04-28
+
+On behalf of the Rakudo and Perl 6 development teams, I'm happy to announce the April 2011 release of "Rakudo Star", a useful and usable distribution of Perl 6.  The tarball for the April 2011 release is available from <a href="http://github.com/rakudo/star/downloads">http://github.com/rakudo/star/downloads</a>.
+
+Rakudo Star is aimed at "early adopters" of Perl 6.  We know that it still has some bugs, it is far slower than it ought to be, and there are some advanced pieces of the Perl 6 language specification that aren't implemented yet.  But Rakudo Perl 6 in its current form is also proving to be viable (and fun) for developing applications and exploring a great new language.  These "Star" releases are intended to make Perl 6 more widely available to programmers, grow the Perl 6 codebase, and gain additional end-user feedback about the Perl 6 language and Rakudo's implementation of it.
+
+In the Perl 6 world, we make a distinction between the language ("Perl 6") and specific implementations of the language such as "Rakudo Perl".  The April 2011 Star release includes release #40 of the Rakudo Perl 6 compiler [1], version 3.3.0 of the Parrot Virtual Machine [2], and various modules, documentation, and other resources collected from the Perl 6 community.
+
+This release of Rakudo Star adds the following features over the previous Star release:
+* Modules MiniDBI, form, HTTP::Daemon, Yaml and Module::Tools are removed in this release.
+* New modules Pies (including panda, the module installer) and HTTP::Server::Simple have been added.
+* New implementation of IO::Socket::INET, with basic IPv6 support
+* -p and -n command-line options are now available
+* Many new IO improvements, including stat-related methods
+* New --ll-backtrace command-line switch for printing PIR level stack traces
+* Preliminary implementation of Infix 'orelse'
+* Added Str.indent
+* Bugfixes to negation meta operator
+* Support for complex conjugation
+
+There are some key features of Perl 6 that Rakudo Star does not yet handle appropriately, although they will appear in upcoming releases.  Some of the not-quite-there features include:
+* nested package definitions
+* binary objects, native types, pack and unpack
+* typed arrays
+* macros
+* state variables
+* threads and concurrency
+* Unicode strings at levels other than codepoints
+* pre and post constraints, and some other phasers
+* interactive readline that understands Unicode
+* backslash escapes in regex &lt;[...]&gt; character classes
+* non-blocking I/O
+* most of Synopsis 9
+* perl6doc or pod manipulation tools
+
+In many places we've tried to make Rakudo smart enough to inform the programmer that a given feature isn't implemented, but there are many that we've missed.  Bug reports about missing and broken features are welcomed at rakudobug@perl.org.
+
+See <a href="http://perl6.org/">http://perl6.org/</a> for links to much more information about Perl 6, including documentation, example code, tutorials, reference materials, specification documents, and other supporting resources.  An updated draft of a Perl 6 book is available as &lt;docs/UsingPerl6-draft.pdf&gt; in the release tarball.
+
+The development team thanks all of the contributors and sponsors for making Rakudo Star possible.  If you would like to contribute, see <a href="http://rakudo.org/how-to-help">http://rakudo.org/how-to-help</a>, ask on the <a href="mailto:perl6-compiler@perl.org">perl6-compiler@perl.org</a> mailing list, or join us on IRC #perl6 on freenode.
+
+Rakudo Star releases are created on a three-month cycle, or as needed in response to important bug fixes or improvements.  (The Rakudo compiler will continue with monthly releases.)  The next planned release of Rakudo Star will be in July 2011.
+
+[1] <a href="http://github.com/rakudo/rakudo">http://github.com/rakudo/rakudo</a>
+[2] <a href="http://parrot.org/">http://parrot.org/</a>
