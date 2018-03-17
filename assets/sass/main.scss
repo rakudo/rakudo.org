@@ -16,9 +16,26 @@ $color-warning: #ffc107;
     }
 }
 
-.article-list h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0;
+.article-list {
+    .blog-post {
+        padding-bottom: .3rem;
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            small {
+                opacity: .5;
+                font-size: 70%;
+                padding-right: .75rem;
+            }
+
+            a {
+                text-decoration: none!important;
+            }
+            a:hover, a:active {
+                text-decoration: underline!important;
+            }
+        }
+    }
 }
 
 .flush-list {
@@ -99,9 +116,7 @@ footer:hover {
     }
 
     main {
-        /*[class*="col-"] {*/
-            display: flex;
-        /*}*/
+        display: flex;
         * {
             align-items: center;
             justify-content: center;

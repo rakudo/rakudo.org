@@ -42,6 +42,14 @@ get '/posts' => sub {
     my $self = shift;
     $self->stash(posts => $posts->all);
 };
+get '/post/#post' => sub {
+    my $c = shift;
+    my ($meta, $html) = $posts->load($c->param('post'));
+    $html or return $c->reply->not_found;
+
+    $c->stash(%$meta, post => $html, title => $meta->{title});
+} => 'post';
+
 get $_ for qw{/about /bugs /docs /files /people};
 
 
@@ -103,14 +111,6 @@ get '/people/irc' => sub {
 get '/people/irc-dev' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#perl6-dev');
 } => 'people-irc-dev';
-
-get '/post/#post' => sub {
-    my $c = shift;
-    my ($meta, $html) = $posts->load($c->param('post'));
-    $html or return $c->reply->not_found;
-
-    $c->stash(%$meta, post => $html, title => $meta->{title});
-} => 'post';
 
 any $_ => sub {
     my $c = shift;

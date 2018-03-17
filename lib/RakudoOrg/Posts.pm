@@ -40,7 +40,7 @@ sub process {
     my %meta;
     $meta{$1} = $2 while $post =~ s/^%%\s*(\w+)\s*:\s*([^\n]+)\n//;
     $post =~ s/^```$//gm;
-    $meta{title} =~ s/Announce:/ℹ/;
+    $meta{title} =~ s/^Announce://;
     return \%meta, $post;
 }
 
