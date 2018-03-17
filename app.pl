@@ -59,6 +59,7 @@ get '/files/star/macos'         => 'files-star-macos';
 get '/files/star/source'        => 'files-star-source';
 get '/files/star/third-party'   => 'files-star-third-party';
 get '/files/rakudo/third-party' => 'files-rakudo-third-party';
+get '/files/rakudo/source'      => 'files-rakudo-source';
 
 
 get '/files/star' => sub {

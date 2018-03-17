@@ -1,0 +1,127 @@
+% layout 'default';
+% title 'Source - Install Rakudo Star';
+% make_crumbs home => 'Home', files => 'Files',
+%   'Install Rakudo Star from Source';
+
+<h2 class="h1">
+  <img class="os-icon" height=50 src="/asset/pics/os-icon-source.png" alt="">
+    Install Rakudo Compiler from Source</h2>
+
+%= include '_from-source-prereqs';
+
+<h3 class="h4">Build</h3>
+
+<p class="alert alert-warning border-warning bg-none" role="alert">
+  You will need about 1.5GB of free RAM to compile Rakudo. Swap disk space
+  can be used on low‑memory machines, but build time will be significantly
+  slower (1+ hour)
+</p>
+
+<div id="build-accordion" class="accordion">
+  <div class="card bg-dark">
+    <div class="card-header" id="build-nix">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse"
+          data-target="#collapse-nix" aria-expanded="false"
+          aria-controls="build-nix">*nix /
+          <abbr title="Windows Subsystem for Linux">WSL</abbr></button>
+      </h5>
+    </div>
+    <div id="collapse-nix" class="collapse"
+      aria-labelledby="build-nix" data-parent="#build-accordion">
+      <div class="card-body">
+        <p>The exact steps required may differ, depending on
+  your operating system:</p>
+
+        <pre><code>mkdir ~/rakudo &amp;&amp; cd $_
+curl -JO <%= url_for(latest => product => 'rakudo', os => 'source')->to_abs %>
+tar -xvzf rakudo-*.tar.gz
+cd rakudo-*
+
+perl Configure.pl --backend=moar --gen-moar
+make
+
+# If you wish, you can run the tests
+# Depending on your machine, they could take over half an hour to run
+make test
+make spectest
+
+make install
+
+echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH" >> ~/.bashrc
+source ~/.bashrc</code></pre>
+        <p>You'll likely want to also install
+          <a href="https://modules.perl6.org/dist/zef:github"><code
+            >zef</code></a> module manager:</p>
+          <pre class="suck-b"><code>cd /tmp/ &amp;&amp;
+git clone https://github.com/ugexe/zef.git &amp;&amp;
+cd zef &amp;&amp;
+perl6 -Ilib bin/zef install .</code></pre>
+      </div>
+    </div>
+  </div
+  ><div class="card bg-dark">
+    <div class="card-header" id="build-windows">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse" data-target="#collapse-build-windows"
+          aria-expanded="false" aria-controls="collapse-build-windows">
+          Windows
+        </button>
+      </h5>
+    </div>
+    <div id="collapse-build-windows" class="collapse"
+      aria-labelledby="build-windows" data-parent="#build-accordion">
+      <div class="card-body">
+        <p>These instructions are for a compiler tool kit included with
+          <a href="http://strawberryperl.com/">Strawberry Perl 5</a>. Other
+          compilers may have different commands (e.g. <code>nmake</code>
+          instead of <code>gmake</code>)</p>
+        <ol class="flush-list">
+          <li>Download <a href="<%=
+              url_for latest => product => 'rakudo', os => 'source' %>">latest
+            Rakudo Compiler-Only source <code>.tar.gz</code> archive</a></li>
+          <li>Extract it into a temporary location, like
+            <code>C:\Temp\rakudo\</code>
+            <small>(<a href="https://www.7-zip.org/">7-zip</a> can open
+              <code>.tar.gz</code> files)</small></li>
+          <li>Press Win+R, then type <code>cmd</code> and press enter, to
+            open the command prompt.</li>
+          <li>Run these commands to install into <code>C:\rakudo\</code>
+            directory: <pre><code>C:
+mkdir C:\rakudo
+cd C:\Temp\rakudo
+perl Configure.pl --backend=moar --gen-moar --prefix=C:\rakudo
+gmake
+</code></pre>
+          </li>
+          <li><span class="text-info"><span class="oi oi-cog"></span>
+            (optional)</span> Run the test suite, which can
+            take over half an hour to complete:<br>
+            <code>gmake test &amp;&amp; gmake spectest</code></li>
+          <li>Run: <code>gmake install</code></li>
+          <li><a href="https://www.java.com/en/download/help/path.xml">Add
+            to your <code>PATH</code> env var</a> paths
+            <code>C:\rakudo\bin\</code> and <code>C:\rakudo\share\perl6\site\bin</code></li>
+          <li>Close the command prompt and open a new one.
+            Type <code>perl6 -v</code> to test the newly-installed
+            Rakudo works.</li>
+        </ul>
+
+        <p>You'll likely want to also install
+          <a href="https://modules.perl6.org/dist/zef:github"><code
+            >zef</code></a> module manager. In a newly-opened command prompt,
+            run these commands:</p>
+          <pre class="suck-b"><code>C:
+cd C:\Temp
+git clone https://github.com/ugexe/zef.git
+cd zef
+perl6 -Ilib bin/zef install .</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<p>Need help? <a href="<%= url_for 'people-irc' %>">Talk to us</a>.</p>
