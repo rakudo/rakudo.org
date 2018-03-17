@@ -2,19 +2,24 @@
 % title 'Rakudo Perl 6 Compiler';
 
 <main role="main" class="inner cover">
-  <div id="logo">
+ <div class="row">
     <p class="easter">"Rakudo" is short for "Rakuda-dō" (with a long 'o';
-      駱駝道), which is Japanese for "Way of the Camel". "Rakudo" (with a short
-      'o'; 楽土) also means "paradise" in Japanese.</p>
-    <p><img src="/asset/pics/logo-inverse-300.png" alt=""></p>
+          駱駝道), which is Japanese for "Way of the Camel". "Rakudo" (with a short
+          'o'; 楽土) also means "paradise" in Japanese.</p>
+    <div class="col-md-6">
+      <div id="logo">
+        <p><img src="/asset/pics/logo-inverse-300.png" alt=""></p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h1 class="cover-heading">Rakudo <%== p6 %> Compiler</h1>
+      <p class="lead">Production-ready, stable implementation of the
+        <a href="https://perl6.org/"><%== p6 %></a> language.</p>
+      <p class="lead">
+          <a href="<%= url_for 'files' %>" data-platform="generic"
+            class="btn btn-lg btn-primary">
+            <span class="oi oi-data-transfer-download"></span> Download</a>
+      </p>
+    </div>
   </div>
-
-  <h1 class="cover-heading">Rakudo <%== p6 %> Compiler</h1>
-  <p class="lead">Production-ready, stable implementation of the
-    <a href="https://perl6.org/"><%== p6 %></a> language.</p>
-  <p class="lead">
-      <a href="<%= url_for 'files' %>" data-platform="generic"
-        class="btn btn-lg btn-primary">
-        <span class="oi oi-data-transfer-download"></span> Download</a>
-  </p>
 </main>

@@ -35,7 +35,7 @@ ol.flush-list {
 
 footer,
 #body_home {
-    text-align: center;
+    text-align: left;
 }
 
 footer {
@@ -76,26 +76,36 @@ footer:hover {
         top: 2px;
     }
 
-    #logo {
-        .easter {
-            font-size: 90%;
-            opacity: 0;
-            transition: opacity 5s 2s;
-        }
+    .easter {
+        font-size: 90%;
+        opacity: 0;
+        transition: opacity 5s 2s;
+    }
 
+    #logo {
         img {
             opacity: .2;
             transition: opacity 2s;
         }
     }
-    #logo:hover {
-        img, .easter {
+    main:hover {
+        #logo img, .easter {
             opacity: 1;
         }
     }
 
     .masthead {
         padding-bottom: 5px;
+    }
+
+    main {
+        /*[class*="col-"] {*/
+            display: flex;
+        /*}*/
+        * {
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
 
@@ -178,12 +188,14 @@ body {
     }
 }
 
-body:not(#body_home) {
+body {
     .masthead-brand {
         float: left;
     }
     .nav-masthead {
-        float: right;
+        float: left;
+        padding-top: 3px;
+        padding-left: 2rem;
     }
 }
 
@@ -196,6 +208,7 @@ body:not(#body_home) {
         .nav-masthead {
             float: none;
             text-align: center;
+            padding-left: 0;
         }
     }
 }
