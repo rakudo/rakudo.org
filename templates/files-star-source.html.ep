@@ -35,9 +35,9 @@
   your operating system:</p>
 
         <pre class="suck-b"><code>mkdir ~/rakudo &amp;&amp; cd $_
-curl -O https://rakudo.perl6.org/downloads/star/rakudo-star-2017.07.tar.gz
-tar -xvzf rakudo-star-2017.07.tar.gz
-cd rakudo-star-2017.07/
+curl -JO <%= url_for(latest => product => 'star', os => 'source')->to_abs %>
+tar -xvzf rakudo-star-*.tar.gz
+cd rakudo-star-*
 
 perl Configure.pl --backend=moar --gen-moar
 make
