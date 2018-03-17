@@ -390,6 +390,12 @@ pre, code {
     margin-bottom: 30px;
 }
 
+.kick-b-cols {
+    > [class*="col-"] {
+        padding-bottom: 2rem;
+    }
+}
+
 .compiler-downloads-panel {
     padding-bottom: 1rem;
 

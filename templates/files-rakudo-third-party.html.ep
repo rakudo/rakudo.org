@@ -17,13 +17,29 @@
   module manager</a> along with any modules you may require from the
   <a href="http://modules.perl6.org/"><%== p6 %> ecosystem</a>.</p>
 
-<div class="row">
+<div class="row kick-b-cols">
+  <div class="col-md-8">
+    <div class="card bg-dark">
+      <div class="card-body">
+        <h5 class="card-title">Various Linuxes</h5>
+        <div class="card-text">
+          <p>Debian, Ubuntu, Windows
+            <abbr title="Windows Subsystem for Linux">WSL</abbr>, Centos,
+            OpenSUSE, Fedora, and Alpine packages. Includes
+            <code>zef</code> module installer and patches for Windows
+            <abbr title="Windows Subsystem for Linux">WSL</abbr>.</p>
+          <a href="https://github.com/nxadm/rakudo-pkg#rakudo-pkg"
+            class="btn btn-primary">Visit Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="col-md-4">
     <div class="card bg-dark">
       <div class="card-body">
-        <h5 class="card-title">Docker</h5>
+        <h5 class="card-title">OpenSUSE</h5>
         <div class="card-text">
-          <p>To install, run: <br> <code>docker pull rakudo-star</code></p>
+          <p>Separate RPMs for Rakudo, NQP, MoarVM, and some modules.</p>
           <a href="https://hub.docker.com/_/rakudo-star/"
             class="btn btn-dark border-secondary">Visit Site</a>
         </div>
@@ -33,10 +49,11 @@
   <div class="col-md-4">
     <div class="card bg-dark">
       <div class="card-body">
-        <h5 class="card-title">Chocolately</h5>
+        <h5 class="card-title">pkgsrc <abbr title="Work in Progress"
+          >(WIP)</small></h5>
         <div class="card-text">
-          <p>To install, run: <br> <code>choco install rakudostar</code></p>
-          <a href="https://chocolatey.org/packages/rakudostar"
+          <p>A cross‑platform (UNIX‑like) source build system</p>
+          <a href="http://pkgsrc.se/wip/rakudo"
             class="btn btn-dark border-secondary">Visit Site</a>
         </div>
       </div>
@@ -45,10 +62,24 @@
   <div class="col-md-4">
     <div class="card bg-dark">
       <div class="card-body">
-        <h5 class="card-title">macOS Homebrew</h5>
+        <h5 class="card-title">OpenBSD Ports</h5>
         <div class="card-text">
-          <p>To install, run: <br> <code>brew install rakudo-star</code></p>
-          <a href="https://github.com/Homebrew/homebrew-core/blob/master/Formula/rakudo-star.rb"
+          <p>Possibly outdated. Check latest available versions before
+            installing.</p>
+          <a href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/lang/rakudo/"
+            class="btn btn-dark border-secondary">Visit Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card bg-dark">
+      <div class="card-body">
+        <h5 class="card-title">Debian</h5>
+        <div class="card-text">
+          <p>Recommended to install from <em>unstable</em> to get the latest
+            version.</p>
+          <a href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/lang/rakudo/"
             class="btn btn-dark border-secondary">Visit Site</a>
         </div>
       </div>
