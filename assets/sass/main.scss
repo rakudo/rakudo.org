@@ -551,3 +551,106 @@ pre, code {
 .need-help {
     opacity: 0;
 }
+
+@media print {
+    header, footer, .os-icon, .show-archived-versions {
+        display: none!important;
+    }
+    html, body, .cover-container.h-100 {
+        height: auto!important;
+        display: block!important
+    }
+    .container {
+        width: auto;
+    }
+
+    .row {
+        display: block;
+        [class*="col-"] {
+            display: block!important;
+            width: 100%!important;
+            max-width: 100%!important;
+        }
+    }
+    .card {
+        border: 0;
+        .card-body {
+            padding-left: 0;
+        }
+    }
+
+    .btn {
+        border: 0;
+        padding: 0;
+        display: inline;
+    }
+
+    a:after {
+        content: " ( " attr(href) " ) ";
+        color: #050;
+        font-size: 80%;
+    }
+
+    a[href^="/"]:after {
+        content: " ( https://rakudo.org/" attr(href) " ) ";
+    }
+    a[href^="#"]:after, a[href^="mailto:"]:after {
+        content: "";
+    }
+
+    .downloads-panel {
+        .download {
+            text-align: left;
+        }
+    }
+
+    .archived {
+        opacity: 1;
+        display: block;
+    }
+
+    #body_home {
+        .easter {
+            opacity: 1;
+            visibility: visible;
+            display: block;
+        }
+        main#main-cover.inner.cover, [class*="col-"] {
+            display: block!important;
+            max-width: 100%!important;
+            h1 {
+                font-size: 4rem;
+            }
+            .lead {
+                font-size: 2rem;
+            }
+            .btn {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .accordion {
+        .collapse {
+            display: block!important;
+        }
+
+        h5 button {
+            color: #000;
+            font-size: 1.4rem;
+            padding-left: 0!important;
+            padding-bottom: 0;
+            margin-left: 0!important;
+            background: 0;
+            border: 0;
+        }
+
+        .card-header {
+            border: 0;
+        }
+        .card-body {
+            padding-top: 0;
+        }
+    }
+}
+
