@@ -23,7 +23,8 @@ function setup_accordion_scroller() {
 
 function setup_show_archived_versions_button() {
     $('.show-archived-versions').on('click', function(){
-        $(this).parents('table').find('.archived').css({opacity: 0})
+        $(this).parents('table,.article-list').find('.archived')
+            .css({opacity: 0})
             .removeClass('archived').animate({opacity: 1}, 1000);
         $(this).remove();
     });

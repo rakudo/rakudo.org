@@ -4,6 +4,7 @@ use base 'Mojo::Base';
 
 use Text::MultiMarkdown qw/markdown/;
 use File::Glob qw/bsd_glob/;
+use POSIX qw/strftime/;
 use Mojo::File qw/path/;
 use Mojo::Util qw/decode  encode  xml_escape/;
 use Mojo::DOM;
@@ -19,6 +20,10 @@ sub all {
         push @return, {
             date  => $meta->{date},
             title => $meta->{title},
+            archived => (
+                ($meta->{date}
+                    cmp strftime "%Y-%m", localtime time-60*60*24*365*1.5
+                ) == -1),
             post  => (substr $_, length 'post/'),
        };
     }

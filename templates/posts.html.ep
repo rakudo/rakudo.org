@@ -5,10 +5,13 @@
 
 <div class="article-list">
 % for my $p ( @$posts ) {
-  <div class="blog-post">
+  <div class="blog-post<%= $p->{archived} ? ' archived' : '' %>">
     <h2 class="blog-post-title"><small><%= $p->{date} %></small>
       <a href="<%= url_for post => post => $p->{post} %>"
         ><%= $p->{title} %></a></h2>
   </div>
 % }
+  <button class="btn btn-dark btn-block show-archived-versions"
+    ><span class="oi oi-timer"></span>
+      Show archived posts</button>
 </div>
