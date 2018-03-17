@@ -26,4 +26,5 @@
 
 <hr>
 
-<p>Need help? <a href="<%= url_for 'people-irc' %>">Talk to us</a>.</p>
+<p class="need-help invisible"
+  >Need help? <a href="<%= url_for 'people-irc' %>">Talk to us</a>.</p>

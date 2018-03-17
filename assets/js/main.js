@@ -4,6 +4,9 @@ $(function(){
     setup_accordion_scroller();
     $(function () { $('[data-toggle="tooltip"]').tooltip() })
     $('.easter').css({visibility: 'visible'});
+    setTimeout(function() {
+        $('.need-help').removeClass('invisible').animate({opacity: 1});
+    }, 5000);
 });
 
 function setup_accordion_scroller() {

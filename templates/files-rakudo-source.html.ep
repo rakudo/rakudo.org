@@ -122,6 +122,8 @@ perl6 -Ilib bin/zef install .</code></pre>
     </div>
   </div>
 </div>
+
 <hr>
 
-<p>Need help? <a href="<%= url_for 'people-irc' %>">Talk to us</a>.</p>
+<p class="need-help invisible"
+  >Need help? <a href="<%= url_for 'people-irc' %>">Talk to us</a>.</p>
