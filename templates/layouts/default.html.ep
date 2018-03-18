@@ -73,7 +73,7 @@
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p><a href="https://github.com/perl6/rakudo.org">perl6/rakudo.org</a>
+          <p><a href="https://github.com/rakudo/rakudo">rakudo/rakudo</a>
             | <a href="https://twitter.com/perl6org">@perl6org</a>
             | <a href="https://webchat.freenode.net/?channels=#perl6"
               >#perl6</a>
