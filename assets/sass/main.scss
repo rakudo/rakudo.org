@@ -96,6 +96,8 @@ footer:hover {
     .easter {
         font-size: 90%;
         opacity: 0;
+        position: relative;
+        left: -9999;
         transition: opacity 5s 2s;
     }
 

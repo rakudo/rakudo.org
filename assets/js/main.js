@@ -3,7 +3,7 @@ $(function(){
     setup_show_archived_versions_button();
     setup_accordion_scroller();
     $(function () { $('[data-toggle="tooltip"]').tooltip() })
-    $('.easter').css({visibility: 'visible'});
+    $('.easter').css({visibility: 'visible', left: 0, position: 'static'});
     setTimeout(function() {
         $('.need-help').removeClass('invisible').animate({opacity: 1});
     }, 5000);
