@@ -66,7 +66,10 @@
         </header>
       % }
 
-      <div id="content"><%= content %></div>
+      <div id="content"
+        <%==  (stash('body_class') && stash('body_class') eq 'home')
+          ? ' class="preload"' : '' %>
+      ><%= content %></div>
 
       <footer class="mastfoot mt-auto">
         <div class="inner">

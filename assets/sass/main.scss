@@ -2,6 +2,14 @@ $color-body: #f6f6f6;
 $bg-body: rgb(51, 51, 51);
 $color-warning: #ffc107;
 
+.preload, .preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none!important;
+}
+
 .article-description {
     font-style: italic;
     opacity: .5;
@@ -107,7 +115,7 @@ footer:hover {
             transition: opacity 2s;
         }
     }
-    main:hover {
+    #content:not(.preload) main:hover {
         #logo img, .easter {
             opacity: 1;
         }
