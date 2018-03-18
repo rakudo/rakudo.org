@@ -81,5 +81,3 @@ The development team thanks all of the contributors and sponsors for
 making Rakudo Star possible. If you would like to contribute, see
 <a href="http://rakudo.org/how-to-help">http://rakudo.org/how-to-help</a>, ask on the perl6-compiler@perl.org
 mailing list, or join us on IRC #perl6 on freenode.
-
-(testing site)
