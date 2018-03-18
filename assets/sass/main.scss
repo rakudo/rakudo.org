@@ -224,7 +224,7 @@ body {
 }
 
 @media (max-width: 28em) {
-    body:not(#body_home) {
+    body {
         .masthead-brand {
             float: none;
         }
@@ -243,7 +243,7 @@ body {
 @media (min-width: 936px) {
     #body_home main {
         position: relative;
-        left: -61px;
+        left: -51px;
         padding-left: 0;
         margin-left: 0;
     }
@@ -291,7 +291,7 @@ h2 {
     }
 }
 
-body:not(#body_home) {
+body {
     .nav-masthead {
         padding-left: 2rem;
     }

@@ -19,53 +19,30 @@
   <body<%== stash('body_class')
     ? q| id="body_|. stash('body_class') .q|"| : '' %>>
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      % if (stash('body_class') and stash('body_class') eq 'home') {
-        <header class="masthead mb-auto justify-content-center">
-          <div class="inner">
-            <nav class="nav nav-masthead justify-content-center">
-              <a class="nav-link<%= nav_active 'home' %>"
-                href="<%= url_for 'home' %>"
-                ><span class="oi oi-home"></span></a>
-              <a class="nav-link<%= nav_active 'posts' %>"
-                href="<%= url_for 'posts' %>">Posts</a>
-              <a class="nav-link<%= nav_active 'files' %>"
-                href="<%= url_for 'files' %>">Files</a>
-              <a class="nav-link<%= nav_active 'docs' %>"
-                href="<%= url_for 'docs' %>">Docs</a>
-              <a class="nav-link<%= nav_active 'bugs' %>"
-                href="<%= url_for 'bugs' %>">Bugs</a>
-              <a class="nav-link<%= nav_active 'people' %>"
-                href="<%= url_for 'people' %>">People</a>
-            </nav>
-          </div>
-        </header>
-      % } else {
-        <header class="masthead mb-auto">
-          <div class="inner">
-            <h3 class="masthead-brand">
-              <a href="<%= url_for 'home' %>"><img
-                src="/asset/pics/logo-inverse.png" alt=""></a>
-            </h3>
-            <nav class="nav nav-masthead justify-content-center">
-              <a class="nav-link<%= nav_active 'home' %>"
-                href="<%= url_for 'home' %>"
-                ><span class="oi oi-home"></span></a>
-              <a class="nav-link<%= nav_active 'posts' %>"
-                href="<%= url_for 'posts' %>">Posts</a>
-              <a class="nav-link<%= nav_active 'files' %>"
-                href="<%= url_for 'files' %>">Files</a>
-              <a class="nav-link<%= nav_active 'docs' %>"
-                href="<%= url_for 'docs' %>">Docs</a>
-              <a class="nav-link<%= nav_active 'bugs' %>"
-                href="<%= url_for 'bugs' %>">Bugs</a>
-              <a class="nav-link<%= nav_active 'people' %>"
-                href="<%= url_for 'people' %>">People</a>
-            </nav>
-          </div>
-          <%== stash('crumbs')//'' %>
-        </header>
-      % }
-
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">
+            <a href="<%= url_for 'home' %>"><img
+              src="/asset/pics/logo-inverse.png" alt=""></a>
+          </h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link<%= nav_active 'home' %>"
+              href="<%= url_for 'home' %>"
+              ><span class="oi oi-home"></span></a>
+            <a class="nav-link<%= nav_active 'posts' %>"
+              href="<%= url_for 'posts' %>">Posts</a>
+            <a class="nav-link<%= nav_active 'files' %>"
+              href="<%= url_for 'files' %>">Files</a>
+            <a class="nav-link<%= nav_active 'docs' %>"
+              href="<%= url_for 'docs' %>">Docs</a>
+            <a class="nav-link<%= nav_active 'bugs' %>"
+              href="<%= url_for 'bugs' %>">Bugs</a>
+            <a class="nav-link<%= nav_active 'people' %>"
+              href="<%= url_for 'people' %>">People</a>
+          </nav>
+        </div>
+        <%== stash('crumbs')//'' %>
+      </header>
       <div id="content"
         <%==  (stash('body_class') && stash('body_class') eq 'home')
           ? ' class="preload"' : '' %>
