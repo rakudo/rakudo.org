@@ -17,13 +17,13 @@ $(function(){
 function setup_same_height() {
     $.fn.sameHeight = function() {
         var max = {};
-        $('.card-body').each(function(){
+        $(this).each(function(){
             var h = $(this).outerHeight();
             var o = $(this).offset().top;
             if (max[o] === undefined) max[o] = 0
             if ( h > max[o] ) { max[o] = h }
         });
-        $('.card-body').each(function(){
+        $(this).each(function(){
             $(this).css('min-height', max[$(this).offset().top] + 'px')
         });
     }
