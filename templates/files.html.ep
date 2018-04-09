@@ -67,7 +67,7 @@
 <h3 class="h4">Alternative Options</h3>
 
 
-<div class="row kick-b">
+<div class="row kick-b" id="alt-star">
   <div class="col-sm-6 col-md-7">
     <div class="card bg-dark border-dark">
       <div class="card-body">

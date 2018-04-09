@@ -10,7 +10,26 @@ $(function(){
     $(window).on('load', function() {
         $('.preload').removeClass('preload');
     });
+
+    setup_same_height();
 });
+
+function setup_same_height() {
+    $.fn.sameHeight = function() {
+        var max = {};
+        $('.card-body').each(function(){
+            var h = $(this).outerHeight();
+            var o = $(this).offset().top;
+            if (max[o] === undefined) max[o] = 0
+            if ( h > max[o] ) { max[o] = h }
+        });
+        $('.card-body').each(function(){
+            $(this).css('min-height', max[$(this).offset().top] + 'px')
+        });
+    }
+
+    $('#alt-star .card-body, #files-rakudo-third-party .card-body').sameHeight();
+}
 
 function setup_accordion_scroller() {
     $('.accordion').on('shown.bs.collapse', function() {

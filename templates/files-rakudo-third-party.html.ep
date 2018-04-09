@@ -18,7 +18,7 @@
   module manager</a> along with any modules you may require from the
   <a href="http://modules.perl6.org/"><%== p6 %> ecosystem</a>.</p>
 
-<div class="row kick-b-cols">
+<div class="row kick-b-cols" id="files-rakudo-third-party">
   <div class="col-md-8">
     <div class="card bg-dark">
       <div class="card-body">
