@@ -664,3 +664,11 @@ pre, code {
     }
 }
 
+@media (max-width: 468px) {
+    .masthead-brand {
+        display: none;
+    }
+    body .nav-masthead {
+        padding-left: 0;
+    }
+}
