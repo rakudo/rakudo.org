@@ -679,3 +679,9 @@ pre, code {
     }
 }
 
+@media (max-width: 700px) {
+    .blog-post-title small {
+        display: block;
+    }
+}
+
