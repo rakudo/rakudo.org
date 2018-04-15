@@ -69,7 +69,7 @@
 
 <div class="row kick-b" id="alt-star">
   <div class="col-sm-6 col-md-7">
-    <div class="card bg-dark border-dark">
+    <div class="card bg-dark border-dark mb-3">
       <div class="card-body">
         <h5 class="card-title">Pre-Built 3<sup>rd</sup> Party Packages</h5>
         <p class="card-text">Install Rakudo Star using your favourite

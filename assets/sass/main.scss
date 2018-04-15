@@ -672,3 +672,10 @@ pre, code {
         padding-left: 0;
     }
 }
+
+@media (max-width: 700px) {
+    .cover-container {
+        max-width: 100%;
+    }
+}
+
