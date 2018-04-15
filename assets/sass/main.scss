@@ -664,14 +664,6 @@ pre, code {
     }
 }
 
-@media (max-width: 468px) {
-    .masthead-brand {
-        display: none;
-    }
-    body .nav-masthead {
-        padding-left: 0;
-    }
-}
 
 @media (max-width: 700px) {
     .cover-container {
@@ -685,3 +677,20 @@ pre, code {
     }
 }
 
+
+@media (max-width: 767px) {
+    .masthead-brand {
+        display: none;
+    }
+    body .nav-masthead {
+        padding-left: 0;
+    }
+    #body_home {
+        nav, footer, main * {
+            text-align: center;
+        }
+        .nav-masthead {
+            float: none;
+        }
+    }
+}
