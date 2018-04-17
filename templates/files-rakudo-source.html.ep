@@ -36,7 +36,7 @@
   your operating system:</p>
 
         <pre><code>mkdir ~/rakudo &amp;&amp; cd $_
-curl -JO <%= url_for(latest => product => 'rakudo', os => 'source')->to_abs %>
+curl -LJO <%= url_for(latest => product => 'rakudo', os => 'source')->to_abs %>
 tar -xvzf rakudo-*.tar.gz
 cd rakudo-*
 
