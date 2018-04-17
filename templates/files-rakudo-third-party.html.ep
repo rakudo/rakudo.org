@@ -41,7 +41,7 @@
         <h5 class="card-title">OpenSUSE</h5>
         <div class="card-text">
           <p>Separate RPMs for Rakudo, NQP, MoarVM, and some modules.</p>
-          <a href="https://hub.docker.com/_/rakudo-star/"
+          <a href="https://build.opensuse.org/project/show/devel:languages:perl6"
             class="btn btn-dark border-secondary">Visit Site</a>
         </div>
       </div>
