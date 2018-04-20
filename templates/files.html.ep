@@ -96,7 +96,7 @@
 <h3 class="h4">Using Rakudo</h3>
 
 <p>To run a <%== p6 %> program with Rakudo, issue a command like:
-  <code>perl6 hello.pl</code>. To enter an interactive mode where each line of
+  <code>perl6 hello.p6</code>. To enter an interactive mode where each line of
   code is evaluated as soon as you enter it, run <code>perl6</code>
   without any arguments.</p>
 
