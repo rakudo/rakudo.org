@@ -24,12 +24,12 @@
       <div class="card-body">
         <h5 class="card-title">Various Linuxes</h5>
         <div class="card-text">
-          <p>Debian, Ubuntu, Windows
-            <abbr title="Windows Subsystem for Linux">WSL</abbr>, Centos,
-            OpenSUSE, Fedora, and Alpine packages. Includes
-            <code>zef</code> module installer and patches for Windows
+          <p>Alpine packages and packages and repositories for CentOS, Debian,
+            Fedora, openSUSE, Ubuntu and the 
+            <abbr title="Windows Subsystem for Linux">WSL</abbr>.
+            Includes <code>zef</code> module installer and patches for Windows
             <abbr title="Windows Subsystem for Linux">WSL</abbr>.</p>
-          <a href="https://github.com/nxadm/rakudo-pkg#rakudo-pkg"
+          <a href="https://nxadm.github.io/rakudo-pkg"
             class="btn btn-primary">Visit Site</a>
         </div>
       </div>
