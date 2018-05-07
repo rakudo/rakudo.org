@@ -24,10 +24,10 @@
         % for my $post (@$posts) {
         	<item>
         		<title><%= $post->{title} %></title>
-        		<link><%= url_for(post => $post->{post})->to_abs %></link>
+        		<link><%= url_for(post => post => $post->{post})->to_abs %></link>
         		<pubDate><%= $post->{date} %></pubDate>
         		<guid isPermaLink="true"><%=
-                    url_for(post => $post->{post})->to_abs %></guid>
+                    url_for(post => post => $post->{post})->to_abs %></guid>
         		<description><![CDATA[<%= $post->{desc} %>]]></description>
         	</item>
         % }
