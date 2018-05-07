@@ -36,8 +36,7 @@ Important Rakudo bug fixes are now listed at
 
 Deprecation:
 
-    + "panda" has been removed from releases after 2017.10 since it is
-deprecated.  Please use "zef".
+    + "panda" has been removed from releases after 2017.10 since it is deprecated.  Please use "zef".
     + LWP::Simple is deprecated and will be removed. Please use "HTTP::UserAgent".
 
 Notable changes in modules shipped with Rakudo Star:
