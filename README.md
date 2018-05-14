@@ -38,6 +38,9 @@ The script pulls changes from the repo. For blog posts, the updates will show
 up automatically. For other changes, you need to ask for app restart by
 putting string `[REAPP]` (including square brackets) into the commit title.
 
+If the box the site lives on gets rebooted, the [`start-rakudo.org.sh`](start-rakudo.org.sh)
+script gets run by cron on boot. It fetches new commits and starts the app.
+
 ### Infrustructure Setup
 
 See [infrastructure docs](https://github.com/perl6/infrastructure-doc/blob/master/hosts/www.p6c.org.pod#rakudoorg) for details on how the site
