@@ -15,7 +15,7 @@ In the Perl 6 world, we make a distinction between the language
 <a href="http://github.com/rakudo/rakudo">Rakudo Perl 6 compiler</a>, version 5.9.0 of the <a href="http://parrot.org">Parrot Virtual
 Machine</a>, plus various modules, documentation, and other resources
 collected from the Perl 6 community.
-<pre><code>https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.01.md
+<pre><code>https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.01.md
 </code></pre>
 Some of the new features added to this release include:
 <ul>

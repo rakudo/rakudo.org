@@ -17,7 +17,7 @@ Machine], plus various modules, documentation, and other resources
 collected from the Perl 6 community.
 
 [release 2014.03]:
-<a title=" https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.03.md" href=" https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.03.md"> https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.03.md</a>
+<a title=" https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.03.md" href=" https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.03.md"> https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.03.md</a>
 [Rakudo Perl 6 compiler]: <a title="http://github.com/rakudo/rakudo" href="http://github.com/rakudo/rakudo">http://github.com/rakudo/rakudo</a>
 [Parrot Virtual Machine]: <a title="http://parrot.org" href="http://parrot.orghttp://">http://parrot.org</a>
 

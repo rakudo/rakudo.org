@@ -3,7 +3,7 @@
 
 On behalf of the Rakudo and Perl 6 development teams, I'm happy to announce the October 2012 release of "Rakudo Star", a useful and usable distribution of Perl 6.  The tarball for the October 2012 release is available from &lt;<a href="http://github.com/rakudo/star/downloads">http://github.com/rakudo/star/downloads</a>&gt;. A Windows .MSI version of Rakudo star will usually appear in the downloads area shortly after the tarball release.
 
-In the Perl 6 world, we make a distinction between the language ("Perl 6") and specific implementations of the language such as "Rakudo Perl".  This Star release includes <a href="https://github.com/rakudo/rakudo/blob/nom/docs/announce/2012.10">release 2012.10</a> of the <a href="http://github.com/rakudo/rakudo">Rakudo Perl 6 compiler</a>, version 4.6.0 of the <a href="http://parrot.org/">Parrot Virtual Machine</a>, and various modules, documentation, and other resources collected from the Perl 6 community.
+In the Perl 6 world, we make a distinction between the language ("Perl 6") and specific implementations of the language such as "Rakudo Perl".  This Star release includes <a href="https://github.com/rakudo/rakudo/blob/master/docs/announce/2012.10">release 2012.10</a> of the <a href="http://github.com/rakudo/rakudo">Rakudo Perl 6 compiler</a>, version 4.6.0 of the <a href="http://parrot.org/">Parrot Virtual Machine</a>, and various modules, documentation, and other resources collected from the Perl 6 community.
 
 Some of the new features added to this release include:
 

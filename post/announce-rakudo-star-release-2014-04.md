@@ -6,7 +6,7 @@ On behalf of the Rakudo and Perl 6 development teams, I'm happy to announce the 
 
 <strong>This is the first Rakudo Star release with support for the MoarVM backend (all module tests pass on supported platforms) along with experimental support for the JVM backend (some module tests fail).</strong>
 
-In the Perl 6 world, we make a distinction between the language ("Perl 6") and specific implementations of the language such as "Rakudo Perl". This Star release includes <a href="https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.04.md">release 2014.04</a> of the <a href="http://github.com/rakudo/rakudo">Rakudo Perl 6 compiler</a>, version 6.1.0 of the <a href="http://parrot.org/">Parrot Virtual Machine</a>, version 2014.04 of <a href="http://moarvm.org/">MoarVM</a>, plus various modules, documentation, and other resources collected from the Perl 6 community.
+In the Perl 6 world, we make a distinction between the language ("Perl 6") and specific implementations of the language such as "Rakudo Perl". This Star release includes <a href="https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.04.md">release 2014.04</a> of the <a href="http://github.com/rakudo/rakudo">Rakudo Perl 6 compiler</a>, version 6.1.0 of the <a href="http://parrot.org/">Parrot Virtual Machine</a>, version 2014.04 of <a href="http://moarvm.org/">MoarVM</a>, plus various modules, documentation, and other resources collected from the Perl 6 community.
 
 Some of the new features added to this release include:
 <ul>

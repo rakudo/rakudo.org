@@ -16,7 +16,7 @@ Two shipped modules are known to fail on Parrot (JSON::RPC and p6doc).
 
 In the Perl 6 world, we make a distinction between the language
 ("Perl 6") and specific implementations of the language such as
-"Rakudo Perl". This Star release includes <a title=" https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.09.md" href=" https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.09.md">release 2014.09</a> of the
+"Rakudo Perl". This Star release includes <a title=" https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.09.md" href=" https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.09.md">release 2014.09</a> of the
 <a title="http://github.com/rakudo/rakudo" href="http://github.com/rakudo/rakudo">Rakudo Perl 6 compiler</a>, version 6.7.0 of the <a title="http://parrot.org" href="http://parrot.org">Parrot Virtual</a>
 <a title="http://parrot.org" href="http://parrot.org"> Machine</a>, version 2014.09 of <a title="http://moarvm.org/" href="http://moarvm.org/">MoarVM</a>, plus various modules,
 documentation, and other resources collected from the Perl 6

@@ -14,14 +14,14 @@ experimental support for the JVM backend (the modules <code>Bailador</code>,
 
 In the Perl 6 world, we make a distinction between the language
 ("Perl 6") and specific implementations of the language such as
-"Rakudo Perl". This Star release includes <a href="https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.03.md">release 2015.03</a> of the
+"Rakudo Perl". This Star release includes <a href="https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.03.md">release 2015.03</a> of the
 <a href="http://github.com/rakudo/rakudo">Rakudo Perl 6 compiler</a>, version 2015.03 of <a href="http://moarvm.org/">MoarVM</a>, plus various
 modules, documentation, and other resources collected from the
 Perl 6 community.
 
 Some of the new compiler features added to this release include:
 <ul>
-    <li>several renames of semi-internal methods. Please refer to <a href="https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.03.md">the Rakudo
+    <li>several renames of semi-internal methods. Please refer to <a href="https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.03.md">the Rakudo
 2015.03 release notes</a> for the full list</li>
     <li>Allow <code>Buf.AT-POS</code> to return an l-value.</li>
     <li>Implement <code>method ^foo($) { ... }</code> syntax.</li>

@@ -12,15 +12,15 @@ backend (all module tests pass on supported platforms).
 
 In the Perl 6 world, we make a distinction between the language
 ("Perl 6") and specific implementations of the language such as
-"Rakudo Perl". This Star release includes <a href=" https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.06.md" target="_blank">release 2015.06</a> of the
+"Rakudo Perl". This Star release includes <a href=" https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.06.md" target="_blank">release 2015.06</a> of the
 <a href="http://github.com/rakudo/rakudo" target="_blank">Rakudo Perl 6 compiler</a>, version 2015.06 of <a href="http://moarvm.org/" target="_blank">MoarVM</a>, plus various
 modules, documentation, and other resources collected from the
 Perl 6 community.
 
 Other Rakudo Perl 6 Comiler changes included in this release:
-<a href=" https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.04.md" target="_blank"> https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.04.md</a>
-<a href=" https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.05.md" target="_blank"> https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.05.md</a>
-<a href=" https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.06.md" target="_blank"> https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.06.md</a>
+<a href=" https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.04.md" target="_blank"> https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.04.md</a>
+<a href=" https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.05.md" target="_blank"> https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.05.md</a>
+<a href=" https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.06.md" target="_blank"> https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.06.md</a>
 
 Some of the new compiler features added to this release include:
 <ul>

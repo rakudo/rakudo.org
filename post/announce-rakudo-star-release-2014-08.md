@@ -16,17 +16,17 @@ One shipped module is known to fail on Parrot (JSON::RPC).
 
 In the Perl 6 world, we make a distinction between the language
 ("Perl 6") and specific implementations of the language such as
-"Rakudo Perl". This Star release includes <a href="https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.08.md">release 2014.08</a> of the
+"Rakudo Perl". This Star release includes <a href="https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.08.md">release 2014.08</a> of the
 <a href="http://github.com/rakudo/rakudo">Rakudo Perl 6 compiler</a>, version 6.7.0 of the <a href="http://parrot.org/">Parrot Virtual</a>
 <a href="http://parrot.org/">Machine</a>, version 2014.08 of <a href="http://moarvm.org/">MoarVM</a>, plus various modules,
 documentation, and other resources collected from the Perl 6
 community.
 
 The 2014.08 release also covers the following announcements:
-<a href="https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.05.md">https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.05.md</a>
-<a href="https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.06.md">https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.06.md</a>
-<a href="https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.07.md">https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.07.md</a>
-<a href="https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.08.md">https://github.com/rakudo/rakudo/blob/nom/docs/announce/2014.08.md</a>
+<a href="https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.05.md">https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.05.md</a>
+<a href="https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.06.md">https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.06.md</a>
+<a href="https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.07.md">https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.07.md</a>
+<a href="https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.08.md">https://github.com/rakudo/rakudo/blob/master/docs/announce/2014.08.md</a>
 
 Some of the new features added to this release include:
 <ul>

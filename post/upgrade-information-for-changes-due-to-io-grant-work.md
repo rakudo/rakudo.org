@@ -10,7 +10,7 @@ receive this work as-it-happens.</p>
 <h2>Why?</h2>
 <p>If you only used documented features, the likelihood of you needing to change any of your code is low. The 6.c language changes due to IO Grant work affect either routines that are rarely used or undocumented routines that might have been used by users assuming they were part of the language.</p>
 <h2>What?</h2>
-<p>This notice describes only <strong>changes affecting existing code</strong> and only for <strong>6.c language</strong>. It does <strong>NOT</strong> include any non-conflicting changes or changes slated for 6.d language. If you're interested in the full list of changes, you can find it in <a href="https://github.com/rakudo/rakudo/blob/nom/docs/2017-IO-Grant--Action-Plan.md">the IO Grant Action Plan</a></p>
+<p>This notice describes only <strong>changes affecting existing code</strong> and only for <strong>6.c language</strong>. It does <strong>NOT</strong> include any non-conflicting changes or changes slated for 6.d language. If you're interested in the full list of changes, you can find it in <a href="https://github.com/rakudo/rakudo/blob/master/docs/2017-IO-Grant--Action-Plan.md">the IO Grant Action Plan</a></p>
 <p>The changes that may affect existing code are:</p>
 <ul>
 <li><code>role IO</code> together with its <code>IO.umask</code> method have been removed without any replacement</li>

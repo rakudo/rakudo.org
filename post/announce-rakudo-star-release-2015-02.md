@@ -17,7 +17,7 @@ One shipped module is known to fail on Parrot (jsonrpc).</p>
 Machine</a>, version 2015.02 of <a href="http://moarvm.org/">MoarVM</a>, plus various modules,
 documentation, and other resources collected from the Perl 6
 community.</p>
-<pre><code>https://github.com/rakudo/rakudo/blob/nom/docs/announce/2015.02.md
+<pre><code>https://github.com/rakudo/rakudo/blob/master/docs/announce/2015.02.md
 </code></pre>
 <p>Some of the new compiler features added to this release include:</p>
 <ul>

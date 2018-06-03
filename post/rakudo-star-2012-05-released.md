@@ -65,6 +65,6 @@ for making Rakudo Star possible.  If you would like to contribute,
 see http://rakudo.org/how-to-help, ask on the perl6-compiler@perl.org
 mailing list, or join us on IRC #perl6 on freenode.
 
-[0] https://github.com/rakudo/rakudo/blob/nom/docs/announce/2012.05
+[0] https://github.com/rakudo/rakudo/blob/master/docs/announce/2012.05
 [1] http://github.com/rakudo/rakudo
 [2] http://parrot.org/

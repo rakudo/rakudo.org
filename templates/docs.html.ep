@@ -6,7 +6,7 @@
   for the compiler itself, and the language it implements.</p>
 
 <p>The main documentation for the compiler itself is
-  <a href="https://github.com/rakudo/rakudo/blob/nom/docs/running.pod">its
+  <a href="https://github.com/rakudo/rakudo/blob/master/docs/running.pod">its
     manual page</a>.</p>
 
 <p>Documentation for the <%== p6 %> language can be found on the
