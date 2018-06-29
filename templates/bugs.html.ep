@@ -20,6 +20,7 @@
   there instead.</p>
 
 <ul class="flush-list">
+  <li><a href="https://github.com/perl6/user-experience/issues/new">User Experience Repo</a></li>
   <li><a href="https://github.com/perl6/nqp/issues/new">NQP</a></li>
   <li><a href="https://github.com/MoarVM/MoarVM/issues/new">MoarVM</a></li>
   <li><a href="https://github.com/perl6/doc/issues/new">Documentation</a></li>
