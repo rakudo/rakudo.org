@@ -74,6 +74,28 @@ sudo yum groupinstall 'Development Tools'</code></pre>
   </div
 
   ><div class="card bg-dark">
+    <div class="card-header" id="prereq-macos">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse" data-target="#collapse-prepreq-macos"
+          aria-expanded="false" aria-controls="collapse-prepreq-macos">
+          MacOS
+        </button>
+      </h5>
+    </div>
+    <div id="collapse-prepreq-macos" class="collapse"
+      aria-labelledby="collapse-prereq-macos"
+      data-parent="#prepreqs-accordion">
+      <div class="card-body">
+        <p>You need <code>perl</code>, <code>git</code>,
+          <code>make</code> or something similar
+          and a C compiler. You can get all that by running:</p>
+        <pre class="mb-0"><code>xcode-select --install</code></pre>
+      </div>
+    </div>
+  </div
+
+  ><div class="card bg-dark">
     <div class="card-header" id="prereq-wsl">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed btn-block text-left"
