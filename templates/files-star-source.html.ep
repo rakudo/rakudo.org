@@ -24,8 +24,7 @@
         <button class="btn btn-link collapsed btn-block text-left"
           data-toggle="collapse"
           data-target="#collapse-nix" aria-expanded="false"
-          aria-controls="build-nix">*nix /
-          <abbr title="Windows Subsystem for Linux">WSL</abbr></button>
+          aria-controls="build-nix">Linux / MacOS
       </h5>
     </div>
     <div id="collapse-nix" class="collapse"
@@ -36,8 +35,9 @@
 
         <pre class="suck-b"><code>mkdir ~/rakudo &amp;&amp; cd $_
 curl -LJO <%= url_for(latest => product => 'star', os => 'source')->to_abs %>
-tar -xvzf rakudo-star-*.tar.gz
-cd rakudo-star-*
+tar -xzf rakudo-star-*.tar.gz
+mv rakudo-star-*/* .
+rm -fr rakudo-star-*
 
 perl Configure.pl --backend=moar --gen-moar
 make
@@ -103,8 +103,69 @@ gmake
         </ul>
       </div>
     </div>
-  </div>
-</div>
+  </div
+  ><div class="card bg-dark">
+    <div class="card-header" id="build-wsl">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse"
+          data-target="#collapse-build-wsl" aria-expanded="false"
+          aria-controls="collapse-build-wsl">
+          <abbr title="Windows Subsystem for Linux">WSL</abbr>
+          ("Bash on Windows")
+      </h5>
+    </div>
+    <div id="collapse-build-wsl" class="collapse"
+      aria-labelledby="collapse-build-wsl" data-parent="#build-accordion">
+      <div class="card-body">
+        <p>The exact steps required may differ, depending on
+  your operating system:</p>
+
+        <pre class="suck-b"><code>mkdir ~/rakudo &amp;&amp; cd $_
+curl -LJO <%= url_for(latest => product => 'star', os => 'source')->to_abs %>
+tar -xzf rakudo-star-*.tar.gz
+mv rakudo-star-*/* .
+rm -fr rakudo-star-*
+
+RAK_INSTALL_DIR=$(pwd)/install
+cd nqp
+git clone https://github.com/MoarVM/MoarVM
+
+cd MoarVM # build MoarVM
+git checkout $(cat ../tools/build/MOAR_REVISION)
+perl Configure.pl --prefix="$RAK_INSTALL_DIR"
+make -j8
+
+# Set execstack on libmoar.so; this is for NativeCall stuff
+sudo execstack -c libmoar.so
+
+# Install MoarVM
+make install
+
+cd ../ # then, build NQP
+perl Configure.pl --prefix="$RAK_INSTALL_DIR"
+make
+make install
+
+cd ../ # finally, build Rakudo
+perl Configure.pl --prefix="$RAK_INSTALL_DIR"
+make
+
+# If you wish, you can run the tests
+# Depending on your machine, they could take over half an hour to run
+make rakudo-test
+make rakudo-spectest
+
+# Install Rakudo and all the modules
+make install
+
+echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH" \\
+    >> ~/.bashrc
+source ~/.bashrc</code></pre>
+      </div>
+    </div>
+  </div
+></div>
 
 <hr>
 

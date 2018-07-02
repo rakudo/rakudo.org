@@ -25,8 +25,8 @@
         <button class="btn btn-link collapsed btn-block text-left"
           data-toggle="collapse"
           data-target="#collapse-nix" aria-expanded="false"
-          aria-controls="build-nix">*nix /
-          <abbr title="Windows Subsystem for Linux">WSL</abbr></button>
+          aria-controls="build-nix">Linux / MacOS
+        </button>
       </h5>
     </div>
     <div id="collapse-nix" class="collapse"
@@ -50,7 +50,8 @@ make spectest
 
 make install
 
-echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH" >> ~/.bashrc
+echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH" \\
+    >> ~/.bashrc
 source ~/.bashrc</code></pre>
         <p>You'll likely want to also install
           <a href="https://modules.perl6.org/dist/zef:github"><code
@@ -121,8 +122,74 @@ cd zef
 perl6 -Ilib bin/zef install .</code></pre>
       </div>
     </div>
-  </div>
-</div>
+  </div
+  ><div class="card bg-dark">
+    <div class="card-header" id="build-wsl">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse"
+          data-target="#collapse-build-wsl" aria-expanded="false"
+          aria-controls="collapse-build-wsl">
+          <abbr title="Windows Subsystem for Linux">WSL</abbr>
+          ("Bash on Windows")
+        </button>
+      </h5>
+    </div>
+    <div id="collapse-build-wsl" class="collapse"
+      aria-labelledby="collapse-build-wsl" data-parent="#build-accordion">
+      <div class="card-body">
+        <pre><code>mkdir ~/rakudo &amp;&amp; cd $_
+curl -LJO <%= url_for(latest => product => 'rakudo', os => 'source')->to_abs %>
+tar -xzf rakudo-*.tar.gz
+mv rakudo-*/* .
+rm -fr rakudo-*
+
+RAK_INSTALL_DIR=$(pwd)/install
+git clone https://github.com/perl6/nqp/
+cd nqp
+git checkout $(cat ../tools/build/NQP_REVISION)
+git clone https://github.com/MoarVM/MoarVM
+
+cd MoarVM # build MoarVM
+git checkout $(cat ../tools/build/MOAR_REVISION)
+perl Configure.pl --prefix="$RAK_INSTALL_DIR"
+make -j8
+
+# Set execstack on libmoar.so; this is for NativeCall stuff
+sudo execstack -c libmoar.so
+
+# Install MoarVM
+make install
+
+cd ../ # then, build NQP
+perl Configure.pl --prefix="$RAK_INSTALL_DIR"
+make
+make install
+
+cd ../ # finally, build Rakudo
+perl Configure.pl --prefix="$RAK_INSTALL_DIR"
+make
+make install
+
+# If you wish, you can run the tests
+# Depending on your machine, they could take over half an hour to run
+make test
+make spectest
+
+echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH" \\
+    >> ~/.bashrc
+source ~/.bashrc</code></pre>
+        <p>You'll likely want to also install
+          <a href="https://modules.perl6.org/dist/zef:github"><code
+            >zef</code></a> module manager:</p>
+          <pre class="suck-b"><code>cd /tmp/ &amp;&amp;
+git clone https://github.com/ugexe/zef.git &amp;&amp;
+cd zef &amp;&amp;
+perl6 -Ilib bin/zef install .</code></pre>
+      </div>
+    </div>
+  </div
+></div>
 
 <hr>
 

@@ -9,18 +9,18 @@
       <h5 class="mb-0">
         <button class="btn btn-link collapsed btn-block text-left"
           data-toggle="collapse"
-          data-target="#collapse-debian" aria-expanded="false"
-          aria-controls="prereq-debian">Debian / Ubuntu /
-          <abbr title="Windows Subsystem for Linux">WSL</abbr>
-
+          data-target="#collapse-prepreq-debian" aria-expanded="false"
+          aria-controls="collapse-prereq-debian">Debian / Ubuntu
+        </button>
       </h5>
     </div>
 
-    <div id="collapse-debian" class="collapse"
-      aria-labelledby="prereq-debian" data-parent="#prepreqs-accordion">
+    <div id="collapse-prepreq-debian" class="collapse"
+      aria-labelledby="collapse-prereq-debian"
+      data-parent="#prepreqs-accordion">
       <div class="card-body">
         <p class="suck-b">Run:
-          <code>sudo apt-get install build-essential git libssl-dev</code></p>
+          <code>sudo apt-get install build-essential git</code></p>
       </div>
     </div>
   </div
@@ -55,14 +55,15 @@ sudo yum groupinstall 'Development Tools'</code></pre>
     <div class="card-header" id="prereq-windows">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed btn-block text-left"
-          data-toggle="collapse" data-target="#collapse-windows"
-          aria-expanded="false" aria-controls="collapse-windows">
+          data-toggle="collapse" data-target="#collapse-prepreq-windows"
+          aria-expanded="false" aria-controls="collapse-prepreq-windows">
           Windows
         </button>
       </h5>
     </div>
-    <div id="collapse-windows" class="collapse"
-      aria-labelledby="prereq-windows" data-parent="#prepreqs-accordion">
+    <div id="collapse-prepreq-windows" class="collapse"
+      aria-labelledby="collapse-prereq-windows"
+      data-parent="#prepreqs-accordion">
       <div class="card-body">
         <p class="suck-b">Download and install
           <a href="https://git-scm.com/download/win">git</a> and
@@ -70,5 +71,26 @@ sudo yum groupinstall 'Development Tools'</code></pre>
         </p>
       </div>
     </div>
-  </div>
-</div>
+  </div
+
+  ><div class="card bg-dark">
+    <div class="card-header" id="prereq-wsl">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse"
+          data-target="#collapse-prepreq-wsl" aria-expanded="false"
+          aria-controls="collapse-prereq-wsl">
+            <abbr title="Windows Subsystem for Linux">WSL</abbr> ("Bash on Windows")
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapse-prepreq-wsl" class="collapse"
+      aria-labelledby="collapse-prereq-wsl" data-parent="#prepreqs-accordion">
+      <div class="card-body">
+        <p class="suck-b">Run:
+          <code>sudo apt-get install build-essential git execstack</code></p>
+      </div>
+    </div>
+  </div
+></div>
