@@ -429,6 +429,20 @@ pre, code {
         text-decoration: none;
         padding: 1rem;
     }
+
+    .card-header button:after {
+        font-family: 'Icons';
+        content: '\e09d';
+        float: left;
+        font-size: 80%;
+        position: relative;
+        top: 2px;
+        color: #ffc107;
+        margin-right: 10px;
+    }
+    .card-header button.collapsed:after {
+        content: '\e0aa';
+    }
 }
 
 .suck-b {
