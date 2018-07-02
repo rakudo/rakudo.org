@@ -83,6 +83,9 @@ footer {
     a[href*="twitter.com"]:before {
         background-image: url(/asset/pics/tw.svg);
     }
+    a[href*="/feed"]:before {
+        background-image: url(/asset/pics/rss.svg);
+    }
 }
 footer:hover {
     a:before {
