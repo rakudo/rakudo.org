@@ -46,7 +46,8 @@ sudo yum groupinstall 'Development Tools'</code></pre>
           <code>sudo yum install perl-ExtUtils-Command</code></p>
 
         <p class="suck-b">On CentOS 7, also run:
-          <code>sudo yum install perl-autodie</code></p>
+          <code>sudo yum install perl-autodie
+sudo yum install perl-CPAN</code></p>
       </div>
     </div>
   </div
