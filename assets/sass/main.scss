@@ -433,13 +433,19 @@ pre, code {
         padding: 1rem;
     }
 
+    .card-header button {
+        position: relative;
+        text-indent: 15px;
+    }
+
     .card-header button:after {
         font-family: 'Icons';
         content: '\e09d';
-        float: left;
         font-size: 80%;
-        position: relative;
-        top: 2px;
+        position: absolute;
+        top: 50%;
+        margin-top: -11px;
+        left: -5px;
         color: #ffc107;
         margin-right: 10px;
     }
