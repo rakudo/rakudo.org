@@ -10,7 +10,6 @@ before=$(git rev-parse HEAD)
 git checkout origin/master
 after=$(git rev-parse HEAD)
 cp update-rakudo.org.sh ../
-cp start-rakudo.org.sh  ../
 
 if [ "$before" != "$after" ]
 then
