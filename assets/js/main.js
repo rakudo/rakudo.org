@@ -56,12 +56,10 @@ function process_platform_specific_content() {
     var fam    = query_param('platform', platform.os.family).toLowerCase(),
         wanted = 'generic';
 
-    if (fam.indexOf('windows') >= 0 && fam.indexOf('windows phone') == -1) {
+    if (fam.indexOf('windows') >= 0 && fam.indexOf('windows phone') == -1)
         wanted = 'windows';
-    }
-    else if (fam.match(/ubuntu|debian|fedora|red hat|suse|ios|android/)) {
+    else if (fam.match(/ubuntu|debian|fedora|red hat|suse|ios|android/))
         wanted = fam.replace(/ /g, '_');
-    }
 
     $('.platform-options').each(function(){
         var show = $(this).find('[data-platform~=' + wanted + ']');
