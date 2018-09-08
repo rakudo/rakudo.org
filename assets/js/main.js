@@ -71,22 +71,15 @@ function process_platform_specific_content() {
         show.css({position: 'static', left: 'auto'});
     })
 
-    if ($('.downloads-panel [data-platform-mark~=' + wanted + ']').length) {
-        $('.downloads-panel [data-platform-mark]').each(function(){
-            if ($(this).attr('data-platform-mark').indexOf(wanted) >= 0) {
-                $(this).removeClass('btn-dark').addClass('btn-primary')
-                .next('a').removeClass('btn-dark').addClass('btn-warning');
-            }
-        });
-    }
-    else {
-        $('.downloads-panel .download')
-            .removeClass('btn-dark').addClass('btn-primary')
-        .next('a')
-            .removeClass('btn-dark').addClass('btn-warning')
-    }
-}
+    if (! $('.downloads-panel [data-platform-mark~=' + wanted + ']').length)
+        wanted = 'generic';
 
+    $('.downloads-panel [data-platform-mark]').each(function(){
+        if ($(this).attr('data-platform-mark').indexOf(wanted) >= 0)
+            $(this)   .removeClass('btn-dark').addClass('btn-primary')
+            .next('a').removeClass('btn-dark').addClass('btn-warning');
+    });
+}
 
 function query_param(wanted, or) {
     var params = decodeURIComponent(
