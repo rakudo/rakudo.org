@@ -20,7 +20,7 @@
       data-parent="#prepreqs-accordion">
       <div class="card-body">
         <p class="suck-b">Run:
-          <code>sudo apt-get install build-essential git</code></p>
+          <code>sudo apt-get install build-essential git libssl-dev</code></p>
       </div>
     </div>
   </div
