@@ -32,14 +32,9 @@ The servers listen on localhost, port `4242`: http://localhost:4242
 ## Updating Live Site
 
 A cronjob runs [`update-rakudo.org.sh`](update-rakudo.org.sh) script every
-5 minutes.
+5 minutes as well as after reboot.
 
-The script pulls changes from the repo. For blog posts, the updates will show
-up automatically. For other changes, you need to ask for app restart by
-putting string `[REAPP]` (including square brackets) into the commit title.
-
-If the box the site lives on gets rebooted, the [`start-rakudo.org.sh`](start-rakudo.org.sh)
-script gets run by cron on boot. It fetches new commits and starts the app.
+The script pulls changes from the repo and hot-restarts the web app.
 
 ### Infrustructure Setup
 
