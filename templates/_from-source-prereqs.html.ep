@@ -52,6 +52,32 @@ sudo yum groupinstall 'Development Tools'</code></pre>
   </div
 
   ><div class="card bg-dark">
+    <div class="card-header" id="prereq-suse">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse" data-target="#collapse-suse"
+          aria-expanded="false" aria-controls="collapse-suse">
+          SUSE
+        </button>
+      </h5>
+    </div>
+    <div id="collapse-suse" class="collapse" aria-labelledby="prereq-suse"
+      data-parent="#prepreqs-accordion">
+      <div class="card-body">
+        <p class="suck-b">Run:</p>
+        <pre><code>sudo zypper -n install --type pattern Basis-Devel</code></pre>
+
+        <p>On Fedora, also run:
+          <code>sudo yum install perl-ExtUtils-Command</code></p>
+
+        <p class="suck-b">On CentOS 7, also run:
+          <code>sudo yum install perl-autodie perl-Digest-SHA</code></p>
+      </div>
+    </div>
+  </div
+
+
+  ><div class="card bg-dark">
     <div class="card-header" id="prereq-windows">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed btn-block text-left"
