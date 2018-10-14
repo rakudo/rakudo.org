@@ -64,8 +64,8 @@ sudo yum groupinstall 'Development Tools'</code></pre>
     <div id="collapse-suse" class="collapse" aria-labelledby="prereq-suse"
       data-parent="#prepreqs-accordion">
       <div class="card-body">
-        <p class="suck-b">Run:</p>
-        <pre><code>sudo zypper -n install --type pattern Basis-Devel</code></pre>
+        <p class="suck-b">Run:
+          <code>sudo zypper -n install --type pattern Basis-Devel</code></p>
       </div>
     </div>
   </div
