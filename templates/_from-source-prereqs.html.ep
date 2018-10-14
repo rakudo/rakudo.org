@@ -57,7 +57,7 @@ sudo yum groupinstall 'Development Tools'</code></pre>
         <button class="btn btn-link collapsed btn-block text-left"
           data-toggle="collapse" data-target="#collapse-suse"
           aria-expanded="false" aria-controls="collapse-suse">
-          SUSE
+          openSUSE
         </button>
       </h5>
     </div>
@@ -65,7 +65,7 @@ sudo yum groupinstall 'Development Tools'</code></pre>
       data-parent="#prepreqs-accordion">
       <div class="card-body">
         <p class="suck-b">Run:
-          <code>sudo zypper -n install --type pattern Basis-Devel</code></p>
+          <code>sudo zypper in -t pattern devel_basis</code></p>
       </div>
     </div>
   </div
