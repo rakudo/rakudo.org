@@ -21,7 +21,7 @@
         <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png"
           alt="">
         <span class="rakudo">Rakudo Star</span>
-        <span class="version">2018.06</span>
+        <span class="version">2018.10</span>
         <span class="details">Windows 64-bit</span>
       </a>
       <a class="btn btn-sm btn-dark btn-block"
@@ -35,7 +35,7 @@
         <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png"
           alt="">
         <span class="rakudo">Rakudo Star</span>
-        <span class="version">2018.06</span>
+        <span class="version">2018.10</span>
         <span class="details">macOS</span>
       </a>
       <a class="btn btn-sm btn-dark btn-block"
@@ -49,7 +49,7 @@
         <img class="os-icon" height=50 src="/asset/pics/os-icon-source.png"
           alt="">
         <span class="rakudo">Rakudo Star</span>
-        <span class="version">2018.06</span>
+        <span class="version">2018.10</span>
         <span class="details">Source (Linux, others)</span>
       </a>
       <a class="btn btn-sm btn-dark btn-block"
