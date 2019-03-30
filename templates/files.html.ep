@@ -35,7 +35,7 @@
         <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png"
           alt="">
         <span class="rakudo">Rakudo Star</span>
-        <span class="version">2018.10</span>
+        <span class="version">2019.03</span>
         <span class="details">macOS</span>
       </a>
       <a class="btn btn-sm btn-dark btn-block"
