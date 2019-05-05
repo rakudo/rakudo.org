@@ -16,12 +16,7 @@
 
   <div class="row downloads-panel">
     <div class="col-sm-6 col-md-4">
-      <a class="download btn btn-dark btn-block" data-platform-mark="windows"
-      <!-- ------------------------------------------------------------------- -->
-        <!-- Revert when new infra is up and running -->
-        <!-- href="<%= url_for latest => product => 'star', os => 'win64' %>"> -->
-        href="https://rakudostar.com/latest/star/win64">
-      <!-- ------------------------------------------------------------------- -->
+      <a class="download btn btn-dark btn-block" data-platform-mark="windows" href="https://rakudostar.com/latest/star/win64">
         <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png"
           alt="">
         <span class="rakudo">Rakudo Star</span>
@@ -34,12 +29,7 @@
     </div>
     <div class="col-sm-6 col-md-4">
       <a class="download btn btn-dark btn-block"
-        data-platform-mark="ios"
-        <!-- ------------------------------------------------------------------- -->
-        <!-- Revert when new infra is up and running -->
-        <!-- href="<%= url_for latest => product => 'star', os => 'macos' %>"> -->
-        href="https://rakudostar.com/latest/star/macos">
-        <!-- ------------------------------------------------------------------- -->
+        data-platform-mark="ios" href="https://rakudostar.com/latest/star/macos">
         <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png"
           alt="">
         <span class="rakudo">Rakudo Star</span>
@@ -52,12 +42,7 @@
     </div>
     <div class="col-sm-12 col-md-4">
       <a class="download btn btn-dark btn-block"
-        data-platform-mark="ubuntu debian fedora red hat suse generic"
-        <!-- ------------------------------------------------------------------- -->
-        <!-- Revert when new infra is up and running -->
-        <!-- href="<%= url_for latest => product => 'star', os => 'source' %>"> -->
-        href="https://rakudostar.com/latest/star/source">
-        <!-- ------------------------------------------------------------------- -->
+        data-platform-mark="ubuntu debian fedora red hat suse generic" href="https://rakudostar.com/latest/star/source">
         <img class="os-icon" height=50 src="/asset/pics/os-icon-source.png"
           alt="">
         <span class="rakudo">Rakudo Star</span>
@@ -72,12 +57,7 @@
 
   <p class="text-info"><small><span class="oi oi-clock"></span>
     You can also download one of the
-    <a class="text-info"
-    <!-- ------------------------------------------------------------------- -->
-    <!-- Revert when new infra is up and running -->
-      <!-- href="<%= url_for 'files-star' %>">older releases</a>.</small></p> -->
-      href="https://rakudostar.com/files/star">older releases</a>.</small></p>
-    <!-- ------------------------------------------------------------------- -->
+    <a class="text-info" href="https://rakudostar.com/files/star">older releases</a>.</small></p>
 </div>
 
 <h3 class="h4">Alternative Options</h3>
