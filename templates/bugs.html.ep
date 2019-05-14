@@ -10,9 +10,6 @@
   or to submit possible feature suggestions. You can use it even if you're
   unsure where to file your report.</p>
 
-<p><small>If you do not have a GitHub account, you can email your report to
-  <a href="mailto:rakudobug@perl.org">rakudobug@perl.org</a>.</small></p>
-
 <h3 class="h4">Sub-Projects</h3>
 
 <p>Rakudo uses some projects that have their own repositories. If you
