@@ -8,11 +8,20 @@
     Install Rakudo Star on Windows</h2>
 
 <ol class="flush-list">
-  <li>Download the <a href="https://rakudostar.com/latest/star/win64">
-  latest Rakudo Star 64-bit Windows <code>.msi</code></a> installer file.
-
-    <a href="https://rakudostar.com/files/star" class="text-info"
-    ><small><span class="oi oi-clock"></span>
+  <li>Download the
+  <!-- ------------------------------------------------------------------- -->
+  <!-- Revert when new infra is up and running -->
+  <!-- <a href="<%= url_for latest => product => 'star', os => 'win64' %>" -->
+  <a href="https://rakudostar.com/latest/star/win64"
+  <!-- ------------------------------------------------------------------- -->
+    >latest Rakudo Star 64-bit Windows <code>.msi</code></a> installer file.
+  <!-- ------------------------------------------------------------------- -->
+  <!-- Revert when new infra is up and running -->
+    <!-- <a href="<%= url_for 'files-star' %>" -->
+    <a href="https://rakudostar.com/files/star"
+  <!-- ------------------------------------------------------------------- -->
+    class="text-info"
+      ><small><span class="oi oi-clock"></span>
         [older releases]</small></a></li>
   <li>Run the installer and follow the instructions on the screen</li>
 </ol>
