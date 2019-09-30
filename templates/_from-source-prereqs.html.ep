@@ -72,6 +72,26 @@ sudo yum groupinstall 'Development Tools'</code></pre>
 
 
   ><div class="card bg-dark">
+    <div class="card-header" id="prereq-freebsd">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed btn-block text-left"
+          data-toggle="collapse" data-target="#collapse-freebsd"
+          aria-expanded="false" aria-controls="collapse-freebsd">
+          FreeBSD
+        </button>
+      </h5>
+    </div>
+    <div id="collapse-freebsd" class="collapse" aria-labelledby="prereq-freebsd"
+      data-parent="#prepreqs-accordion">
+      <div class="card-body">
+        <p class="suck-b">Run:
+          <code>pkg install gcc gmake openssl</code></p>
+      </div>
+    </div>
+  </div
+
+
+  ><div class="card bg-dark">
     <div class="card-header" id="prereq-openbsd">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed btn-block text-left"
