@@ -1,5 +1,5 @@
 % layout 'default';
-% title 'Rakudo Perl 6 Compiler';
+% title 'Rakudo Compiler';
 
 <main role="main" class="inner cover">
  <div class="row">
@@ -14,7 +14,7 @@
     <div class="col-md-6">
       <h1 class="cover-heading">Rakudo <%== p6 %> Compiler</h1>
       <p class="lead">Production-ready, stable implementation of the
-        <a href="https://perl6.org/"><%== p6 %></a> language.</p>
+        <a href="https://raku.org/"><%== p6 %></a> language.</p>
       <p class="lead">
           <a href="<%= url_for 'files' %>" data-platform="generic"
             class="btn btn-lg btn-primary">

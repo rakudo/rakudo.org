@@ -1,5 +1,5 @@
 % layout 'default';
-% title 'Perl 6 Community';
+% title 'Raku Community';
 
 <h2 class="h1"><%== p6 %> Community</h2>
 <p class="lead">Our
@@ -7,7 +7,7 @@
   community is the flagship "feature" of <%== p6 %>.</p>
 
 <p>The <a href="<%= url_for 'people-irc' %>"
-    class="btn btn-primary btn-sm">#perl6 IRC</a>
+    class="btn btn-primary btn-sm">#raku IRC</a>
   chat channel on Freenode
   is the primary means of communication among
   <%== p6 %> contributors, which makes it a great place to receive expert help
@@ -18,12 +18,12 @@
   <li><a href="https://twitter.com/perl6org">@perl6org Twitter feed</a></li>
   <li><a href="https://www.facebook.com/groups/perl6/"><%== p6 %> Facebook
     group</a></li>
-  <li><a href="https://www.reddit.com/r/perl6/">r/perl6 subreddit</a></li>
-  <li><a href="https://stackoverflow.com/tags/perl6/info"><%== p6 %>
+  <li><a href="https://www.reddit.com/r/rakulang/">r/rakulang subreddit</a></li>
+  <li><a href="https://stackoverflow.com/tags/raku/info"><%== p6 %>
     StackOverflow questions</a></li>
   <li><a href="https://lists.perl.org/list/perl6-users.html">perl6-users
     mailing list</a></li>
-  <li><a href="<%= url_for 'people-irc-dev' %>">#perl6-dev
+  <li><a href="<%= url_for 'people-irc-dev' %>">#raku-dev
     IRC channel</a> <small>(mostly for Rakudo core development)</small></li>
 </ul>
 
@@ -32,7 +32,7 @@
 
 <p>Would you like to be one of the people making Rakudo <%== p6 %> better?
   Check out
-  our <a href="https://perl6.org/community/#Getting-Involved">Getting
+  our <a href="https://raku.org/community/#Getting-Involved">Getting
   Involved</a> page or
   <a href="<%= url_for 'people-irc' %>">ask us</a> how your
   skills can be best applied.</p>

@@ -9,7 +9,7 @@
     <meta name="twitter:image"
       content="<%= url_for('/asset/logo.png')->to_abs %>">
     <title><%= $title %>
-      - Rakudo Compiler for Perl 6 Programming Language</title>
+      - Rakudo Compiler for Raku Programming Language</title>
     %= asset 'app.css'
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
   </head>
@@ -52,8 +52,8 @@
         <div class="inner">
           <p><a href="https://github.com/rakudo/rakudo">rakudo/rakudo</a>
             | <a href="https://twitter.com/perl6org">@perl6org</a>
-            | <a href="https://webchat.freenode.net/?channels=#perl6"
-              >#perl6</a>
+            | <a href="https://webchat.freenode.net/?channels=#raku"
+              >#raku</a>
             | <a href="/feed">posts rss</a>
           </p>
         </div>

@@ -1,10 +1,10 @@
 % layout 'default';
-% title 'About the Rakudo Perl 6 Compiler';
+% title 'About the Rakudo Compiler';
 
 <h2>Rakudo <%== p6 %></h2>
 
 <p>Rakudo <%== p6 %>, or simply <strong>Rakudo</strong>, is a compiler for the
-  <a title="Perl&nbsp;6" href="https://perl6.org/"><%== p6 %></a> programming
+  <a title="Raku" href="https://raku.org/"><%== p6 %></a> programming
   language.</p>
 
 <p>Rakudo is licensed under the terms of the

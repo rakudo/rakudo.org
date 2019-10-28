@@ -107,10 +107,10 @@ get '/dl/:product/*bin' => sub {
 
 
 get '/people/irc' => sub {
-    shift->redirect_to('https://webchat.freenode.net/?channels=#perl6');
+    shift->redirect_to('https://webchat.freenode.net/?channels=#raku');
 } => 'people-irc';
 get '/people/irc-dev' => sub {
-    shift->redirect_to('https://webchat.freenode.net/?channels=#perl6-dev');
+    shift->redirect_to('https://webchat.freenode.net/?channels=#raku-dev');
 } => 'people-irc-dev';
 
 any $_ => sub {
@@ -185,7 +185,7 @@ helper contribute => sub {
     . q| title="Would you like to help us fix that? Contribute ♥"|
     . q| class="text-primary"><span class="oi oi-wrench"></span></a>|
 };
-helper p6 => sub { '<span class="nb">Perl 6</span>' };
+helper p6 => sub { '<span class="nb">Raku</span>' };
 helper nav_active => sub {
     my ($self, $nav) = @_;
     $self->url_for('current')->to_abs eq $self->url_for($nav)->to_abs
@@ -206,4 +206,3 @@ sub blog_date_to_feed_date {
     return Time::Moment->from_string("${date}T00:00:00Z")
         ->strftime("%a, %d %b %Y %H:%M:%S %z");
 }
-

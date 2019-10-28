@@ -8,16 +8,16 @@
     xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
     >
     <channel>
-    	<title>Rakudo Perl 6 Compiler</title>
+    	<title>Rakudo Compiler</title>
     	<atom:link href="<%= url_for('feed')->to_abs %>"
             rel="self" type="application/rss+xml" />
     	<link><%= url_for('home')->to_abs %></link>
-    	<description>Rakudo Perl 6 Compiler</description>
+    	<description>Rakudo Compiler</description>
     	<lastBuildDate><%= $last_update %></lastBuildDate>
     	<language>en</language>
         <image>
     		<url><%= url_for('/asset/pics/logo.png')->to_abs %></url>
-    		<title>Perl 6 Compiler</title>
+    		<title>Raku Compiler</title>
     		<link><%= url_for('home')->to_abs %></link>
     	</image>
 
