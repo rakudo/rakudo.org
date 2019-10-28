@@ -1,9 +1,9 @@
 % layout 'default';
 % title 'About the Rakudo Compiler';
 
-<h2>Rakudo <%== p6 %></h2>
+<h2>Rakudo</h2>
 
-<p>Rakudo <%== p6 %>, or simply <strong>Rakudo</strong>, is a compiler for the
+<p><strong>Rakudo</strong> is a compiler for the
   <a title="Raku" href="https://raku.org/"><%== p6 %></a> programming
   language.</p>
 

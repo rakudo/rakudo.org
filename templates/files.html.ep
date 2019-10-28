@@ -6,13 +6,13 @@
 <div class="jumbotron jumbotron-wiry">
   <h3 class="h4" id="Star">Rakudo Star Collection</h3>
 
-  <p>This option contains the Rakudo <%== p6 %> Compiler,
+  <p>This option contains the Rakudo Compiler,
     a <a href="https://github.com/rakudo/star/tree/master/modules">collection
     of modules</a> from the <%== p6 %>
     <a href="http://modules.perl6.org/">ecosystem</a>,
     and <a href="https://docs.perl6.org/">language documentation</a>.
     This is the most thoroughly tested release and is the recommended
-    way to use Rakudo <%== p6 %>.</p>
+    way to use Rakudo.</p>
 
   <div class="row downloads-panel">
     <div class="col-sm-6 col-md-4">
@@ -100,6 +100,6 @@
   code is evaluated as soon as you enter it, run <code>perl6</code>
   without any arguments.</p>
 
-<p>You can try out Rakudo <%== p6 %> without installing anything, using online
+<p>You can try out Rakudo without installing anything, using online
   code execution services like <a href="https://glot.io/new/perl6">Glot.IO</a>
   and <a href="https://tio.run/#perl6">TIO</a></p>
