@@ -50,17 +50,20 @@ get '/post/#post' => sub {
     $c->stash(%$meta, post => $html, title => $meta->{title});
 } => 'post';
 
-get $_ for qw{/about /bugs /docs /files /people};
+get $_ for qw{/about /files /docs /star /bugs /people};
 
 
 ### FILES ROUTES
-get '/files/star/windows'       => 'files-star-windows';
-get '/files/star/macos'         => 'files-star-macos';
-get '/files/star/source'        => 'files-star-source';
-get '/files/star/third-party'   => 'files-star-third-party';
+get '/star/windows'             => 'star-windows';
+get '/star/macos'               => 'star-macos';
+get '/star/source'              => 'star-source';
+get '/star/third-party'         => 'star-third-party';
 get '/files/rakudo/third-party' => 'files-rakudo-third-party';
 get '/files/rakudo/source'      => 'files-rakudo-source';
 
+get '/files' => sub {
+    my $self = shift;
+} => 'files';
 
 get '/files/star' => sub {
     my $self = shift;
@@ -104,7 +107,6 @@ get '/dl/:product/*bin' => sub {
 } => 'dl';
 
 ### </FILES ROUTES>
-
 
 get '/people/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku');

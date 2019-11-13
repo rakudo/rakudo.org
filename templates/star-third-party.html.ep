@@ -1,9 +1,9 @@
 % layout 'default';
-% title 'Third Party Packages - Install Rakudo Star';
-% make_crumbs home => 'Home', files => 'Files',
-%   'Install Rakudo Star from Third Party Packages';
+% title 'Third Party Packages - Install the Rakudo Star Bundle';
+% make_crumbs home => 'Home', star => 'Star Bundle',
+%   'Install the Rakudo Star Bundle from Third Party Packages';
 
-<h2 class="h1">3<sup>rd</sup>-Party Rakudo Star Packages</h2>
+<h2 class="h1">3<sup>rd</sup>-Party Rakudo Star Bundle Packages</h2>
 
 <p>These packages are built by third-party volunteers some of whom may not be
   directly associated with the Rakudo Core Team. As such, these packages
@@ -26,7 +26,7 @@
   <div class="col-md-4">
     <div class="card bg-dark">
       <div class="card-body">
-        <h5 class="card-title">Chocolately</h5>
+        <h5 class="card-title">Chocolatey</h5>
         <div class="card-text">
           <p>To install, run: <br> <code>choco install rakudostar</code></p>
           <a href="https://chocolatey.org/packages/rakudostar"
