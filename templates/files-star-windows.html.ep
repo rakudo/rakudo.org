@@ -1,15 +1,15 @@
 % layout 'default';
-% title 'Windows - Install the Rakudo Star Bundle';
-% make_crumbs home => 'Home', star => 'Star Bundle',
-%   'Install the Rakudo Star Bundle on Windows';
+% title 'Windows - Install Rakudo Star';
+% make_crumbs home => 'Home', files => 'Files',
+%   'Install Rakudo Star on Windows';
 
 <h2 class="h1">
   <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png" alt="">
-    Install the Rakudo Star Bundle on Windows</h2>
+    Install Rakudo Star on Windows</h2>
 
 <ol class="flush-list">
   <li>Download the <a href="<%= url_for
-    latest => product => 'star', os => 'win64' %>">latest Rakudo Star Bundle 64-bit Windows <code>.msi</code></a> installer file.
+    latest => product => 'star', os => 'win64' %>">latest Rakudo Star 64-bit Windows <code>.msi</code></a> installer file.
     <a href="<%= url_for 'files-star' %>" class="text-info"
       ><small><span class="oi oi-clock"></span>
         [older releases]</small></a></li>
@@ -27,7 +27,7 @@
   <li>If you use
     <%== third_party 'Chocolatey',
       'https://chocolatey.org/packages/rakudostar' %>,
-    run <code>choco install rakudostar</code> to install the Rakudo Star Bundle</li>
+    run <code>choco install rakudostar</code> to install Rakudo Star</li>
   <li>For WSL (Windows Subsystem for Linux), you can install
     <a href="<%= url_for 'files-star-third-party' %>">pre-built 3<sup>rd</sup>
     party packages</a> or <a href="<%= url_for 'files-star-source' %>">build
@@ -35,7 +35,7 @@
   <li>
     Installer for the <a href="<%= url_for
       latest => product => 'star', os => 'win32' %>"
-    >32-bit Rakudo Star Bundle</a> is available, but
+    >32-bit Rakudo Star</a> is available, but
     <i>is severely outdated</i> <%== contribute %>.
     You may wish to attempt to <a href="<%= url_for 'files-star-source' %>">
     build from source</a> instead.

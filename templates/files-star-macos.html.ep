@@ -1,16 +1,16 @@
 % layout 'default';
-% title 'macOS - Install the Rakudo Star Bundle';
-% make_crumbs home => 'Home', star => 'Star Bundle',
-%   'Install the Rakudo Star on MacOS';
+% title 'macOS - Install Rakudo Star';
+% make_crumbs home => 'Home', files => 'Files',
+%   'Install Rakudo Star on macOS';
 
 <h2 class="h1">
   <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png" alt="">
-    Install the Rakudo Star Bundle on MacOS</h2>
+    Install Rakudo Star on macOS</h2>
 
 <ol class="flush-list">
   <li>Download the <a href="<%= url_for
     latest => product => 'star', os => 'macos' %>"
-    >latest Rakudo Star Bundle MacOS <code>.dmg</code></a> disk image file.
+    >latest Rakudo Star macOS <code>.dmg</code></a> disk image file.
   <a href="<%= url_for 'files-star' %>" class="text-info"
     ><small><span class="oi oi-clock"></span>
       [older releases]</small></a></li>
@@ -22,7 +22,7 @@
 <h3 class="h4">Other Variants</h3>
 
 <ul class="flush-list">
-  <li>The Rakudo Star Bundle is available from <a href="https://brew.sh/">Homebrew</a>.
+  <li>Rakudo Star is available from <a href="https://brew.sh/">Homebrew</a>.
     To install, run <code>brew install rakudo-star</code></li>
 </ul>
 

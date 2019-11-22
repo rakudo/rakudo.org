@@ -22,12 +22,6 @@ sub all {
     $self->_get_vers_for($product);
 }
 
-sub platforms {
-    my ($self, $as_hashref) = @_;
-    my @platforms = qw(win linux macos src);
-    $as_hashref ? +{map +($_ => 1), @platforms } : c @platforms;
-}
-
 sub products {
     my ($self, $as_hashref) = @_;
     my $prefix = 1+length $self->binaries_dir;
@@ -37,28 +31,24 @@ sub products {
 }
 
 sub latest {
-    my ($self, $product, $platform, $type) = @_;
+    my ($self, $product, $os) = @_;
+    my %os_to_ext = (
+        win64  => {qw/.msi 1  .exe 1/},
+        win32  => {qw/.msi 1  .exe 1/},
+        macos  => {qw/.dmg 1  .AppImage 1/},
+        source => {qw/.tar.gz 1}/},
+    );
+    $os_to_ext{$os} or return;
 
-    my $products = $self->products('as_hashref');
-    $products->{$product} or die "Unknown product `$product`. "
-        . 'Did you specify the correct binaries dir?';
-
-    my $platforms = $self->platforms('as_hashref');
-    $platforms->{$platform} or die "Unknown platform `$platform`.";
-
-    my @bins;
     for my $ver ($self->all($product)->each) {
-        next unless $ver->latest;
         for my $bin ($ver->bins->each) {
-            my $bin_type = $bin->type;
-            next if $type && index($type, $bin_type) == -1;
-            next if $platform ne $bin->platform;
-            next if $type =~ '32'             && !$bin->is32;
-            next if (!$type || $type !~ '32') &&  $bin->is32;
-            push @bins, $bin;
+            if ($os_to_ext{$os}{$bin->ext}) {
+                next if $os eq 'win32' and not $bin->is32;
+                return $bin
+            }
         }
     }
-    return sort { $b->default cmp $a->default } @bins;
+    return;
 }
 
 sub bin {
@@ -76,75 +66,41 @@ sub _get_vers_for {
 
     my $dir = catfile $self->binaries_dir, $product;
     my $prefix = 1 + length $dir;
-
-    my %types = (
-        win      => {qw/.txt sig  .asc sig  .zip archive  .msi installer  .exe installer/},
-        linux    => {qw/.txt sig  .asc sig  .tar.gz archive/},
-        macos    => {qw/.txt sig  .asc sig  .tar.gz archive  .dmg installer  .AppImage installer/},
-        src      => {qw/.txt sig  .asc sig  .tar.gz archive/},
-    );
+    my @exts = qw/
+        .tar.gz.sha256.txt  .tar.gz.asc
+        .tar.gz
+        .dmg  .AppImage
+        .msi  .exe
+    /;
 
     my %vers;
     for my $full_path (bsd_glob catfile $dir, '*') {
         my $file = substr $full_path, $prefix;
-
-        unless ($file =~ /^$product-(\d{4}\.\d{2}(?:.\d+)?)-([^.]+)\..+$/) {
-            warn "Strange filename on file $full_path; skipping";
-            next;
-        }
-
-        my ($ver, $plat_text) = ($1, $2);
-
-        my $platform;
-        for my $pf ($self->platforms->each) {
-            if ($plat_text =~ /$pf/) {
-                $platform = $pf;
-                last;
-            }
-        }
-        unless ($platform) {
-            warn "Unknown platform on file $full_path; skipping";
-            next;
-        }
-
         my $ext;
-        for my $e (keys $types{$platform}->%*) {
-            next if $file !~ /$e$/;
-            $ext = $e;
+        for (@exts) {
+            next if -1 == rindex $file, $_;
+            $ext = $_;
             last;
         }
         unless ($ext) {
             warn "Unknown extension on file $full_path; skipping";
             next;
         }
-
-        my $type = $types{$platform}->{$ext};
-
-        my $is32 = ($plat_text =~ /\Qx86 (no JIT)\E/) ? 1 : 0;
-
-        my $default =
-            $platform eq 'win'   && $type eq 'installer' && $ext eq '.msi' ? 1 :
-            $platform eq 'macos' && $type eq 'installer' && $ext eq '.dmg' ? 1 :
-            $platform eq 'linux' && $type eq 'archive'                     ? 1 :
-            $platform eq 'src'   && $type eq 'archive'                     ? 1 :
-            0;
-
+        my ($name, $ver) = $file =~ /(.+?)[.-](\d{4}(?:.\d+)+)/;
+        my $is32 = ($file =~ /\Q-x86 (no JIT)\E/) ? 1 : 0;
         unless ($ver) {
             warn "Unknown version on file $full_path; skipping";
             next;
         }
 
         push $vers{$ver}->@*, Perl6Org::Binaries::Bin->new(
-            bin       => $file,
-            ext       => $ext,
-            name      => $product,
-            path      => catfile($product, $file),
-            ver       => $ver,
-            platform  => $platform,
-            is32      => $is32,
+            bin  => $file,
+            ext  => $ext,
+            name => $name,
+            path => catfile($product, $file),
+            ver  => $ver,
+            is32 => $is32,
             full_path => $full_path,
-            type      => $type,
-            default   => $default,
         );
     }
 
