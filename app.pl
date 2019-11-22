@@ -50,7 +50,7 @@ get '/post/#post' => sub {
     $c->stash(%$meta, post => $html, title => $meta->{title});
 } => 'post';
 
-get $_ for qw{/about /files /docs /star /bugs /people};
+get $_ for qw{/about /docs /star /bugs /people};
 
 
 ### FILES ROUTES
@@ -60,15 +60,16 @@ get '/star/source'              => 'star-source';
 get '/star/third-party'         => 'star-third-party';
 get '/files/rakudo/third-party' => 'files-rakudo-third-party';
 get '/files/rakudo/source'      => 'files-rakudo-source';
+get '/files/star'               => 'files-star';
 
 get '/files' => sub {
     my $self = shift;
+    $self->stash(
+        binaries   => $binaries,
+        body_class => 'files',
+    );
 } => 'files';
 
-get '/files/star' => sub {
-    my $self = shift;
-    $self->stash(vers => $binaries->all('star'));
-} => 'files-star';
 get '/files/rakudo' => sub {
     my $self = shift;
     $self->stash(
@@ -77,10 +78,12 @@ get '/files/rakudo' => sub {
     );
 } => 'files-rakudo';
 
-get '/latest/:product/:os' => sub {
+get '/latest/:product/:os' => { type => '' } => sub {
     my $self = shift;
-    my $bin = $binaries->latest($self->stash('product'), $self->stash('os'))
+    my @bins = $binaries->latest(
+        $self->stash('product'), $self->stash('os'), $self->stash('type'))
         or return $self->reply->not_found;
+    my $bin = $bins[0];
 
     $self->res->headers->content_type('application/octet-stream');
     $self->res->headers->content_disposition(
@@ -94,7 +97,7 @@ get '/dl/:product/*bin' => sub {
     my $bin = $binaries->bin($self->stash('product'), $self->stash('bin'))
         or return $self->reply->not_found;
 
-    if ($bin->ext =~ /\.(?:txt|asc)/) {
+    if ($bin->type eq 'sig') {
         $self->res->headers->content_type('text/plain');
     }
     else {

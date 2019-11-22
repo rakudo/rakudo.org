@@ -766,6 +766,10 @@ pre, code {
     display: block;
 }
 
+#body_files header {
+    margin-bottom: 0 !important;
+}
+
 
 .rakudo-do {
     color: $color-highlight;

@@ -11,11 +11,19 @@
       <p>The source is the basis from which all the other packages are created. If
       none of the other options suits your need, you can always compile Rakudo
       yourself from these sources.</p>
-
+      <p>
+      % my @src_bins = $binaries->latest('rakudo', 'src', 'archive');
+      % if (@src_bins) {
       <ul>
-        <li><a href="https://github.com/rakudo/rakudo/releases/download/rakudo-2019.11-src.tgz">rakudo-2019.11-src.tgz</a>
-        <li><a href="https://github.com/rakudo/rakudo/releases/download/rakudo-2019.11-src.zip">rakudo-2019.11-src.zip</a>
+        % for my $bin (@src_bins) {
+          <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
+        % }
       </ul>
+      % }
+      % else {
+        <code>No files available at this time. Sorry!</code>
+      % }
+      </p>
       <a class="btn btn-dark" href="https://github.com/rakudo/rakudo/releases">Older releases</a>
     </div>
 
@@ -27,13 +35,33 @@
     <div class="tab-content">
       <h4>Archives</h4>
       Archives and installers contain a pre-compiled Rakudo and the Zef module manager.
-      <p><ul>
-        <li><a href="https://github.com/rakudo/rakudo/releases/download/rakudo-2019.11-win-64bit.zip">rakudo-2019.11-win-64bit.zip</a>
-      </ul></p>
+      <p>
+      % my @win_arch_bins = $binaries->latest('rakudo', 'win', 'archive');
+      % if (@win_arch_bins) {
+        <ul>
+          % for my $bin (@win_arch_bins) {
+            <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
+          % }
+        </ul>
+      % }
+      % else {
+        <code>No files available at this time. Sorry!</code>
+      % }
+      </p>
       <h4>Installer</h4>
-      <ul>
-        <li><a href="https://github.com/rakudo/rakudo/releases/download/rakudo-2019.11-win-64bit.msi">rakudo-2019.11-win-64bit.msi</a>
-      </ul>
+      <p>
+      % my @win_inst_bins = $binaries->latest('rakudo', 'win', 'archive');
+      % if (@win_inst_bins) {
+        <ul>
+          % for my $bin (@win_inst_bins) {
+            <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
+          % }
+        </ul>
+      % }
+      % else {
+        <code>No files available at this time. Sorry!</code>
+      % }
+      </p>
       <a class="kick-b btn btn-dark" href="https://github.com/rakudo/rakudo/releases">Older releases</a>
 
       <h4>Chocolatey Rakudo Star Bundle</h4>
@@ -52,9 +80,19 @@
     <div class="tab-content">
       <h4>Archives</h4>
       Archives contain a pre-compiled Rakudo and the Zef module manager.
-      <ul>
-        <li><a href="https://github.com/rakudo/rakudo/releases/download/rakudo-2019.11-linux-64bit.tgz">rakudo-2019.11-linux-64bit.tgz</a>
-      </ul>
+      <p>
+      % my @linux_bins = $binaries->latest('rakudo', 'linux', 'archive');
+      % if (@linux_bins) {
+        <ul>
+          % for my $bin (@linux_bins) {
+            <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
+          % }
+        </ul>
+      % }
+      % else {
+        <code>No files available at this time. Sorry!</code>
+      % }
+      </p>
       <a class="kick-b btn btn-dark" href="https://github.com/rakudo/rakudo/releases">Older releases</a>
 
       <h4>Distro packages</h4>
@@ -94,9 +132,19 @@
     <div class="tab-content">
       <h4>Archives</h4>
       Archives contain a pre-compiled Rakudo and the Zef module manager.
-      <ul>
-      <li><a href="https://github.com/rakudo/rakudo/releases/download/rakudo-2019.11-mac-64bit.tgz">rakudo-2019.11-mac-64bit.tgz</a>
-      </ul>
+      <p>
+      % my @macos_bins = $binaries->latest('rakudo', 'macos', 'archive');
+      % if (@macos_bins) {
+        <ul>
+          % for my $bin (@macos_bins) {
+            <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
+          % }
+        </ul>
+      % }
+      % else {
+        <code>No files available at this time. Sorry!</code>
+      % }
+      </p>
       <a class="kick-b btn btn-dark" href="https://github.com/rakudo/rakudo/releases">Older releases</a>
 
       <h4>Homebrew</h4>

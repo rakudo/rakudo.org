@@ -14,7 +14,8 @@ tested release.</p>
 <div class="row downloads-panel">
 <div class="col-sm-6 col-md-4">
   <a class="download btn btn-dark btn-block" data-platform-mark="windows"
-    href="<%= url_for latest => product => 'star', os => 'win64' %>">
+    href="<%= url_for latest => product => 'star', os => 'win', type => '64'
+      %>">
     <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png"
       alt="">
     <span class="rakudo">Rakudo Star Bundle</span>
