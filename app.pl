@@ -50,22 +50,26 @@ get '/post/#post' => sub {
     $c->stash(%$meta, post => $html, title => $meta->{title});
 } => 'post';
 
-get $_ for qw{/about /bugs /docs /files /people};
+get $_ for qw{/about /docs /star /bugs /people};
 
 
 ### FILES ROUTES
-get '/files/star/windows'       => 'files-star-windows';
-get '/files/star/macos'         => 'files-star-macos';
-get '/files/star/source'        => 'files-star-source';
-get '/files/star/third-party'   => 'files-star-third-party';
+get '/star/windows'             => 'star-windows';
+get '/star/macos'               => 'star-macos';
+get '/star/source'              => 'star-source';
+get '/star/third-party'         => 'star-third-party';
 get '/files/rakudo/third-party' => 'files-rakudo-third-party';
 get '/files/rakudo/source'      => 'files-rakudo-source';
+get '/files/star'               => 'files-star';
 
-
-get '/files/star' => sub {
+get '/files' => sub {
     my $self = shift;
-    $self->stash(vers => $binaries->all('star'));
-} => 'files-star';
+    $self->stash(
+        binaries   => $binaries,
+        body_class => 'files',
+    );
+} => 'files';
+
 get '/files/rakudo' => sub {
     my $self = shift;
     $self->stash(
@@ -74,24 +78,26 @@ get '/files/rakudo' => sub {
     );
 } => 'files-rakudo';
 
-get '/latest/:product/:os' => sub {
+get '/latest/:product/:os' => { type => '' } => sub {
     my $self = shift;
-    my $bin = $binaries->latest($self->stash('product'), $self->stash('os'))
+    my @bins = $binaries->latest(
+        $self->stash('product'), $self->stash('os'), $self->stash('type'))
         or return $self->reply->not_found;
+    my $bin = $bins[0];
 
     $self->res->headers->content_type('application/octet-stream');
     $self->res->headers->content_disposition(
         'attachment; filename="' . $bin->bin . '"'
     );
     $self->reply->static($bin->path);
-} => 'latest';
+};
 
 get '/dl/:product/*bin' => sub {
     my $self = shift;
     my $bin = $binaries->bin($self->stash('product'), $self->stash('bin'))
         or return $self->reply->not_found;
 
-    if ($bin->ext =~ /\.(?:txt|asc)/) {
+    if ($bin->type eq 'sig') {
         $self->res->headers->content_type('text/plain');
     }
     else {
@@ -101,17 +107,16 @@ get '/dl/:product/*bin' => sub {
         );
     }
     $self->reply->static($bin->path);
-} => 'dl';
+};
 
 ### </FILES ROUTES>
 
-
 get '/people/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku');
-} => 'people-irc';
+};
 get '/people/irc-dev' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku-dev');
-} => 'people-irc-dev';
+};
 
 any $_ => sub {
     my $c = shift;

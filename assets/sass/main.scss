@@ -1,6 +1,8 @@
 $color-body: #f6f6f6;
-$bg-body: rgb(51, 51, 51);
+$bg-body: rgb(35, 35, 35);
 $color-warning: #ffc107;
+$color-highlight: #007bff;
+$color-selected: lighten($bg-body, 30%);
 
 .preload, .preload * {
   -webkit-transition: none !important;
@@ -157,7 +159,7 @@ a:hover {
 html,
 body {
     height: 100%;
-    background-color: #333;
+    background-color: $bg-body;
 }
 
 body {
@@ -716,4 +718,59 @@ pre, code {
             float: none;
         }
     }
+}
+
+.highlight {
+    background-color: $color-selected;
+}
+
+.vert-align-reset {
+    vertical-align: initial;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+.tabs > label {
+    order: 1;
+    display: block;
+    font-size: 150%;
+    padding: 5px 10px 5px 10px;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+.tabs > label > img {
+    height: 1.2em;
+    vertical-align: text-top;
+}
+.tabs > .tab-content {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: $bg-body;
+    padding: 20px;
+    border: 1px solid $color-selected;
+}
+.tabs > input[type=radio] {
+    display: none;
+}
+.tabs > input[type=radio]:checked + label {
+    background: $color-selected;
+}
+.tabs input[type=radio]:checked + label + .tab-content {
+    display: block;
+}
+
+#body_files header {
+    margin-bottom: 0 !important;
+}
+
+
+.rakudo-do {
+    color: $color-highlight;
 }
