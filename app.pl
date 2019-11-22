@@ -87,7 +87,7 @@ get '/latest/:product/:os' => sub {
         'attachment; filename="' . $bin->bin . '"'
     );
     $self->reply->static($bin->path);
-} => 'latest';
+};
 
 get '/dl/:product/*bin' => sub {
     my $self = shift;
@@ -104,16 +104,16 @@ get '/dl/:product/*bin' => sub {
         );
     }
     $self->reply->static($bin->path);
-} => 'dl';
+};
 
 ### </FILES ROUTES>
 
 get '/people/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku');
-} => 'people-irc';
+};
 get '/people/irc-dev' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku-dev');
-} => 'people-irc-dev';
+};
 
 any $_ => sub {
     my $c = shift;
