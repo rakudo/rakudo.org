@@ -13,13 +13,13 @@ use Perl6Org::Binaries::Ver;
 has 'binaries_dir';
 
 sub all {
-    my ($self, $product) = @_;
+    my ($self, $product, $platform_filter) = @_;
     $product or die "Must specify product to fetch all binaries for";
 
     my $products = $self->products('as_hashref');
     $products->{$product} or die "Unknown product `$product`. "
         . 'Did you specify the correct binaries dir?';
-    $self->_get_vers_for($product);
+    my $vers = $self->_get_vers_for($product, $platform_filter);
 }
 
 sub platforms {
@@ -72,7 +72,7 @@ sub bin {
 }
 
 sub _get_vers_for {
-    my ($self, $product) = @_;
+    my ($self, $product, $platform_filter) = @_;
 
     my $dir = catfile $self->binaries_dir, $product;
     my $prefix = 1 + length $dir;
@@ -88,7 +88,7 @@ sub _get_vers_for {
     for my $full_path (bsd_glob catfile $dir, '*') {
         my $file = substr $full_path, $prefix;
 
-        unless ($file =~ /^$product-(\d{4}\.\d{2}(?:.\d+)?)-([^.]+)\..+$/) {
+        unless ($file =~ /^$product-(\d{4}\.\d{2}(?:.\d+)?)(?:-([^.]+))?\..+$/) {
             warn "Strange filename on file $full_path; skipping";
             next;
         }
@@ -96,16 +96,23 @@ sub _get_vers_for {
         my ($ver, $plat_text) = ($1, $2);
 
         my $platform;
-        for my $pf ($self->platforms->each) {
-            if ($plat_text =~ /$pf/) {
-                $platform = $pf;
-                last;
+        if (!$plat_text) {
+            $platform = 'src';
+        }
+        else {
+            for my $pf ($self->platforms->each) {
+                if ($plat_text =~ /$pf/) {
+                    $platform = $pf;
+                    last;
+                }
             }
         }
         unless ($platform) {
             warn "Unknown platform on file $full_path; skipping";
             next;
         }
+        
+        next if $platform_filter && $platform_filter ne $platform;
 
         my $ext;
         for my $e (keys $types{$platform}->%*) {
@@ -120,7 +127,7 @@ sub _get_vers_for {
 
         my $type = $types{$platform}->{$ext};
 
-        my $is32 = ($plat_text =~ /\Qx86 (no JIT)\E/) ? 1 : 0;
+        my $is32 = ($plat_text && $plat_text =~ /\Qx86 (no JIT)\E/) ? 1 : 0;
 
         my $default =
             $platform eq 'win'   && $type eq 'installer' && $ext eq '.msi' ? 1 :

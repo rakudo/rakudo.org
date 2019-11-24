@@ -7,11 +7,11 @@
   </thead>
   <tbody>
     % for my $ver ($vers->@*) {
-      <tr class="ver<%= $ver->archived ? ' archived' : '' %>">
+      <tr class="ver<%=  $archive_filter && $ver->archived ? ' archived' : '' %>">
         <td colspan=2><%= $ver->ver %></td>
       </tr>
         % for my $bin ($ver->bins->@*) {
-          <tr<%== $ver->archived ? ' class="archived"' : '' %>>
+          <tr<%== $archive_filter && $ver->archived ? ' class="archived"' : '' %>>
             <td>
               <a href="<%= url_for dl
                 => product => $product => bin => $bin->bin %>"
@@ -25,12 +25,14 @@
           </tr>
         % }
     % }
-    <tr>
-      <td colspan=2>
-        <button class="btn btn-dark btn-block show-archived-versions"
-          ><span class="oi oi-timer"></span>
-            Show archived versions</button>
-      </td>
-    </tr>
+    % if ($archive_filter) {
+        <tr>
+          <td colspan=2>
+            <button class="btn btn-dark btn-block show-archived-versions"
+              ><span class="oi oi-timer"></span>
+                Show older versions</button>
+          </td>
+        </tr>
+    % }
   </tbody>
 </table>

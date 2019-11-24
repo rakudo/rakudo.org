@@ -12,19 +12,15 @@
       none of the other options suits your need, you can always compile Rakudo
       yourself from these sources.</p>
       <p>
-      % my @src_bins = $binaries->latest('rakudo', 'src', 'archive');
-      % if (@src_bins) {
-      <ul>
-        % for my $bin (@src_bins) {
-          <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
-        % }
-      </ul>
-      % }
-      % else {
-        <code>No files available at this time. Sorry!</code>
+      % my $src_files = $binaries->all('rakudo', 'src');
+      % if ($src_files->size > 0) {
+        %= include '_files-list', vers => c($src_files->[0]), product => 'rakudo', archive_filter => 0;
       % }
       </p>
-      <a class="btn btn-dark" href="https://github.com/rakudo/rakudo/releases">Older releases</a>
+      <a class="btn btn-dark" href="<%= url_for 'files-rakudo' %>">All releases</a>
+      <a class="btn btn-dark"
+        href="<%= url_for 'files-rakudo-source' %>"
+        >Build Instructions</a>
     </div>
 
     <input type="radio" id="download-tab-windows" name="tab-group-download" checked>
@@ -36,33 +32,12 @@
       <h4>Archives</h4>
       Archives and installers contain a pre-compiled Rakudo and the Zef module manager.
       <p>
-      % my @win_arch_bins = $binaries->latest('rakudo', 'win', 'archive');
-      % if (@win_arch_bins) {
-        <ul>
-          % for my $bin (@win_arch_bins) {
-            <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
-          % }
-        </ul>
-      % }
-      % else {
-        <code>No files available at this time. Sorry!</code>
+      % my $win_files = $binaries->all('rakudo', 'win');
+      % if ($win_files->size > 0) {
+        %= include '_files-list', vers => c($win_files->[0]), product => 'rakudo', archive_filter => 0;
       % }
       </p>
-      <h4>Installer</h4>
-      <p>
-      % my @win_inst_bins = $binaries->latest('rakudo', 'win', 'archive');
-      % if (@win_inst_bins) {
-        <ul>
-          % for my $bin (@win_inst_bins) {
-            <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
-          % }
-        </ul>
-      % }
-      % else {
-        <code>No files available at this time. Sorry!</code>
-      % }
-      </p>
-      <a class="kick-b btn btn-dark" href="https://github.com/rakudo/rakudo/releases">Older releases</a>
+      <a class="btn btn-dark kick-b" href="<%= url_for 'files-rakudo' %>">All releases</a>
 
       <h4>Chocolatey Rakudo Star Bundle</h4>
 
@@ -81,19 +56,12 @@
       <h4>Archives</h4>
       Archives contain a pre-compiled Rakudo and the Zef module manager.
       <p>
-      % my @linux_bins = $binaries->latest('rakudo', 'linux', 'archive');
-      % if (@linux_bins) {
-        <ul>
-          % for my $bin (@linux_bins) {
-            <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
-          % }
-        </ul>
-      % }
-      % else {
-        <code>No files available at this time. Sorry!</code>
+      % my $linux_files = $binaries->all('rakudo', 'linux');
+      % if ($linux_files->size > 0) {
+        %= include '_files-list', vers => c($linux_files->[0]), product => 'rakudo', archive_filter => 0;
       % }
       </p>
-      <a class="kick-b btn btn-dark" href="https://github.com/rakudo/rakudo/releases">Older releases</a>
+      <a class="btn btn-dark kick-b" href="<%= url_for 'files-rakudo' %>">All releases</a>
 
       <h4>Distro packages</h4>
 
@@ -114,7 +82,7 @@
         <li>One single package used for Rakudo, NQP and MoarVM
         <li>Includes zef (Raku Module Installer)
       </ul>
-      <a class="kick-b btn btn-dark" href="https://nxadm.github.io/rakudo-pkg">Rakudo package repositories</a>
+      <a class="kick-b btn btn-dark" href="https://nxadm.github.io/rakudo-pkg">Rakudo-Pkg package repositories</a>
 
       <p>In addition there is another set of packages for OpenSUSE available.</p>
       <ul>
@@ -133,19 +101,12 @@
       <h4>Archives</h4>
       Archives contain a pre-compiled Rakudo and the Zef module manager.
       <p>
-      % my @macos_bins = $binaries->latest('rakudo', 'macos', 'archive');
-      % if (@macos_bins) {
-        <ul>
-          % for my $bin (@macos_bins) {
-            <li><a href="<%= $bin->path %>"><%= $bin->bin %></a>
-          % }
-        </ul>
-      % }
-      % else {
-        <code>No files available at this time. Sorry!</code>
+      % my $mac_files = $binaries->all('rakudo', 'macos');
+      % if ($mac_files->size > 0) {
+        %= include '_files-list', vers => c($mac_files->[0]), product => 'rakudo', archive_filter => 0;
       % }
       </p>
-      <a class="kick-b btn btn-dark" href="https://github.com/rakudo/rakudo/releases">Older releases</a>
+      <a class="btn btn-dark kick-b" href="<%= url_for 'files-rakudo' %>">All releases</a>
 
       <h4>Homebrew</h4>
       <p>There is a  Homebrew package available:<br/>
