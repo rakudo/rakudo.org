@@ -60,7 +60,6 @@ get '/star/source'              => 'star-source';
 get '/star/third-party'         => 'star-third-party';
 get '/files/rakudo/third-party' => 'files-rakudo-third-party';
 get '/files/rakudo/source'      => 'files-rakudo-source';
-get '/files/star'               => 'files-star';
 
 get '/files' => sub {
     my $self = shift;
@@ -69,6 +68,11 @@ get '/files' => sub {
         body_class => 'files',
     );
 } => 'files';
+
+get '/files/star' => sub {
+    my $self = shift;
+    $self->stash(vers => $binaries->all('star'));
+} => 'files-star';
 
 get '/files/rakudo' => sub {
     my $self = shift;

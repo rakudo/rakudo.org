@@ -43,7 +43,7 @@ tested release.</p>
 <div class="col-sm-12 col-md-4">
   <a class="download btn btn-dark btn-block"
     data-platform-mark="ubuntu debian fedora red hat suse generic"
-    href="<%= url_for latest => product => 'star', os => 'source' %>">
+    href="<%= url_for latest => product => 'star', os => 'src' %>">
     <img class="os-icon" height=50 src="/asset/pics/os-icon-source.png"
       alt="">
     <span class="rakudo">Rakudo Star Bundle</span>
