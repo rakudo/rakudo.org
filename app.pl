@@ -96,6 +96,32 @@ get '/latest/:product/:os' => { type => '' } => sub {
     $self->reply->static($bin->path);
 } => 'latest';
 
+get '/dl/:product' => sub {
+    my $self = shift;
+
+    my @data;
+    my $vers = $binaries->all($self->stash('product'));
+    for my $ver ($vers->each) {
+        for my $bin ($ver->bins->each) {
+            push @data, {
+                name      => $bin->name,
+                ver       => $bin->ver,
+                platform  => $bin->platform,
+                type      => $bin->type,
+                latest    => $ver->latest,
+                url       => $self->url_for('dl',
+                    product => $self->stash('product'),
+                    bin => $bin->bin),
+            };
+        }
+    }
+
+    $self->render(
+        json => \@data,
+        format => 'json',
+    );
+} => 'file-index';
+
 get '/dl/:product/*bin' => sub {
     my $self = shift;
     my $bin = $binaries->bin($self->stash('product'), $self->stash('bin'))

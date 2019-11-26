@@ -19,7 +19,7 @@ sub all {
     my $products = $self->products('as_hashref');
     $products->{$product} or die "Unknown product `$product`. "
         . 'Did you specify the correct binaries dir?';
-    my $vers = $self->_get_vers_for($product, $platform_filter);
+    $self->_get_vers_for($product, $platform_filter);
 }
 
 sub platforms {
