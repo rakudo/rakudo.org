@@ -106,6 +106,7 @@ get '/dl/:product' => sub {
             push @data, {
                 name      => $bin->name,
                 ver       => $bin->ver,
+                build_rev => $bin->build_rev,
                 platform  => $bin->platform,
                 arch      => $bin->arch,
                 type      => $bin->type,

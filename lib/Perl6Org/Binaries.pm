@@ -86,12 +86,13 @@ sub _get_vers_for {
     for my $full_path (bsd_glob catfile $dir, '*') {
         my $file = substr $full_path, $prefix;
 
-        unless ($file =~ /^(?:.+[.-])?(\d{4}\.\d{2}(?:.\d+)?)(?:-([^.-]+)-([^.]+))?\..+$/) {
+        unless ($file =~ /^(?:.+[.-])?(\d{4}\.\d{2}(?:\.\d+)?)(?:-(\d\d)-([^.-]+)-([^.-]+))?(?:-[^.]+)?\..+$/) {
             warn "Strange filename \"$file\" on file $full_path; skipping";
             next;
         }
 
-        my ($ver, $platform, $arch) = ($1, $2, $3);
+        my ($ver, $build_rev, $platform, $arch) = ($1, $2, $3, $4);
+        $build_rev = 0+$build_rev if $build_rev;
 
         if (!$platform) {
             $platform = 'src';
@@ -135,6 +136,7 @@ sub _get_vers_for {
             name      => $product,
             path      => catfile($product, $file),
             ver       => $ver,
+            build_rev => $build_rev,
             platform  => $platform,
             arch      => $arch,
             full_path => $full_path,
