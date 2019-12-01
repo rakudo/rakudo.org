@@ -77,8 +77,8 @@ sub _get_vers_for {
 
     my %types = (
         win   => {qw/.txt sig  .asc sig  .zip archive  .msi installer  .exe installer/},
-        linux => {qw/.txt sig  .asc sig  .tar.gz archive/},
-        macos => {qw/.txt sig  .asc sig  .tar.gz archive  .dmg installer  .AppImage installer/},
+        linux => {qw/.txt sig  .asc sig  .tar.gz archive  .AppImage installer/},
+        macos => {qw/.txt sig  .asc sig  .tar.gz archive  .dmg installer/},
         src   => {qw/.txt sig  .asc sig  .tar.gz archive/},
     );
 
@@ -86,8 +86,8 @@ sub _get_vers_for {
     for my $full_path (bsd_glob catfile $dir, '*') {
         my $file = substr $full_path, $prefix;
 
-        unless ($file =~ /^$product-(\d{4}\.\d{2}(?:.\d+)?)(?:-([^.-]+)-([^.]+))?\..+$/) {
-            warn "Strange filename on file $full_path; skipping";
+        unless ($file =~ /^(?:.+[.-])?(\d{4}\.\d{2}(?:.\d+)?)(?:-([^.-]+)-([^.]+))?\..+$/) {
+            warn "Strange filename \"$file\" on file $full_path; skipping";
             next;
         }
 
