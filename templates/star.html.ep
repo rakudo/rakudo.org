@@ -14,8 +14,8 @@ tested release.</p>
 <div class="row downloads-panel">
 <div class="col-sm-6 col-md-4">
   <a class="download btn btn-dark btn-block" data-platform-mark="windows"
-    href="<%= url_for latest => product => 'star', os => 'win', type => '64'
-      %>">
+    href="<%= url_for 'latest', product => 'star', platform => 'win',
+      arch => 'x86_64' %>">
     <img class="os-icon" height=50 src="/asset/pics/os-icon-windows.png"
       alt="">
     <span class="rakudo">Rakudo Star Bundle</span>
@@ -29,7 +29,7 @@ tested release.</p>
 <div class="col-sm-6 col-md-4">
   <a class="download btn btn-dark btn-block"
     data-platform-mark="ios"
-    href="<%= url_for latest => product => 'star', os => 'macos' %>">
+    href="<%= url_for 'latest', product => 'star', platform => 'macos' %>">
     <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png"
       alt="">
     <span class="rakudo">Rakudo Star Bundle</span>
@@ -43,7 +43,7 @@ tested release.</p>
 <div class="col-sm-12 col-md-4">
   <a class="download btn btn-dark btn-block"
     data-platform-mark="ubuntu debian fedora red hat suse generic"
-    href="<%= url_for latest => product => 'star', os => 'src' %>">
+    href="<%= url_for 'latest', product => 'star', platform => 'src' %>">
     <img class="os-icon" height=50 src="/asset/pics/os-icon-source.png"
       alt="">
     <span class="rakudo">Rakudo Star Bundle</span>

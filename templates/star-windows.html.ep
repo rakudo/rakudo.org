@@ -9,7 +9,8 @@
 
 <ol class="flush-list">
   <li>Download the <a href="<%= url_for
-    latest => product => 'star', os => 'win64' %>">latest Rakudo Star Bundle 64-bit Windows <code>.msi</code></a> installer file.
+    'latest', product => 'star', platform => 'win', arch => 'x86_64' %>">latest
+    Rakudo Star Bundle 64-bit Windows <code>.msi</code></a> installer file.
     <a href="<%= url_for 'files-star' %>" class="text-info"
       ><small><span class="oi oi-clock"></span>
         [older releases]</small></a></li>
@@ -34,7 +35,7 @@
     from source</a></li>
   <li>
     Installer for the <a href="<%= url_for
-      latest => product => 'star', os => 'win32' %>"
+      'latest', product => 'star', platform => 'win', arch => 'x86' %>"
     >32-bit Rakudo Star Bundle</a> is available, but
     <i>is severely outdated</i> <%== contribute %>.
     You may wish to attempt to <a href="<%= url_for 'files-star-source' %>">

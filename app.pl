@@ -82,10 +82,10 @@ get '/files/rakudo' => sub {
     );
 } => 'files-rakudo';
 
-get '/latest/:product/:os' => { type => '' } => sub {
+get '/latest/:product/:platform' => { type => '' } => sub {
     my $self = shift;
     my @bins = $binaries->latest(
-        $self->stash('product'), $self->stash('os'), $self->stash('type'))
+        $self->stash('product'), $self->stash('platform'), 0, $self->stash('type'))
         or return $self->reply->not_found;
     my $bin = $bins[0];
 
@@ -107,11 +107,14 @@ get '/dl/:product' => sub {
                 name      => $bin->name,
                 ver       => $bin->ver,
                 platform  => $bin->platform,
+                arch      => $bin->arch,
                 type      => $bin->type,
                 latest    => $ver->latest,
-                url       => $self->url_for('dl',
+                url       => $self->url_for(
+                    'dl',
                     product => $self->stash('product'),
-                    bin => $bin->bin),
+                    bin     => $bin->bin
+                )->to_abs,
             };
         }
     }

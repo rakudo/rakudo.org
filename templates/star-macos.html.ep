@@ -9,7 +9,7 @@
 
 <ol class="flush-list">
   <li>Download the <a href="<%= url_for
-    latest => product => 'star', os => 'macos' %>"
+    'latest', product => 'star', platform => 'macos' %>"
     >latest Rakudo Star Bundle MacOS <code>.dmg</code></a> disk image file.
   <a href="<%= url_for 'files-star' %>" class="text-info"
     ><small><span class="oi oi-clock"></span>

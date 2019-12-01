@@ -35,7 +35,7 @@
   your operating system:</p>
 
         <pre><code>mkdir ~/rakudo &amp;&amp; cd $_
-curl -LJO <%= url_for(latest => product => 'rakudo', os => 'source')->to_abs %>
+curl -LJO <%= url_for('latest', product => 'rakudo', platform => 'src')->to_abs %>
 tar -xvzf rakudo-*.tar.gz
 cd rakudo-*
 
@@ -81,8 +81,9 @@ perl6 -Ilib bin/zef install .</code></pre>
           instead of <code>gmake</code>)</p>
         <ol class="flush-list">
           <li>Download <a href="<%=
-              url_for latest => product => 'rakudo', os => 'source' %>">latest
-            Rakudo Compiler-Only source <code>.tar.gz</code> archive</a></li>
+            url_for 'latest', product => 'rakudo', platform => 'src' %>">
+            latest Rakudo Compiler-Only source <code>.tar.gz</code> archive</a>
+          </li>
           <li>Extract it into a temporary location, like
             <code>C:\Temp\rakudo\</code>
             <small>(<a href="https://www.7-zip.org/">7-zip</a> can open
@@ -138,7 +139,7 @@ perl6 -Ilib bin/zef install .</code></pre>
       aria-labelledby="collapse-build-wsl" data-parent="#build-accordion">
       <div class="card-body">
         <pre><code>mkdir ~/rakudo &amp;&amp; cd $_
-curl -LJO <%= url_for(latest => product => 'rakudo', os => 'source')->to_abs %>
+curl -LJO <%= url_for('latest', product => 'rakudo', platform => 'src')->to_abs %>
 tar -xzf rakudo-*.tar.gz
 mv rakudo-*/* .
 rm -fr rakudo-*

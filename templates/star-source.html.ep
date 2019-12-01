@@ -34,7 +34,7 @@
   your operating system:</p>
 
         <pre class="suck-b"><code>mkdir ~/rakudo &amp;&amp; cd $_
-curl -LJO <%= url_for(latest => product => 'star', os => 'source')->to_abs %>
+curl -LJO <%= url_for('latest', product => 'star', platform => 'src')->to_abs %>
 tar -xzf rakudo-star-*.tar.gz
 mv rakudo-star-*/* .
 rm -fr rakudo-star-*
@@ -73,7 +73,7 @@ source ~/.bashrc</code></pre>
           instead of <code>gmake</code>)</p>
         <ol class="flush-list suck-b">
           <li>Download the <a href="<%=
-              url_for latest => product => 'star', os => 'source' %>"
+              url_for('latest', product => 'star', platform => 'src') %>"
             >latest Rakudo Star Bundle source <code>.tar.gz</code> archive</a></li>
           <li>Extract it into a temporary location, like
             <code>C:\Temp\rakudo-star\</code>
@@ -122,7 +122,7 @@ gmake
   your operating system:</p>
 
         <pre class="suck-b"><code>mkdir ~/rakudo &amp;&amp; cd $_
-curl -LJO <%= url_for(latest => product => 'star', os => 'source')->to_abs %>
+curl -LJO <%= url_for('latest', product => 'star', platform => 'src')->to_abs %>
 tar -xzf rakudo-star-*.tar.gz
 mv rakudo-star-*/* .
 rm -fr rakudo-star-*

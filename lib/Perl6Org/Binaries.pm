@@ -37,7 +37,7 @@ sub products {
 }
 
 sub latest {
-    my ($self, $product, $platform, $type) = @_;
+    my ($self, $product, $platform, $arch, $type) = @_;
 
     my $products = $self->products('as_hashref');
     $products->{$product} or die "Unknown product `$product`. "
@@ -50,11 +50,9 @@ sub latest {
     for my $ver ($self->all($product)->each) {
         next unless $ver->latest;
         for my $bin ($ver->bins->each) {
-            my $bin_type = $bin->type;
-            next if $type && index($type, $bin_type) == -1;
             next if $platform ne $bin->platform;
-            next if $type =~ '32'             && !$bin->is32;
-            next if (!$type || $type !~ '32') &&  $bin->is32;
+            next if $arch && $arch ne $bin->arch;
+            next if $type && $type ne $bin->type;
             push @bins, $bin;
         }
     }
@@ -78,36 +76,28 @@ sub _get_vers_for {
     my $prefix = 1 + length $dir;
 
     my %types = (
-        win      => {qw/.txt sig  .asc sig  .zip archive  .msi installer  .exe installer/},
-        linux    => {qw/.txt sig  .asc sig  .tar.gz archive/},
-        macos    => {qw/.txt sig  .asc sig  .tar.gz archive  .dmg installer  .AppImage installer/},
-        src      => {qw/.txt sig  .asc sig  .tar.gz archive/},
+        win   => {qw/.txt sig  .asc sig  .zip archive  .msi installer  .exe installer/},
+        linux => {qw/.txt sig  .asc sig  .tar.gz archive/},
+        macos => {qw/.txt sig  .asc sig  .tar.gz archive  .dmg installer  .AppImage installer/},
+        src   => {qw/.txt sig  .asc sig  .tar.gz archive/},
     );
 
     my %vers;
     for my $full_path (bsd_glob catfile $dir, '*') {
         my $file = substr $full_path, $prefix;
 
-        unless ($file =~ /^$product-(\d{4}\.\d{2}(?:.\d+)?)(?:-([^.]+))?\..+$/) {
+        unless ($file =~ /^$product-(\d{4}\.\d{2}(?:.\d+)?)(?:-([^.-]+)-([^.]+))?\..+$/) {
             warn "Strange filename on file $full_path; skipping";
             next;
         }
 
-        my ($ver, $plat_text) = ($1, $2);
+        my ($ver, $platform, $arch) = ($1, $2, $3);
 
-        my $platform;
-        if (!$plat_text) {
+        if (!$platform) {
             $platform = 'src';
+            $arch     = '';
         }
-        else {
-            for my $pf ($self->platforms->each) {
-                if ($plat_text =~ /$pf/) {
-                    $platform = $pf;
-                    last;
-                }
-            }
-        }
-        unless ($platform) {
+        elsif (!$self->platforms->grep(sub { $_ eq $platform })) {
             warn "Unknown platform on file $full_path; skipping";
             next;
         }
@@ -126,8 +116,6 @@ sub _get_vers_for {
         }
 
         my $type = $types{$platform}->{$ext};
-
-        my $is32 = ($plat_text && $plat_text =~ /\Qx86 (no JIT)\E/) ? 1 : 0;
 
         my $default =
             $platform eq 'win'   && $type eq 'installer' && $ext eq '.msi' ? 1 :
@@ -148,7 +136,7 @@ sub _get_vers_for {
             path      => catfile($product, $file),
             ver       => $ver,
             platform  => $platform,
-            is32      => $is32,
+            arch      => $arch,
             full_path => $full_path,
             type      => $type,
             default   => $default,

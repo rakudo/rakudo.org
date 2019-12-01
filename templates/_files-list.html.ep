@@ -13,8 +13,8 @@
         % for my $bin ($ver->bins->@*) {
           <tr<%== $archive_filter && $ver->archived ? ' class="archived"' : '' %>>
             <td>
-              <a href="<%= url_for dl
-                => product => $product => bin => $bin->bin %>"
+              <a href="<%= url_for 'dl',
+                product => $product, bin => $bin->bin %>"
                 class="file-icon-<%= icon_for $bin->bin %>">
                 <%= $bin->bin %>
               </a>
