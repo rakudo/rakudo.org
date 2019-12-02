@@ -103,6 +103,7 @@ get '/dl/:product' => sub {
     my $vers = $binaries->all($self->stash('product'));
     for my $ver ($vers->each) {
         for my $bin ($ver->bins->each) {
+            (my $format = $bin->ext) =~ s/^\.//;
             push @data, {
                 name      => $bin->name,
                 ver       => $bin->ver,
@@ -110,6 +111,7 @@ get '/dl/:product' => sub {
                 platform  => $bin->platform,
                 arch      => $bin->arch,
                 type      => $bin->type,
+                format    => $format,
                 latest    => $ver->latest,
                 url       => $self->url_for(
                     'dl',
