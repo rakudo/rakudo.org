@@ -122,6 +122,18 @@
       <p>Rakudo can run on Node.JS and in modern browsers.</p>
       <a class="btn btn-dark" href="https://www.npmjs.com/package/rakudo">Rakudo.js</a>
     </div>
+
+    <input type="radio" id="download-tab-other-platforms" name="tab-group-download">
+    <label class="btn-dark" for="download-tab-other-platforms">
+      <img src="/asset/pics/os-icon-other-platforms.png" alt=""></img>
+      Other Platforms
+    </label>
+    <div class="tab-content">
+      <h4>BSD</h4>
+      <p>Pkgsrc.se provides rakudo packages for NetBSD and other BSD flavors.<br/>
+      </p>
+      <a class="btn btn-dark" href="http://pkgsrc.se/lang/rakudo">pkgsrc.se</a>
+    </div>
 </div>
 
 <h3 class="h4">Other installation methods</h3>
