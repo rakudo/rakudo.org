@@ -86,7 +86,11 @@ sub _get_vers_for {
     for my $full_path (bsd_glob catfile $dir, '*') {
         my $file = substr $full_path, $prefix;
 
-        unless ($file =~ /^(?:.+[.-])?(\d{4}\.\d{2}(?:\.\d+)?)(?:-(\d\d)-([^.-]+)-([^.-]+))?(?:-[^.]+)?\..+$/) {
+        # Source archives: rakudo-2019.11.02.tar.gz
+        # Precompiled archives: rakudo-moar-2019.11.02-01-linux-x86_64.tar.gz
+        # Star Bundle: rakudo-star-2019.11.02-01-win-x86_64.msi
+        # Star Bundle src: rakudo-star-2019.11.02-01.tar.gz
+        unless ($file =~ /^(?:.+[.-])?(\d{4}\.\d{2}(?:\.\d+)?)(?:-(\d\d)(?:-([^.-]+)-([^.-]+)(?:-[^.]+)?)?)?\..+$/) {
             warn "Strange filename \"$file\" on file $full_path; skipping";
             next;
         }
