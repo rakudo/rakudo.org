@@ -29,8 +29,8 @@
       Windows
     </label>
     <div class="tab-content">
-      <h4>Archives</h4>
-      Archives and installers contain a pre-compiled Rakudo and the Zef module manager.
+      <h4>Binary Releases</h4>
+      Archives and installers contain a precompiled Rakudo and the Zef module manager.
       <p>
       % my $win_files = $binaries->all('rakudo', 'win');
       % if ($win_files->size > 0) {
@@ -53,8 +53,8 @@
       Linux
     </label>
     <div class="tab-content">
-      <h4>Archives</h4>
-      Archives contain a pre-compiled Rakudo and the Zef module manager.
+      <h4>Binary Releases</h4>
+      Archives contain a precompiled Rakudo and the Zef module manager.
       <p>
       % my $linux_files = $binaries->all('rakudo', 'linux');
       % if ($linux_files->size > 0) {
@@ -98,8 +98,8 @@
       Mac OS
     </label>
     <div class="tab-content">
-      <h4>Archives</h4>
-      Archives contain a pre-compiled Rakudo and the Zef module manager.
+      <h4>Binary Releases</h4>
+      Archives contain a precompiled Rakudo and the Zef module manager.
       <p>
       % my $mac_files = $binaries->all('rakudo', 'macos');
       % if ($mac_files->size > 0) {
