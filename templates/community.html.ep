@@ -31,8 +31,7 @@
 <h3 class="h4">Helping Out</h3>
 
 <p>Would you like to be one of the people making Rakudo better?
-  Check out
-  our <a href="https://raku.org/community/#Getting-Involved">Getting
-  Involved</a> page or
-  <a href="<%= url_for 'community-irc' %>">ask us</a> how your
+  Head over to the Raku <a href="https://raku.org/community/#Getting-Involved">
+  Getting Involved</a> page with which Rakudo development is currently tightly
+  coupled or <a href="<%= url_for 'community-irc' %>">ask us</a> how your
   skills can be best applied.</p>
