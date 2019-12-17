@@ -16,7 +16,7 @@
       <p class="lead">The most mature, production-ready implementation of the
         <a href="https://raku.org/"><%== p6 %></a> language.</p>
       <p class="lead">
-          <a href="<%= url_for 'files' %>" data-platform="generic"
+          <a href="<%= url_for 'downloads' %>" data-platform="generic"
             class="btn btn-lg btn-primary">
             <span class="oi oi-data-transfer-download"></span> Download</a>
       </p>

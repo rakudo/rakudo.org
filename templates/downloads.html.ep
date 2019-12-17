@@ -1,5 +1,5 @@
 % layout 'default';
-% title 'Download';
+% title 'Downloads';
 
 <div class="tabs">
     <input type="radio" id="download-tab-source" name="tab-group-download">
@@ -17,9 +17,9 @@
         %= include '_files-list', vers => c($src_files->[0]), product => 'rakudo', archive_filter => 0;
       % }
       </p>
-      <a class="btn btn-dark" href="<%= url_for 'files-rakudo' %>">All releases</a>
+      <a class="btn btn-dark" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
       <a class="btn btn-dark"
-        href="<%= url_for 'files-rakudo-source' %>"
+        href="<%= url_for 'downloads-rakudo-source' %>"
         >Build Instructions</a>
     </div>
 
@@ -37,7 +37,7 @@
         %= include '_files-list', vers => c($win_files->[0]), product => 'rakudo', archive_filter => 0;
       % }
       </p>
-      <a class="btn btn-dark kick-b" href="<%= url_for 'files-rakudo' %>">All releases</a>
+      <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
 
       <h4>Chocolatey Rakudo Star Bundle</h4>
 
@@ -61,7 +61,7 @@
         %= include '_files-list', vers => c($linux_files->[0]), product => 'rakudo', archive_filter => 0;
       % }
       </p>
-      <a class="btn btn-dark kick-b" href="<%= url_for 'files-rakudo' %>">All releases</a>
+      <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
 
       <h4>Distro packages</h4>
 
@@ -106,7 +106,7 @@
         %= include '_files-list', vers => c($mac_files->[0]), product => 'rakudo', archive_filter => 0;
       % }
       </p>
-      <a class="btn btn-dark kick-b" href="<%= url_for 'files-rakudo' %>">All releases</a>
+      <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
 
       <h4>Homebrew</h4>
       <p>There is a  Homebrew package available:<br/>

@@ -58,7 +58,7 @@ tested release.</p>
 <p class="text-info"><small><span class="oi oi-clock"></span>
 You can also download one of the
 <a class="text-info"
-  href="<%= url_for 'files-star' %>">older releases</a>.</small></p>
+  href="<%= url_for 'downloads-star' %>">older releases</a>.</small></p>
 </div>
 
 

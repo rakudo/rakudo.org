@@ -53,34 +53,34 @@ get '/post/#post' => sub {
 get $_ for qw{/about /docs /star /bugs /people};
 
 
-### FILES ROUTES
+### DOWNLOADS ROUTES
 get '/star/windows'             => 'star-windows';
 get '/star/macos'               => 'star-macos';
 get '/star/source'              => 'star-source';
 get '/star/third-party'         => 'star-third-party';
-get '/files/rakudo/third-party' => 'files-rakudo-third-party';
-get '/files/rakudo/source'      => 'files-rakudo-source';
+get '/downloads/rakudo/third-party' => 'downloads-rakudo-third-party';
+get '/downloads/rakudo/source'      => 'downloads-rakudo-source';
 
-get '/files' => sub {
+get '/downloads' => sub {
     my $self = shift;
     $self->stash(
         binaries   => $binaries,
-        body_class => 'files',
+        body_class => 'downloads',
     );
-} => 'files';
+} => 'downloads';
 
-get '/files/star' => sub {
+get '/downloads/star' => sub {
     my $self = shift;
     $self->stash(vers => $binaries->all('star'));
-} => 'files-star';
+} => 'downloads-star';
 
-get '/files/rakudo' => sub {
+get '/downloads/rakudo' => sub {
     my $self = shift;
     $self->stash(
         rakudo_vers => $binaries->all('rakudo'),
         nqp_vers    => $binaries->all('nqp')
     );
-} => 'files-rakudo';
+} => 'downloads-rakudo';
 
 get '/latest/:product/:platform' => { type => '' } => sub {
     my $self = shift;
@@ -146,7 +146,7 @@ get '/dl/:product/*bin' => sub {
     $self->reply->static($bin->path);
 } => 'dl';
 
-### </FILES ROUTES>
+### </DOWNLOADS ROUTES>
 
 get '/people/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku');

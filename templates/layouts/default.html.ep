@@ -31,8 +31,8 @@
               ><span class="oi oi-home"></span></a>
             <a class="nav-link<%= nav_active 'news' %>"
               href="<%= url_for 'news' %>">News</a>
-            <a class="nav-link<%= nav_active 'files' %>"
-              href="<%= url_for 'files' %>">Files</a>
+            <a class="nav-link<%= nav_active 'downloads' %>"
+              href="<%= url_for 'downloads' %>">Downloads</a>
             <a class="nav-link<%= nav_active 'docs' %>"
               href="<%= url_for 'docs' %>">Docs</a>
             <a class="nav-link<%= nav_active 'star' %>"

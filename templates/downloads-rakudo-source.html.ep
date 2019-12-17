@@ -1,6 +1,6 @@
 % layout 'default';
 % title 'Source - Install Rakudo Compiler-Only';
-% make_crumbs home => 'Home', files => 'Files',
+% make_crumbs home => 'Home', downloads => 'Downloads',
 %   'Install from Source';
 
 <h2 class="h1">

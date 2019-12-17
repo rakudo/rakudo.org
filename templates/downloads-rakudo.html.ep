@@ -1,7 +1,7 @@
 % layout 'default';
 % title 'Install Rakudo Compiler Only';
-% make_crumbs home => 'Home', files => 'Files',
-%   'Rakudo Files';
+% make_crumbs home => 'Home', downloads => 'Downloads',
+%   'Rakudo Downloads';
 
-<h2 class="h1">Rakudo Files</h2>
+<h2 class="h1">Rakudo Downloads</h2>
 %= include '_files-list', vers => $rakudo_vers, product => 'rakudo', archive_filter => 0;

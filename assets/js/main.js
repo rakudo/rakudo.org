@@ -28,7 +28,7 @@ function setup_same_height() {
         });
     }
 
-    $('#alt-star .card-body, #files-rakudo-third-party .card-body').sameHeight();
+    $('#alt-star .card-body, #downloads-rakudo-third-party .card-body').sameHeight();
 }
 
 function setup_accordion_scroller() {
