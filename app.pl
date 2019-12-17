@@ -6,12 +6,12 @@ use Mojolicious::Lite;
 use Mojo::File qw/path/;
 use Mojo::Util qw/trim  xml_escape/;
 use Time::Moment;
-use RakudoOrg::Posts;
+use RakudoOrg::News;
 use Perl6Org::Binaries;
 
 plugin Config => { file => 'conf.conf' };
 
-my $posts    = RakudoOrg::Posts->new;
+my $news    = RakudoOrg::News->new;
 my $binaries = Perl6Org::Binaries->new(
     binaries_dir => app->config('binaries_dir')
 );
@@ -38,13 +38,13 @@ get '/' => sub {
     my $self = shift;
     $self->stash(body_class => 'home');
 }, => 'home';
-get '/posts' => sub {
+get '/news' => sub {
     my $self = shift;
-    $self->stash(posts => $posts->all);
+    $self->stash(posts => $news->all);
 };
 get '/post/#post' => sub {
     my $c = shift;
-    my ($meta, $html) = $posts->load($c->param('post'));
+    my ($meta, $html) = $news->load($c->param('post'));
     $html or return $c->reply->not_found;
 
     $c->stash(%$meta, post => $html, title => $meta->{title});
@@ -157,13 +157,13 @@ get '/people/irc-dev' => sub {
 
 any $_ => sub {
     my $c = shift;
-    my $posts = [ map +{ %$_ }, @{ $posts->all } ];
-    $_->{date} = blog_date_to_feed_date($_->{date}) for @$posts;
+    my $posts = [ map +{ %$_ }, @{ $news->all } ];
+    $_->{date} = post_date_to_feed_date($_->{date}) for @$posts;
 
-    my $blog_last_updated_date = $posts->[0]{date};
+    my $news_last_updated_date = $posts->[0]{date};
     $c->stash(
         posts       => $posts,
-        last_update => $blog_last_updated_date,
+        last_update => $news_last_updated_date,
         template    => 'feed',
         format      => 'xml',
     );
@@ -233,7 +233,7 @@ helper nav_active => sub {
     $self->url_for('current')->to_abs eq $self->url_for($nav)->to_abs
         ? ' active' : ''
 };
-helper posts => sub { $posts->all };
+helper news => sub { $news->all };
 helper items_in => sub {
         my ($c, $what ) = @_;
         return unless defined $what;
@@ -243,7 +243,7 @@ helper items_in => sub {
 
 app->start;
 
-sub blog_date_to_feed_date {
+sub post_date_to_feed_date {
     my $date = shift;
     return Time::Moment->from_string("${date}T00:00:00Z")
         ->strftime("%a, %d %b %Y %H:%M:%S %z");

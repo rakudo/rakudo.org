@@ -1,5 +1,5 @@
 % layout 'default';
-% make_crumbs home => 'Home', posts => 'Posts', $title;
+% make_crumbs home => 'Home', news => 'News', $title;
 
 <article>
   <h2 class="h1"><%= $title %></h2>

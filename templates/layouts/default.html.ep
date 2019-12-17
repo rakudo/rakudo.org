@@ -29,8 +29,8 @@
             <a class="nav-link<%= nav_active 'home' %>"
               href="<%= url_for 'home' %>"
               ><span class="oi oi-home"></span></a>
-            <a class="nav-link<%= nav_active 'posts' %>"
-              href="<%= url_for 'posts' %>">Posts</a>
+            <a class="nav-link<%= nav_active 'news' %>"
+              href="<%= url_for 'news' %>">News</a>
             <a class="nav-link<%= nav_active 'files' %>"
               href="<%= url_for 'files' %>">Files</a>
             <a class="nav-link<%= nav_active 'docs' %>"
@@ -55,7 +55,7 @@
           <p><a href="https://github.com/rakudo/rakudo">rakudo/rakudo</a>
             | <a href="https://webchat.freenode.net/?channels=#raku"
               >#raku</a>
-            | <a href="/feed">posts rss</a>
+            | <a href="/feed">News RSS</a>
           </p>
         </div>
       </footer>
