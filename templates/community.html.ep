@@ -1,7 +1,7 @@
 % layout 'default';
 % title 'Raku Community';
 
-<h2 class="h1"><%== p6 %> Community</h2>
+<h2 class="h1">Community</h2>
 <p class="lead">Our
   <a href="http://blogs.perl.org/users/zoffix_znet/2017/08/on-troll-hugging-hole-digging-and-improving-open-source-communities.html">hugtastic</a>
   community is the flagship "feature" of <%== p6 %>.</p>
