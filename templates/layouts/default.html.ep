@@ -39,8 +39,8 @@
               href="<%= url_for 'star' %>">Star Bundle</a>
             <a class="nav-link<%= nav_active 'bugs' %>"
               href="<%= url_for 'bugs' %>">Bugs</a>
-            <a class="nav-link<%= nav_active 'people' %>"
-              href="<%= url_for 'people' %>">People</a>
+            <a class="nav-link<%= nav_active 'community' %>"
+              href="<%= url_for 'community' %>">Community</a>
           </nav>
         </div>
         <%== stash('crumbs')//'' %>

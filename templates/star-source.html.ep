@@ -170,4 +170,4 @@ source ~/.bashrc</code></pre>
 <hr>
 
 <p class="need-help invisible"
-  >Need help? <a href="<%= url_for 'people-irc' %>">Talk to us</a>.</p>
+  >Need help? <a href="<%= url_for 'community-irc' %>">Talk to us</a>.</p>

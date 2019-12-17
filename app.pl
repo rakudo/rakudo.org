@@ -50,7 +50,7 @@ get '/post/#post' => sub {
     $c->stash(%$meta, post => $html, title => $meta->{title});
 } => 'post';
 
-get $_ for qw{/about /docs /star /bugs /people};
+get $_ for qw{/about /docs /star /bugs /community};
 
 
 ### DOWNLOADS ROUTES
@@ -148,12 +148,12 @@ get '/dl/:product/*bin' => sub {
 
 ### </DOWNLOADS ROUTES>
 
-get '/people/irc' => sub {
+get '/community/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku');
-} => 'people-irc';
-get '/people/irc-dev' => sub {
+} => 'community-irc';
+get '/community/irc-dev' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku-dev');
-} => 'people-irc-dev';
+} => 'community-irc-dev';
 
 any $_ => sub {
     my $c = shift;
@@ -222,7 +222,7 @@ helper third_party => sub {
 },
 helper contribute => sub {
     my $self = shift;
-    q|<a href="| . xml_escape($self->url_for('people'))
+    q|<a href="| . xml_escape($self->url_for('community'))
     . q|" data-toggle="tooltip"|
     . q| title="Would you like to help us fix that? Contribute ♥"|
     . q| class="text-primary"><span class="oi oi-wrench"></span></a>|
