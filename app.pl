@@ -110,6 +110,7 @@ get '/dl/:product' => sub {
                 build_rev => $bin->build_rev,
                 platform  => $bin->platform,
                 arch      => $bin->arch,
+                backend   => $bin->backend,
                 type      => $bin->type,
                 format    => $format,
                 latest    => $ver->latest,
