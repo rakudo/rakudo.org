@@ -37,8 +37,8 @@
               href="<%= url_for 'docs' %>">Docs</a>
             <a class="nav-link<%= nav_active 'star' %>"
               href="<%= url_for 'star' %>">Star Bundle</a>
-            <a class="nav-link<%= nav_active 'bugs' %>"
-              href="<%= url_for 'bugs' %>">Bugs</a>
+            <a class="nav-link<%= nav_active 'issue-trackers' %>"
+              href="<%= url_for 'issue-trackers' %>">Issue Tracker</a>
             <a class="nav-link<%= nav_active 'community' %>"
               href="<%= url_for 'community' %>">Community</a>
           </nav>

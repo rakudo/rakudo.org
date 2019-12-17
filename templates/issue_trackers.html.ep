@@ -1,11 +1,11 @@
 % layout 'default';
-% title 'Reporting Bugs';
+% title 'Issue Trackers';
 
-<h2 class="h1">Reporting bugs</h2>
+<h2 class="h1">Issue Trackers</h2>
 
 <p class="lead">Our
   <a href="https://github.com/rakudo/rakudo/issues/new"
-    class="btn btn-primary btn-sm">GitHub Issue
+    class="btn btn-dark btn-sm">GitHub Issue
   Tracker</a> is the main place to report problems with Rakudo
   or to submit possible feature suggestions. You can use it even if you're
   unsure where to file your report.</p>

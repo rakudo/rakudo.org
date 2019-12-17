@@ -50,8 +50,9 @@ get '/post/#post' => sub {
     $c->stash(%$meta, post => $html, title => $meta->{title});
 } => 'post';
 
-get $_ for qw{/about /docs /star /bugs /community};
+get $_ for qw{/about /docs /star /community};
 
+get '/issue-trackers' => 'issue_trackers';
 
 ### DOWNLOADS ROUTES
 get '/star/windows'             => 'star-windows';
