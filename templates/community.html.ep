@@ -1,13 +1,13 @@
 % layout 'default';
 % title 'Raku Community';
 
-<h2 class="h1"><%== p6 %> Community</h2>
+<h2 class="h1">Community</h2>
 <p class="lead">Our
   <a href="http://blogs.perl.org/users/zoffix_znet/2017/08/on-troll-hugging-hole-digging-and-improving-open-source-communities.html">hugtastic</a>
   community is the flagship "feature" of <%== p6 %>.</p>
 
-<p>The <a href="<%= url_for 'people-irc' %>"
-    class="btn btn-primary btn-sm">#raku IRC</a>
+<p>The <a href="<%= url_for 'community-irc' %>"
+    class="btn btn-dark btn-sm">#raku IRC</a>
   chat channel on Freenode
   is the primary means of communication among
   <%== p6 %> contributors, which makes it a great place to receive expert help
@@ -23,7 +23,7 @@
     StackOverflow questions</a></li>
   <li><a href="https://lists.perl.org/list/perl6-users.html">perl6-users
     mailing list</a></li>
-  <li><a href="<%= url_for 'people-irc-dev' %>">#raku-dev
+  <li><a href="<%= url_for 'community-irc-dev' %>">#raku-dev
     IRC channel</a> <small>(mostly for Rakudo core development)</small></li>
 </ul>
 
@@ -31,8 +31,7 @@
 <h3 class="h4">Helping Out</h3>
 
 <p>Would you like to be one of the people making Rakudo better?
-  Check out
-  our <a href="https://raku.org/community/#Getting-Involved">Getting
-  Involved</a> page or
-  <a href="<%= url_for 'people-irc' %>">ask us</a> how your
+  Head over to the Raku <a href="https://raku.org/community/#Getting-Involved">
+  Getting Involved</a> page with which Rakudo development is currently tightly
+  coupled or <a href="<%= url_for 'community-irc' %>">ask us</a> how your
   skills can be best applied.</p>

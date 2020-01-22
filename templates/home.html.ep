@@ -12,11 +12,11 @@
       </div>
     </div>
     <div class="col-md-6">
-      <h1 class="cover-heading">Rakudo Compiler</h1>
-      <p class="lead">Production-ready, stable implementation of the
+      <h1 class="cover-heading">Raku<span class="rakudo-do">do</span></h1>
+      <p class="lead">The most mature, production-ready implementation of the
         <a href="https://raku.org/"><%== p6 %></a> language.</p>
       <p class="lead">
-          <a href="<%= url_for 'files' %>" data-platform="generic"
+          <a href="<%= url_for 'downloads' %>" data-platform="generic"
             class="btn btn-lg btn-primary">
             <span class="oi oi-data-transfer-download"></span> Download</a>
       </p>

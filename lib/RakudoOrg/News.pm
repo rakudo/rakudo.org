@@ -1,4 +1,4 @@
-package RakudoOrg::Posts;
+package RakudoOrg::News;
 
 use base 'Mojo::Base';
 

@@ -1,17 +1,17 @@
 % layout 'default';
-% title 'macOS - Install Rakudo Star';
-% make_crumbs home => 'Home', files => 'Files',
-%   'Install Rakudo Star on macOS';
+% title 'macOS - Install the Rakudo Star Bundle';
+% make_crumbs home => 'Home', star => 'Star Bundle',
+%   'Install the Rakudo Star on MacOS';
 
 <h2 class="h1">
   <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png" alt="">
-    Install Rakudo Star on macOS</h2>
+    Install the Rakudo Star Bundle on MacOS</h2>
 
 <ol class="flush-list">
   <li>Download the <a href="<%= url_for
-    latest => product => 'star', os => 'macos' %>"
-    >latest Rakudo Star macOS <code>.dmg</code></a> disk image file.
-  <a href="<%= url_for 'files-star' %>" class="text-info"
+    'latest', product => 'star', platform => 'macos' %>"
+    >latest Rakudo Star Bundle MacOS <code>.dmg</code></a> disk image file.
+  <a href="<%= url_for 'downloads-star' %>" class="text-info"
     ><small><span class="oi oi-clock"></span>
       [older releases]</small></a></li>
   <li>Double click it, to open a window showing its content</li>
@@ -22,11 +22,11 @@
 <h3 class="h4">Other Variants</h3>
 
 <ul class="flush-list">
-  <li>Rakudo Star is available from <a href="https://brew.sh/">Homebrew</a>.
+  <li>The Rakudo Star Bundle is available from <a href="https://brew.sh/">Homebrew</a>.
     To install, run <code>brew install rakudo-star</code></li>
 </ul>
 
 <hr>
 
 <p class="need-help invisible"
-  >Need help? <a href="<%= url_for 'people-irc' %>">Talk to us</a>.</p>
+  >Need help? <a href="<%= url_for 'community-irc' %>">Talk to us</a>.</p>

@@ -1,17 +1,17 @@
 % layout 'default';
-% title 'Posts';
+% title 'News';
 
-<h2 class="h1">Posts</h2>
+<h2 class="h1">News</h2>
 
 <div class="article-list">
 % for my $p ( @$posts ) {
   <div class="blog-post<%= $p->{archived} ? ' archived' : '' %>">
     <h2 class="blog-post-title"><small><%= $p->{date} %></small>
-      <a href="<%= url_for post => post => $p->{post} %>"
+      <a href="<%= url_for news => post => $p->{post} %>"
         ><%= $p->{title} %></a></h2>
   </div>
 % }
   <button class="btn btn-dark btn-block show-archived-versions"
     ><span class="oi oi-timer"></span>
-      Show archived posts</button>
+      Show archived news</button>
 </div>

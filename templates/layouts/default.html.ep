@@ -29,16 +29,18 @@
             <a class="nav-link<%= nav_active 'home' %>"
               href="<%= url_for 'home' %>"
               ><span class="oi oi-home"></span></a>
-            <a class="nav-link<%= nav_active 'posts' %>"
-              href="<%= url_for 'posts' %>">Posts</a>
-            <a class="nav-link<%= nav_active 'files' %>"
-              href="<%= url_for 'files' %>">Files</a>
+            <a class="nav-link<%= nav_active 'news' %>"
+              href="<%= url_for 'news' %>">News</a>
+            <a class="nav-link<%= nav_active 'downloads' %>"
+              href="<%= url_for 'downloads' %>">Downloads</a>
             <a class="nav-link<%= nav_active 'docs' %>"
               href="<%= url_for 'docs' %>">Docs</a>
-            <a class="nav-link<%= nav_active 'bugs' %>"
-              href="<%= url_for 'bugs' %>">Bugs</a>
-            <a class="nav-link<%= nav_active 'people' %>"
-              href="<%= url_for 'people' %>">People</a>
+            <a class="nav-link<%= nav_active 'star' %>"
+              href="<%= url_for 'star' %>">Star Bundle</a>
+            <a class="nav-link<%= nav_active 'issue-trackers' %>"
+              href="<%= url_for 'issue-trackers' %>">Issue Tracker</a>
+            <a class="nav-link<%= nav_active 'community' %>"
+              href="<%= url_for 'community' %>">Community</a>
           </nav>
         </div>
         <%== stash('crumbs')//'' %>
@@ -51,10 +53,9 @@
       <footer class="mastfoot mt-auto">
         <div class="inner">
           <p><a href="https://github.com/rakudo/rakudo">rakudo/rakudo</a>
-            | <a href="https://twitter.com/perl6org">@perl6org</a>
             | <a href="https://webchat.freenode.net/?channels=#raku"
               >#raku</a>
-            | <a href="/feed">posts rss</a>
+            | <a href="/feed">News RSS</a>
           </p>
         </div>
       </footer>

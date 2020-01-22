@@ -1,0 +1,155 @@
+% layout 'default';
+% title 'Downloads';
+
+<div class="tabs">
+    <input type="radio" id="download-tab-source" name="tab-group-download">
+    <label class="btn-dark" for="download-tab-source">
+      <img src="/asset/pics/os-icon-source.png" alt=""></img>
+      Sources
+    </label>
+    <div class="tab-content">
+      <p>The source is the basis from which all the other packages are created. If
+      none of the other options suits your need, you can always compile Rakudo
+      yourself from these sources.</p>
+      <p>
+      % my $src_files = $binaries->all('rakudo', 'src');
+      % if ($src_files->size > 0) {
+        %= include '_files-list', vers => c($src_files->[0]), product => 'rakudo', archive_filter => 0;
+      % }
+      </p>
+      <a class="btn btn-dark" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
+      <a class="btn btn-dark"
+        href="<%= url_for 'downloads-rakudo-source' %>"
+        >Build Instructions</a>
+    </div>
+
+    <input type="radio" id="download-tab-windows" name="tab-group-download" checked>
+    <label class="btn-dark" for="download-tab-windows">
+      <img src="/asset/pics/os-icon-windows.png" alt=""></img>
+      Windows
+    </label>
+    <div class="tab-content">
+      <h4>Binary Releases</h4>
+      Archives and installers contain a precompiled Rakudo and the Zef module manager.
+      <p>
+      % my $win_files = $binaries->all('rakudo', 'win');
+      % if ($win_files->size > 0) {
+        %= include '_files-list', vers => c($win_files->[0]), product => 'rakudo', archive_filter => 0;
+      % }
+      </p>
+      <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
+
+      <h4>Chocolatey Rakudo Star Bundle</h4>
+
+      <p>This is a packaging of Rakudo itself, MoarVM, NQP and the modules of the Rakudo Star Bundle
+      It's built straight from the Rakudo Star Bundle Windows MSI usually released quarterly.
+      <code>choco install rakudostar</code></p>
+      <a class="btn btn-dark" href="https://chocolatey.org/packages/rakudostar">Chocolatey</a>
+    </div>
+
+    <input type="radio" id="download-tab-linux" name="tab-group-download">
+    <label class="btn-dark" for="download-tab-linux">
+      <img src="/asset/pics/os-icon-linux.png" alt=""></img>
+      Linux
+    </label>
+    <div class="tab-content">
+      <h4>Binary Releases</h4>
+      Archives contain a precompiled Rakudo and the Zef module manager.
+      <p>
+      % my $linux_files = $binaries->all('rakudo', 'linux');
+      % if ($linux_files->size > 0) {
+        %= include '_files-list', vers => c($linux_files->[0]), product => 'rakudo', archive_filter => 0;
+      % }
+      </p>
+      <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
+
+      <h4>Distro packages</h4>
+
+      <p>When on *nix, the easiest way to install Rakudo is to use the packages
+      provided by your distribution. The packages are often a bit out of date.</p>
+
+      <ul>
+        <li>Fedora: <code>dnf install rakudo</code>
+        <li>Ubuntu / Debian: <code>apt-get install rakudo</code>
+        <li>OpenSUSE: <code>zypper install rakudo</code>
+      </ul>
+
+      <h4>3rd-party distro packages</h4>
+
+      <p>These are often more up to date, but require adding a third party repository.<br/>
+      <ul>
+        <li>Packages for Alpine and packages and repositories for Centos, Fedora, openSUSE and Ubuntu
+        <li>One single package used for Rakudo, NQP and MoarVM
+        <li>Includes zef (Raku Module Installer)
+      </ul>
+      <a class="kick-b btn btn-dark" href="https://nxadm.github.io/rakudo-pkg">Rakudo-Pkg package repositories</a>
+
+      <p>In addition there is another set of packages for OpenSUSE available.</p>
+      <ul>
+        <li>Separate RPMs for Rakudo, NQP and MoarVM
+        <li>perl6-Inline-Perl5 is also available
+      </ul>
+      <a class="btn btn-dark" href="https://build.opensuse.org/project/show/devel:languages:perl6">OpenSUSE builds</a>
+    </div>
+
+    <input type="radio" id="download-tab-macos" name="tab-group-download">
+    <label class="btn-dark" for="download-tab-macos">
+      <img src="/asset/pics/os-icon-apple.png" alt=""></img>
+      Mac OS
+    </label>
+    <div class="tab-content">
+      <h4>Binary Releases</h4>
+      Archives contain a precompiled Rakudo and the Zef module manager.
+      <p>
+      % my $mac_files = $binaries->all('rakudo', 'macos');
+      % if ($mac_files->size > 0) {
+        %= include '_files-list', vers => c($mac_files->[0]), product => 'rakudo', archive_filter => 0;
+      % }
+      </p>
+      <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
+
+      <h4>Homebrew</h4>
+      <p>There is a  Homebrew package available:<br/>
+      <code>brew install rakudo</code></p>
+    </div>
+
+    <input type="radio" id="download-tab-javascript" name="tab-group-download">
+    <label class="btn-dark" for="download-tab-javascript">
+      <img src="/asset/pics/os-icon-javascript.png" alt=""></img>
+      JavaScript
+    </label>
+    <div class="tab-content">
+      <p>Rakudo can run on Node.JS and in modern browsers.</p>
+      <a class="btn btn-dark" href="https://www.npmjs.com/package/rakudo">Rakudo.js</a>
+    </div>
+
+    <input type="radio" id="download-tab-other-platforms" name="tab-group-download">
+    <label class="btn-dark" for="download-tab-other-platforms">
+      <img src="/asset/pics/os-icon-other-platforms.png" alt=""></img>
+      Other Platforms
+    </label>
+    <div class="tab-content">
+      <h4>BSD</h4>
+      <p>Pkgsrc.se provides rakudo packages for NetBSD and other BSD flavors.<br/>
+      </p>
+      <a class="btn btn-dark" href="http://pkgsrc.se/lang/rakudo">pkgsrc.se</a>
+    </div>
+</div>
+
+<h3 class="h4">Other installation methods</h3>
+
+<h5>Rakudobrew</h5>
+
+<p>A download, installation and version management tool for Rakudo. Works on all major platforms.</p>
+<a class="kick-b btn btn-dark" href="https://github.com/tadzik/rakudobrew">Rakudobrew</a>
+
+<h5>Rakudo Star Bundle</h5>
+
+<p>This option contains the Rakudo Compiler,
+a <a href="https://github.com/rakudo/star/tree/master/modules">collection
+of modules</a> from the <%== p6 %>
+<a href="http://modules.perl6.org/">ecosystem</a>,
+and <a href="https://docs.perl6.org/">language documentation</a>.
+The Rakudo Star Bundle is released quarterly.</p>
+<a class="btn btn-dark" href="<%= url_for 'star' %>">Rakudo Star Bundle</a>
+

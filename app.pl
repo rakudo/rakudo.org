@@ -6,12 +6,12 @@ use Mojolicious::Lite;
 use Mojo::File qw/path/;
 use Mojo::Util qw/trim  xml_escape/;
 use Time::Moment;
-use RakudoOrg::Posts;
+use RakudoOrg::News;
 use Perl6Org::Binaries;
 
 plugin Config => { file => 'conf.conf' };
 
-my $posts    = RakudoOrg::Posts->new;
+my $news    = RakudoOrg::News->new;
 my $binaries = Perl6Org::Binaries->new(
     binaries_dir => app->config('binaries_dir')
 );
@@ -38,46 +38,57 @@ get '/' => sub {
     my $self = shift;
     $self->stash(body_class => 'home');
 }, => 'home';
-get '/posts' => sub {
+get '/news' => sub {
     my $self = shift;
-    $self->stash(posts => $posts->all);
+    $self->stash(posts => $news->all);
 };
 get '/post/#post' => sub {
     my $c = shift;
-    my ($meta, $html) = $posts->load($c->param('post'));
+    my ($meta, $html) = $news->load($c->param('post'));
     $html or return $c->reply->not_found;
 
     $c->stash(%$meta, post => $html, title => $meta->{title});
 } => 'post';
 
-get $_ for qw{/about /bugs /docs /files /people};
+get $_ for qw{/about /docs /star /community};
 
+get '/issue-trackers' => 'issue_trackers';
 
-### FILES ROUTES
-get '/files/star/windows'       => 'files-star-windows';
-get '/files/star/macos'         => 'files-star-macos';
-get '/files/star/source'        => 'files-star-source';
-get '/files/star/third-party'   => 'files-star-third-party';
-get '/files/rakudo/third-party' => 'files-rakudo-third-party';
-get '/files/rakudo/source'      => 'files-rakudo-source';
+### DOWNLOADS ROUTES
+get '/star/windows'             => 'star-windows';
+get '/star/macos'               => 'star-macos';
+get '/star/source'              => 'star-source';
+get '/star/third-party'         => 'star-third-party';
+get '/downloads/rakudo/third-party' => 'downloads-rakudo-third-party';
+get '/downloads/rakudo/source'      => 'downloads-rakudo-source';
 
+get '/downloads' => sub {
+    my $self = shift;
+    $self->stash(
+        binaries   => $binaries,
+        body_class => 'downloads',
+    );
+} => 'downloads';
 
-get '/files/star' => sub {
+get '/downloads/star' => sub {
     my $self = shift;
     $self->stash(vers => $binaries->all('star'));
-} => 'files-star';
-get '/files/rakudo' => sub {
+} => 'downloads-star';
+
+get '/downloads/rakudo' => sub {
     my $self = shift;
     $self->stash(
         rakudo_vers => $binaries->all('rakudo'),
         nqp_vers    => $binaries->all('nqp')
     );
-} => 'files-rakudo';
+} => 'downloads-rakudo';
 
-get '/latest/:product/:os' => sub {
+get '/latest/:product/:platform' => { type => '' } => sub {
     my $self = shift;
-    my $bin = $binaries->latest($self->stash('product'), $self->stash('os'))
+    my @bins = $binaries->latest(
+        $self->stash('product'), $self->stash('platform'), 0, $self->stash('type'))
         or return $self->reply->not_found;
+    my $bin = $bins[0];
 
     $self->res->headers->content_type('application/octet-stream');
     $self->res->headers->content_disposition(
@@ -86,12 +97,45 @@ get '/latest/:product/:os' => sub {
     $self->reply->static($bin->path);
 } => 'latest';
 
+get '/dl/:product' => sub {
+    my $self = shift;
+
+    my @data;
+    my $vers = $binaries->all($self->stash('product'));
+    for my $ver ($vers->each) {
+        for my $bin ($ver->bins->each) {
+            (my $format = $bin->ext) =~ s/^\.//;
+            push @data, {
+                name      => $bin->name,
+                ver       => $bin->ver,
+                build_rev => $bin->build_rev,
+                platform  => $bin->platform,
+                arch      => $bin->arch,
+                backend   => $bin->backend,
+                type      => $bin->type,
+                format    => $format,
+                latest    => $ver->latest,
+                url       => $self->url_for(
+                    'dl',
+                    product => $self->stash('product'),
+                    bin     => $bin->bin
+                )->to_abs,
+            };
+        }
+    }
+
+    $self->render(
+        json => \@data,
+        format => 'json',
+    );
+} => 'file-index';
+
 get '/dl/:product/*bin' => sub {
     my $self = shift;
     my $bin = $binaries->bin($self->stash('product'), $self->stash('bin'))
         or return $self->reply->not_found;
 
-    if ($bin->ext =~ /\.(?:txt|asc)/) {
+    if ($bin->type eq 'sig') {
         $self->res->headers->content_type('text/plain');
     }
     else {
@@ -103,25 +147,24 @@ get '/dl/:product/*bin' => sub {
     $self->reply->static($bin->path);
 } => 'dl';
 
-### </FILES ROUTES>
+### </DOWNLOADS ROUTES>
 
-
-get '/people/irc' => sub {
+get '/community/irc' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku');
-} => 'people-irc';
-get '/people/irc-dev' => sub {
+} => 'community-irc';
+get '/community/irc-dev' => sub {
     shift->redirect_to('https://webchat.freenode.net/?channels=#raku-dev');
-} => 'people-irc-dev';
+} => 'community-irc-dev';
 
 any $_ => sub {
     my $c = shift;
-    my $posts = [ map +{ %$_ }, @{ $posts->all } ];
-    $_->{date} = blog_date_to_feed_date($_->{date}) for @$posts;
+    my $posts = [ map +{ %$_ }, @{ $news->all } ];
+    $_->{date} = post_date_to_feed_date($_->{date}) for @$posts;
 
-    my $blog_last_updated_date = $posts->[0]{date};
+    my $news_last_updated_date = $posts->[0]{date};
     $c->stash(
         posts       => $posts,
-        last_update => $blog_last_updated_date,
+        last_update => $news_last_updated_date,
         template    => 'feed',
         format      => 'xml',
     );
@@ -180,7 +223,7 @@ helper third_party => sub {
 },
 helper contribute => sub {
     my $self = shift;
-    q|<a href="| . xml_escape($self->url_for('people'))
+    q|<a href="| . xml_escape($self->url_for('community'))
     . q|" data-toggle="tooltip"|
     . q| title="Would you like to help us fix that? Contribute ♥"|
     . q| class="text-primary"><span class="oi oi-wrench"></span></a>|
@@ -191,7 +234,7 @@ helper nav_active => sub {
     $self->url_for('current')->to_abs eq $self->url_for($nav)->to_abs
         ? ' active' : ''
 };
-helper posts => sub { $posts->all };
+helper news => sub { $news->all };
 helper items_in => sub {
         my ($c, $what ) = @_;
         return unless defined $what;
@@ -201,7 +244,7 @@ helper items_in => sub {
 
 app->start;
 
-sub blog_date_to_feed_date {
+sub post_date_to_feed_date {
     my $date = shift;
     return Time::Moment->from_string("${date}T00:00:00Z")
         ->strftime("%a, %d %b %Y %H:%M:%S %z");

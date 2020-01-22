@@ -6,9 +6,9 @@ use Test::Most tests =>
     + 3 # different products
         *(1 # product test
             + 5 # versions for each product
-                *(5)) # version tests
+                *5) # version tests
     + 7 # binary tests
-      * (11*5), 'die'; #total binaries * number of versions
+      * (11*5), 'die'; # total binaries * number of versions
 use File::Temp qw/tempdir/;
 use File::Spec::Functions qw/catfile/;
 
@@ -93,10 +93,10 @@ sub setup_temp_binaries_dir {
                 "rakudo-star-$ver.tar.gz.sha256.txt",
                 "rakudo-star-$ver.tar.gz.asc",
                 "rakudo-star-$ver.tar.gz",
-                "rakudo-star-$ver.dmg",
-                "rakudo-star-$ver-x86_64 (JIT).msi",
-                "rakudo-star-$ver-x86 (no JIT).msi",
-                "org.perl6.rakudo-star.$ver-x86_64.AppImage";
+                "rakudo-star-$ver-macos-x86_64.dmg",
+                "rakudo-star-$ver-win-x86_64.msi",
+                "rakudo-star-$ver-win-x86.msi",
+                "org.perl6.rakudo-star.$ver-linux-x86_64.AppImage";
         }
         for (@bins) {
             open my $fh_bin, '>', $_ or die "Failed to create $_: $!";

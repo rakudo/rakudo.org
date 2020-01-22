@@ -2,7 +2,7 @@ package Perl6Org::Binaries::Bin;
 
 use Mojo::Base -base;
 use POSIX qw/floor  round  pow/;
-has [qw/bin  ext  name  full_path  path  ver  is32/];
+has [qw/bin  ext  name  full_path  path  ver  build_rev  platform  arch  type  default  backend/];
 
 my @types = qw/B KB MB GB TB PB/;
 sub size {

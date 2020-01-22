@@ -28,7 +28,7 @@ function setup_same_height() {
         });
     }
 
-    $('#alt-star .card-body, #files-rakudo-third-party .card-body').sameHeight();
+    $('#alt-star .card-body, #downloads-rakudo-third-party .card-body').sameHeight();
 }
 
 function setup_accordion_scroller() {
@@ -74,9 +74,16 @@ function process_platform_specific_content() {
 
     $('.downloads-panel [data-platform-mark]').each(function(){
         if ($(this).attr('data-platform-mark').indexOf(wanted) >= 0)
-            $(this)   .removeClass('btn-dark').addClass('btn-primary')
-            .next('a').removeClass('btn-dark').addClass('btn-warning');
+            $(this)   .addClass('highlight')
+            .next('a').addClass('highlight');
     });
+
+    if (wanted == 'windows')
+        $('#download-tab-windows').prop("checked", true);
+    else if (wanted.match(/os x|ios/))
+        $('#download-tab-macos').prop("checked", true);
+    else
+        $('#download-tab-linux').prop("checked", true);
 }
 
 function query_param(wanted, or) {
