@@ -7,7 +7,7 @@
 % for my $p ( @$posts ) {
   <div class="blog-post<%= $p->{archived} ? ' archived' : '' %>">
     <h2 class="blog-post-title"><small><%= $p->{date} %></small>
-      <a href="<%= url_for news => post => $p->{post} %>"
+      <a href="<%= url_for post => post => $p->{post} %>"
         ><%= $p->{title} %></a></h2>
   </div>
 % }
