@@ -53,21 +53,29 @@ function setup_show_archived_versions_button() {
 }
 
 function process_platform_specific_content() {
-    var fam    = query_param('platform', platform.os.family).toLowerCase(),
-        wanted = 'generic';
+    // Downloads page platform pre-selection
+    var ua = query_param('platform', platform.ua);
+    if (fam === null) fam = 'generic';
+    ua = ua.toLowerCase();
+    if (ua.match(/windows/))
+        $('#download-tab-windows').prop("checked", true);
+    else if (ua.match(/linux/))
+        $('#download-tab-linux').prop("checked", true);
+    else if (ua.match(/os x|osx|ios|ipad/))
+        $('#download-tab-macos').prop("checked", true);
+    else
+        $('#download-tab-source').prop("checked", true);
 
-    if (fam.indexOf('windows') >= 0 && fam.indexOf('windows phone') == -1)
+    // Star Bundle platform highlight
+    var fam = query_param('platform', platform.os.family);
+    if (fam === null) fam = 'generic';
+    fam = fam.toLowerCase();
+
+    var wanted;
+    if (fam.match('windows'))
         wanted = 'windows';
-    else if (fam.match(/ubuntu|debian|fedora|red hat|suse|ios|android/))
+    else
         wanted = fam.replace(/ /g, '_');
-
-    $('.platform-options').each(function(){
-        var show = $(this).find('[data-platform~=' + wanted + ']');
-        if (! show.length)
-            show = $(this).find('[data-platform~=generic]');
-        $('[data-platform]').css({position: 'absolute', left: '-9999px'});
-        show.css({position: 'static', left: 'auto'});
-    })
 
     if (! $('.downloads-panel [data-platform-mark~=' + wanted + ']').length)
         wanted = 'generic';
@@ -77,13 +85,6 @@ function process_platform_specific_content() {
             $(this)   .addClass('highlight')
             .next('a').addClass('highlight');
     });
-
-    if (wanted == 'windows')
-        $('#download-tab-windows').prop("checked", true);
-    else if (wanted.match(/os x|ios/))
-        $('#download-tab-macos').prop("checked", true);
-    else
-        $('#download-tab-linux').prop("checked", true);
 }
 
 function query_param(wanted, or) {

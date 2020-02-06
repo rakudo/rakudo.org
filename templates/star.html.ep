@@ -28,7 +28,7 @@ tested release.</p>
 </div>
 <div class="col-sm-6 col-md-4">
   <a class="download btn btn-dark btn-block"
-    data-platform-mark="ios"
+    data-platform-mark="os_x ios"
     href="<%= url_for 'latest', product => 'star', platform => 'macos' %>">
     <img class="os-icon" height=50 src="/asset/pics/os-icon-apple.png"
       alt="">
