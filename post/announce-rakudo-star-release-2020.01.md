@@ -1,4 +1,4 @@
-%% title: Announce: Rakudo Star Release 2020.02
+%% title: Announce: Rakudo Star Release 2020.01
 %% date: 2020-02-24
 
 On behalf of the Rakudo and Raku development teams, I'm pleased to announce
@@ -17,17 +17,21 @@ We make a distinction between the language "Raku" and specific implementations
 of the language such as "Rakudo".
 
 This Star release includes release 2020.01 of [the Rakudo
-compiler](https://github.com/rakudo/rakudo), and version 2019.03 of
+compiler](https://github.com/rakudo/rakudo), and version 2020.01 of
 [MoarVM](https://github.com/MoarVM/MoarVM). Additionally, it includes various
 community modules, and the Raku documentation.
 
-The Rakudo compiler changes since the last Rakudo Star release are now listed
-in "2018.11.md", "2018.12.md" and "2019.03.md" under the "rakudo/docs/announce"
-directory of the source distribution.
+The Rakudo compiler changes since the last Rakudo Star release can be found in
+`rakudo/docs/announce`. Specifically, in:
+
+- 2019.07.md
+- 2019.07.1.md
+- 2019.11.md
+- 2020.01.md
 
 Important Rakudo bug fixes are now listed at <https://alerts.perl6.org/>
 
-Also see the Rakudo Star errata at <https://perl6.org/downloads/>
+Also see the Rakudo Star errata at <https://raku.org/downloads/>
 
 ## Changes
 
