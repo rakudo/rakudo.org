@@ -29,8 +29,6 @@ The Rakudo compiler changes since the last Rakudo Star release can be found in
 - 2019.11.md
 - 2020.01.md
 
-Important Rakudo bug fixes are now listed at <https://alerts.perl6.org/>
-
 Also see the Rakudo Star errata at <https://raku.org/downloads/>
 
 ## Changes
