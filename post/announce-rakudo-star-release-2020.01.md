@@ -2,7 +2,7 @@
 %% date: 2020-02-24
 
 On behalf of the Rakudo and Raku development teams, I'm pleased to announce
-the March 2019 release of "Rakudo Star", a useful and usable production
+the January 2020 release of "Rakudo Star", a useful and usable production
 distribution of Rakudo. The tarball for this release is available from
 <https://rakudo.org/downloads/star/>.
 
