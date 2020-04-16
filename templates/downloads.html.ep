@@ -74,9 +74,10 @@
         <li>OpenSUSE: <code>zypper install rakudo</code>
       </ul>
 
-      <h4>3rd-party distro packages</h4>
+      <h4>rakudo-pkg distro packages</h4>
 
-      <p>These are often more up to date, but require adding a third party repository.<br/>
+      <p>These are often more up to date than the packages provided by the
+      distribution itself, but require adding a third party repository.<br/>
       <ul>
         <li>Packages for Alpine and packages and repositories for Centos, Fedora, openSUSE and Ubuntu
         <li>One single package used for Rakudo, NQP and MoarVM
