@@ -138,10 +138,10 @@
 
 <h3 class="h4">Other installation methods</h3>
 
-<h5>Rakudobrew</h5>
+<h5>Rakubrew</h5>
 
 <p>A download, installation and version management tool for Rakudo. Works on all major platforms.</p>
-<a class="kick-b btn btn-dark" href="https://github.com/tadzik/rakudobrew">Rakudobrew</a>
+<a class="kick-b btn btn-dark" href="https://rakubrew.org/">Rakubrew</a>
 
 <h5>Rakudo Star Bundle</h5>
 
