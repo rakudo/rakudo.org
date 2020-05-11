@@ -1,5 +1,5 @@
 #!/bin/bash
-. /var/www/rakudo.perl6.org/perl5/perlbrew/etc/bashrc
+. /home/rakudo.org/perl5/perlbrew/etc/bashrc
 set -e -x
 echo 'Starting rakudo.org update'
 date
