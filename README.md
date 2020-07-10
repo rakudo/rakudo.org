@@ -29,6 +29,13 @@ If you need to stop it entirely later, run `hypnotoad app.pl --stop`
 
 The servers listen on localhost, port `4242`: http://localhost:4242
 
+### SASS
+
+Note that running the site requires sass - you can either install
+the sass binary (e.g. with ``` gem install sass```, or using the
+perl module ```CSS::Sass```). Sass is not installed automatically
+using the cpanm command above.
+
 ## Updating Live Site
 
 A cronjob runs [`update-rakudo.org.sh`](update-rakudo.org.sh) script every
