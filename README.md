@@ -17,7 +17,7 @@ accordingly in `conf.conf` file, under `binaries_dir` key.
     mkdir binaries
     cp -R ~/some-location-with-binaries/* binaries/
 
-To star development server, run:
+To start development server, run:
 
     ./morbo
 
@@ -36,7 +36,7 @@ A cronjob runs [`update-rakudo.org.sh`](update-rakudo.org.sh) script every
 
 The script pulls changes from the repo and hot-restarts the web app.
 
-### Infrustructure Setup
+### Infrastructure Setup
 
 See [infrastructure docs](https://github.com/perl6/infrastructure-doc/blob/master/hosts/www.p6c.org.pod#rakudoorg) for details on how the site
 is setup on the current server.
