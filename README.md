@@ -36,30 +36,6 @@ the sass binary (e.g. with ``` gem install sass```, or using the
 perl module ```CSS::Sass```). Sass is not installed automatically
 using the cpanm command above.
 
-## Updating Live Site
-
-A cronjob runs [`update-rakudo.org.sh`](update-rakudo.org.sh) script every
-5 minutes as well as after reboot.
-
-The script pulls changes from the repo and hot-restarts the web app.
-
-### Infrastructure Setup
-
-See [infrastructure docs](https://github.com/perl6/infrastructure-doc/blob/master/hosts/www.p6c.org.pod#rakudoorg) for details on how the site
-is setup on the current server.
-
-### Adding More URL Rewrites
-
-The site has a ton of URL rewrites in
-`/etc/apache2/sites-available/rakudo.org.conf` (copy is saved in
-the repo in [`apache.conf`](apache.conf)). Note that that file does NOT get
-automatically updated from the repo and needs to be edited manually.
-
-If you need to add a rewrite, note that `Proxy` stuff takes precedence
-over `Redirect` directives. You need to ensure the `Proxy` stuff doesn't
-proxy the stuff you want to redirect (there's already a `ProxyPassMatch`
-regex in the file; just add more stuff to it)
-
 ### Debug Aid
 
 Some areas of the site are platform-specific (e.g. showing a download
