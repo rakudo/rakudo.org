@@ -220,7 +220,7 @@ helper third_party => sub {
     . q| title="⚠ This package was prepared by a 3rd party,|
     . q| not the core Rakudo team"><span class="oi oi-people"></span>|
     . q| | . xml_escape($text) . q|</a>|;
-},
+};
 helper contribute => sub {
     my $self = shift;
     q|<a href="| . xml_escape($self->url_for('community'))
@@ -236,11 +236,16 @@ helper nav_active => sub {
 };
 helper news => sub { $news->all };
 helper items_in => sub {
-        my ($c, $what ) = @_;
-        return unless defined $what;
-        $what = $c->stash($what) // [] unless ref $what;
-        return @$what;
-    };
+    my ($c, $what ) = @_;
+    return unless defined $what;
+    $what = $c->stash($what) // [] unless ref $what;
+    return @$what;
+};
+helper latest_version => sub {
+    my ($self, $product, $platform, $arch, $type) = @_;
+    my @bins = $binaries->latest($product, $platform, $arch, $type);
+    return $bins[0];
+};
 
 app->start;
 
