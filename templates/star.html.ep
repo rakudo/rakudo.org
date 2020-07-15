@@ -47,7 +47,7 @@ tested release.</p>
     <img class="os-icon" height=50 src="/asset/pics/os-icon-source.png"
       alt="">
     <span class="rakudo">Rakudo Star Bundle</span>
-    <span class="version"><%== latest_version('star', 'linux', 'x86_64')->ver %></span>
+    <span class="version"><%== latest_version('star', 'src')->ver %></span>
     <span class="details">Source (Linux, others)</span>
   </a>
   <a class="btn btn-sm btn-dark btn-block"
