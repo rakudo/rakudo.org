@@ -13,13 +13,13 @@ use Perl6Org::Binaries::Ver;
 has 'binaries_dir';
 
 sub all {
-    my ($self, $product, $platform_filter) = @_;
+    my ($self, $product, $platform, $arch, $type) = @_;
     $product or die "Must specify product to fetch all binaries for";
 
     my $products = $self->products('as_hashref');
     $products->{$product} or die "Unknown product `$product`. "
         . 'Did you specify the correct binaries dir?';
-    $self->_get_vers_for($product, $platform_filter);
+    $self->_get_vers_for($product, $platform, $arch, $type);
 }
 
 sub platforms {
@@ -47,12 +47,9 @@ sub latest {
     $platforms->{$platform} or die "Unknown platform `$platform`.";
 
     my @bins;
-    for my $ver ($self->all($product)->each) {
+    for my $ver ($self->all($product, $platform, $arch, $type)->each) {
         next unless $ver->latest;
         for my $bin ($ver->bins->each) {
-            next if $platform ne $bin->platform;
-            next if $arch && $arch ne $bin->arch;
-            next if $type && $type ne $bin->type;
             push @bins, $bin;
         }
     }
@@ -70,7 +67,7 @@ sub bin {
 }
 
 sub _get_vers_for {
-    my ($self, $product, $platform_filter) = @_;
+    my ($self, $product, $platform_filter, $arch_filter, $type_filter) = @_;
 
     my $dir = catfile $self->binaries_dir, $product;
     my $prefix = 1 + length $dir;
@@ -116,6 +113,7 @@ sub _get_vers_for {
         }
         
         next if $platform_filter && $platform_filter ne $platform;
+        next if $arch_filter && $arch_filter ne $arch;
 
         my $ext;
         for my $e (keys $types{$platform}->%*) {
@@ -129,6 +127,9 @@ sub _get_vers_for {
         }
 
         my $type = $types{$platform}->{$ext};
+
+        next if $type_filter && $type_filter ne $type;
+
 
         my $default =
             $platform eq 'win'   && $type eq 'installer' && $ext eq '.msi' ? 1 :
