@@ -53,6 +53,8 @@
       <footer class="mastfoot mt-auto">
         <div class="inner">
           <p><a href="https://github.com/rakudo/rakudo">rakudo/rakudo</a>
+            | <a href="https://twitter.com/search?q=%23rakulang"
+              >#rakulang</a>
             | <a href="https://webchat.freenode.net/?channels=#raku"
               >#raku</a>
             | <a href="/feed">News RSS</a>
