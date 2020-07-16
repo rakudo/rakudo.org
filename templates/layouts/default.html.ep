@@ -27,20 +27,20 @@
           </h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link<%= nav_active 'home' %>"
-              href="<%= url_for 'home' %>"
+              href="<%= url_for '/home' %>"
               ><span class="oi oi-home"></span></a>
             <a class="nav-link<%= nav_active 'news' %>"
-              href="<%= url_for 'news' %>">News</a>
+              href="<%= url_for '/news' %>">News</a>
             <a class="nav-link<%= nav_active 'downloads' %>"
-              href="<%= url_for 'downloads' %>">Downloads</a>
+              href="<%= url_for '/downloads' %>">Downloads</a>
             <a class="nav-link<%= nav_active 'docs' %>"
-              href="<%= url_for 'docs' %>">Docs</a>
+              href="<%= url_for '/docs' %>">Docs</a>
             <a class="nav-link<%= nav_active 'star' %>"
-              href="<%= url_for 'star' %>">Star Bundle</a>
+              href="<%= url_for '/star' %>">Star Bundle</a>
             <a class="nav-link<%= nav_active 'issue-trackers' %>"
-              href="<%= url_for 'issue-trackers' %>">Issue Tracker</a>
+              href="<%= url_for '/issue-trackers' %>">Issue Tracker</a>
             <a class="nav-link<%= nav_active 'community' %>"
-              href="<%= url_for 'community' %>">Community</a>
+              href="<%= url_for '/community' %>">Community</a>
           </nav>
         </div>
         <%== stash('crumbs')//'' %>
