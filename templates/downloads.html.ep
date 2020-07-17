@@ -147,8 +147,8 @@
 <h5>Rakudo Star Bundle</h5>
 
 <p>This option contains the Rakudo Compiler,
-a <a href="https://github.com/rakudo/star/blob/master/etc/modules.txt">collection
-of modules</a> from the <%== p6 %>
+a <a href="https://github.com/rakudo/star/blob/master/etc/modules.txt">specific
+set of modules</a> from the <%== p6 %>
 <a href="http://modules.perl6.org/">ecosystem</a>,
 and <a href="https://docs.perl6.org/">language documentation</a>.
 The Rakudo Star Bundle is released quarterly.</p>
