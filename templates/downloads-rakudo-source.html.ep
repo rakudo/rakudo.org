@@ -53,7 +53,7 @@ echo "export PATH=$(pwd)/install/bin:$(pwd)/install/share/perl6/site/bin:\$PATH"
     >> ~/.bashrc
 source ~/.bashrc</code></pre>
         <p>You'll likely want to also install
-          <a href="https://modules.perl6.org/dist/zef:github"><code
+          <a href="https://modules.raku.org/dist/zef:github"><code
             >zef</code></a> module manager:</p>
           <pre class="suck-b"><code>cd /tmp/ &amp;&amp;
 git clone https://github.com/ugexe/zef.git &amp;&amp;
@@ -112,7 +112,7 @@ gmake
         </ul>
 
         <p>You'll likely want to also install
-          <a href="https://modules.perl6.org/dist/zef:github"><code
+          <a href="https://modules.raku.org/dist/zef:github"><code
             >zef</code></a> module manager. In a newly-opened command prompt,
             run these commands:</p>
           <pre class="suck-b"><code>C:
@@ -180,7 +180,7 @@ echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH
     >> ~/.bashrc
 source ~/.bashrc</code></pre>
         <p>You'll likely want to also install
-          <a href="https://modules.perl6.org/dist/zef:github"><code
+          <a href="https://modules.raku.org/dist/zef:github"><code
             >zef</code></a> module manager:</p>
           <pre class="suck-b"><code>cd /tmp/ &amp;&amp;
 git clone https://github.com/ugexe/zef.git &amp;&amp;

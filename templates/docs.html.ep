@@ -10,11 +10,11 @@
     manual page</a>.</p>
 
 <p>Documentation for the <%== p6 %> language can be found on the
-  <a href="https://docs.perl6.org/" class="btn btn-primary btn-sm"><%== p6 %> documentation</a> website, which
-  includes <a href="https://docs.perl6.org/language.html">tutorials for
+  <a href="https://docs.raku.org/" class="btn btn-primary btn-sm"><%== p6 %> documentation</a> website, which
+  includes <a href="https://docs.raku.org/language.html">tutorials for
   programmers who know other languages</a>. There also exist
   an <a href="https://perl6intro.com/">introductory tutorial</a> and
-  many <a href="https://perl6.org/resources/">other learning resources</a>.
+  many <a href="https://raku.org/resources/">other learning resources</a>.
 </p>
 
 <p>Our <a href="https://webchat.freenode.net/?channels=#raku">IRC chat
