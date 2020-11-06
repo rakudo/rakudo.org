@@ -39,12 +39,21 @@
       </p>
       <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
 
-      <h4>Chocolatey Rakudo Star Bundle</h4>
+      <h4>Rakudo Star Bundle</h4>
 
       <p>This is a packaging of Rakudo itself, MoarVM, NQP and the modules of the Rakudo Star Bundle
-      It's built straight from the Rakudo Star Bundle Windows MSI usually released quarterly.
+      It's built straight from the Rakudo Star Bundle Windows MSI usually released quarterly.</p>
+      
+      <h5>Chocolatey</h5>
+      <p>Install the Rakudo Star Bundle with chocolatey:
       <code>choco install rakudostar</code></p>
       <a class="btn btn-dark" href="https://chocolatey.org/packages/rakudostar">Chocolatey</a>
+      
+      <h5>Scoop</h5>
+      <p>Install the Rakudo Star Bundle with scoop:
+      <code>scoop install rakudo-star</code></p>
+      <a class="btn btn-dark" href="https://scoop.sh/">Scoop</a>
+      
     </div>
 
     <input type="radio" id="download-tab-linux" name="tab-group-download">
