@@ -29,6 +29,10 @@
     <%== third_party 'Chocolatey',
       'https://chocolatey.org/packages/rakudostar' %>,
     run <code>choco install rakudostar</code> to install the Rakudo Star Bundle</li>
+      <li>If you prefer
+    <%== third_party 'Scoop',
+      'https://scoop.sh/' %>,
+    run <code>scoop install rakudo-star</code> to install the Rakudo Star Bundle</li>
   <li>For WSL (Windows Subsystem for Linux), you can install
     <a href="<%= url_for 'downloads-star-third-party' %>">pre-built 3<sup>rd</sup>
     party packages</a> or <a href="<%= url_for 'downloads-star-source' %>">build
