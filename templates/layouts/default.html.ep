@@ -26,9 +26,6 @@
               src="/asset/pics/logo-inverse.png" alt=""></a>
           </h3>
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link<%= nav_active 'home' %>"
-              href="<%= url_for '/home' %>"
-              ><span class="oi oi-home"></span></a>
             <a class="nav-link<%= nav_active 'news' %>"
               href="<%= url_for '/news' %>">News</a>
             <a class="nav-link<%= nav_active 'downloads' %>"
