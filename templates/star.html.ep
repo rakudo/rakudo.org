@@ -4,7 +4,7 @@
 <h1 id="Star">Rakudo Star Bundle</h1>
 
 <p>The Rakudo Star Bundle contains the Rakudo Compiler,
-a <a href="https://github.com/rakudo/star/tree/master/modules">collection
+a <a href="https://github.com/rakudo/star/blob/master/etc/modules.txt">collection
 of modules</a> from the <%== p6 %>
 <a href="https://modules.raku.org/">ecosystem</a>,
 and the <a href="https://docs.raku.org/">language documentation</a>.
