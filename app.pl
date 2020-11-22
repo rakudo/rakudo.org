@@ -108,10 +108,11 @@ get '/dl/:product' => sub {
             push @data, {
                 name      => $bin->name,
                 ver       => $bin->ver,
-                build_rev => $bin->build_rev,
+               (build_rev => $bin->build_rev) x!! $bin->build_rev,
                 platform  => $bin->platform,
-                arch      => $bin->arch,
-                backend   => $bin->backend,
+               (arch      => $bin->arch)      x!! $bin->arch,
+               (toolchain => $bin->toolchain) x!! $bin->toolchain,
+               (backend   => $bin->backend)   x!! $bin->backend,
                 type      => $bin->type,
                 format    => $format,
                 latest    => $ver->latest,
@@ -242,8 +243,8 @@ helper items_in => sub {
     return @$what;
 };
 helper latest_version => sub {
-    my ($self, $product, $platform, $arch, $type) = @_;
-    my @bins = $binaries->latest($product, $platform, $arch, $type);
+    my ($self, $product, $platform, $arch, $type, $toolchain) = @_;
+    my @bins = $binaries->latest($product, $platform, $arch, $type, $toolchain);
     return $bins[0];
 };
 
