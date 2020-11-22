@@ -93,9 +93,9 @@ sub setup_temp_binaries_dir {
                 "rakudo-star-$ver.tar.gz.sha256.txt",
                 "rakudo-star-$ver.tar.gz.asc",
                 "rakudo-star-$ver.tar.gz",
-                "rakudo-star-$ver-01-macos-x86_64.dmg",
-                "rakudo-star-$ver-01-win-x86_64.msi",
-                "rakudo-star-$ver-01-win-x86.msi",
+                "rakudo-star-$ver-01-macos-x86_64-clang.dmg",
+                "rakudo-star-$ver-01-win-x86_64-msvc.msi",
+                "rakudo-star-$ver-01-win-x86-msvc.msi",
         }
         for (@bins) {
             open my $fh_bin, '>', $_ or die "Failed to create $_: $!";
