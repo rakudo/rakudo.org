@@ -88,9 +88,10 @@
       <p>These are often more up to date than the packages provided by the
       distribution itself, but require adding a third party repository.<br/>
       <ul>
-        <li>Packages for Alpine and packages and repositories for Centos, Fedora, openSUSE and Ubuntu
+        <li>Native packages and repositories for Alpine, Debian, EL (RHEL/CentOS/AmazonLinux/OracleLinux), Fedora, openSUSE and Ubuntu
+        <li>Additionally a relocable tar.gz for all Linux distributions
         <li>One single package used for Rakudo, NQP and MoarVM
-        <li>Includes zef (Raku Module Installer)
+        <li>Includes zef (Raku Module Installer) and helper scripts (e.g. zef install as user).
       </ul>
       <a class="kick-b btn btn-dark" href="https://nxadm.github.io/rakudo-pkg">Rakudo-Pkg package repositories</a>
 
