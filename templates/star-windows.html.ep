@@ -34,15 +34,15 @@
       'https://scoop.sh/' %>,
     run <code>scoop install rakudo-star</code> to install the Rakudo Star Bundle</li>
   <li>For WSL (Windows Subsystem for Linux), you can install
-    <a href="<%= url_for 'downloads-star-third-party' %>">pre-built 3<sup>rd</sup>
-    party packages</a> or <a href="<%= url_for 'downloads-star-source' %>">build
+    <a href="<%= url_for 'third-party' %>">pre-built 3<sup>rd</sup>
+    party packages</a> or <a href="<%= url_for 'source' %>">build
     from source</a></li>
   <li>
     Installer for the <a href="<%= url_for
       'latest', product => 'star', platform => 'win', arch => 'x86' %>"
     >32-bit Rakudo Star Bundle</a> is available, but
     <i>is severely outdated</i> <%== contribute %>.
-    You may wish to attempt to <a href="<%= url_for 'downloads-star-source' %>">
+    You may wish to attempt to <a href="<%= url_for 'source' %>">
     build from source</a> instead.
   </li>
 </ul>
