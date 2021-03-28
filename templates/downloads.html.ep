@@ -82,14 +82,15 @@
         <li>Ubuntu / Debian: <code>apt-get install rakudo</code>
         <li>OpenSUSE: <code>zypper install rakudo</code>
       </ul>
-      
-      <h5>User repositories</h5>
-    
-      <ul>
-        <li>Arch Linux: <a href="https://aur.archlinux.org/packages/rakudo/">AUR</a></li>
-      </ul>
 
-      <h4>rakudo-pkg distro packages</h4>
+      <hr>
+
+      <h4>User repositories</h4>
+      
+      <h5>Arch Linux</h5>
+      <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo/">Rakudo package on AUR</a>
+      
+      <h5>rakudo-pkg distro packages</h5>
 
       <p>These are often more up to date than the packages provided by the
       distribution itself, but require adding a third party repository.<br/>
@@ -101,7 +102,7 @@
       </ul>
       <a class="kick-b btn btn-dark" href="https://nxadm.github.io/rakudo-pkg">Rakudo-Pkg package repositories</a>
 
-      <p>In addition there is another set of packages for OpenSUSE available.</p>
+      <h5>OpenSUSE</h5>
       <ul>
         <li>Separate RPMs for Rakudo, NQP and MoarVM
         <li>perl6-Inline-Perl5 is also available
