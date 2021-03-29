@@ -75,15 +75,29 @@
       <h4>Distro packages</h4>
 
       <p>When on *nix, the easiest way to install Rakudo is to use the packages
-      provided by your distribution. The packages are often a bit out of date.</p>
+      provided by your distribution. The packages on non-rolling release distributions are often a bit out of date.</p>
 
-      <ul>
-        <li>Fedora: <code>dnf install rakudo</code>
-        <li>Ubuntu / Debian: <code>apt-get install rakudo</code>
-        <li>OpenSUSE: <code>zypper install rakudo</code>
-      </ul>
+      <h5>Fedora</h5>
+      <p><code>dnf install rakudo</code></p>
 
-      <hr>
+      <h5>Ubuntu / Debian</h5>
+      <p><code>apt-get install rakudo</code></p>
+
+      <h5>openSUSE</h5>
+      <h6>openSUSE Tumbleweed (rolling release)</h6>
+      <p><code>zypper install rakudo</code></p>
+      <h6>openSUSE Leap (stable)</h6>
+      <a class="kick-b btn btn-dark" href="https://software.opensuse.org/package/rakudo">Click on "1 Click Install" under experimental packages</a>
+      
+      <h5>Gentoo (rolling release)</h5>
+      <p><code>emerge --ask --verbose dev-lang/rakudo</code></p>
+
+      <h5>Alpine Linux</h5>
+      <p><code>apk add rakudo</code></p>
+      
+      <h5>NixOS</h5>
+      <p>NixOS: <code>nix-env -iA nixos.rakudo</code></p>
+      <p>Non-NixOS: <code>nix-env -iA nixpkgs.rakudo</code></p>
 
       <h4>User repositories</h4>
       
@@ -100,14 +114,7 @@
         <li>One single package used for Rakudo, NQP and MoarVM
         <li>Includes zef (Raku Module Installer) and helper scripts (e.g. zef install as user).
       </ul>
-      <a class="kick-b btn btn-dark" href="https://nxadm.github.io/rakudo-pkg">Rakudo-Pkg package repositories</a>
-
-      <h5>OpenSUSE</h5>
-      <ul>
-        <li>Separate RPMs for Rakudo, NQP and MoarVM
-        <li>perl6-Inline-Perl5 is also available
-      </ul>
-      <a class="btn btn-dark" href="https://build.opensuse.org/project/show/devel:languages:perl6">OpenSUSE builds</a>
+      <a class="btn btn-dark" href="https://nxadm.github.io/rakudo-pkg">Rakudo-Pkg package repositories</a>
     </div>
 
     <input type="radio" id="download-tab-macos" name="tab-group-download">
