@@ -101,8 +101,10 @@
 
       <h4>User repositories</h4>
       
-      <h5>Arch Linux</h5>
-      <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo/">Rakudo package on AUR</a>
+      <h5>Arch Linux (AUR)</h5>
+      <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo-bin/">rakudo-bin</a>
+      <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo/">rakudo</a>
+      <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo-git/">rakudo-git</a>
       
       <h5>rakudo-pkg distro packages</h5>
 
