@@ -38,7 +38,13 @@
       % }
       </p>
       <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
+      
+      <h4>SCOOP</h4>
 
+      <p>Install Rakudo-on-MoarVM with scoop:
+      <code>scoop install rakudo-moar</code></p>
+      <a class="btn btn-dark" href="https://scoop.sh/">Scoop</a>
+      
       <h4>Rakudo Star Bundle</h4>
 
       <p>This is a packaging of Rakudo itself, MoarVM, NQP and the modules of the Rakudo Star Bundle
