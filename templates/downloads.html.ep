@@ -41,7 +41,7 @@
       
       <h5>Use a package manager to install the binary release</h5>
 
-      <p>Install Rakudo-on-MoarVM with scoop:
+      <p>Install Rakudo-on-MoarVM with Scoop:
       <code>scoop install rakudo-moar</code></p>
       <a class="btn btn-dark" href="https://scoop.sh/">Scoop</a>
       
