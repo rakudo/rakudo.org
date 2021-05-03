@@ -41,7 +41,7 @@
       </p>
       <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
       
-      <h5>Use a package manager to install the binary release</h5>
+      <h5>Scoop</h5>
 
       <p>Install Rakudo-on-MoarVM with Scoop:
       <code>scoop install rakudo-moar</code></p>
