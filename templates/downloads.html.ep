@@ -31,6 +31,8 @@
     <div class="tab-content">
       <h4>Binary Releases</h4>
       Archives and installers contain a precompiled Rakudo and the Zef module manager.
+      The filenames follow the pattern
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>
       <p>
       % my $win_files = $binaries->all('rakudo', 'win');
       % if ($win_files->size > 0) {
@@ -70,6 +72,8 @@
     <div class="tab-content">
       <h4>Binary Releases</h4>
       Archives contain a precompiled Rakudo and the Zef module manager.
+      The filenames follow the pattern
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>
       <p>
       % my $linux_files = $binaries->all('rakudo', 'linux');
       % if ($linux_files->size > 0) {
@@ -133,6 +137,8 @@
     <div class="tab-content">
       <h4>Binary Releases</h4>
       Archives contain a precompiled Rakudo and the Zef module manager.
+      The filenames follow the pattern
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>
       <p>
       % my $mac_files = $binaries->all('rakudo', 'macos');
       % if ($mac_files->size > 0) {
