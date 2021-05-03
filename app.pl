@@ -208,11 +208,15 @@ helper make_crumbs => sub {
 };
 
 my %exts = qw/
-    .gz source  .msi windows  .exe windows
+    .gz source  .msi windows  .exe windows    .zip windows
     .dmg macos  .AppImage macos   .asc sig    .txt sig
 /;
 helper icon_for => sub {
     my ($self, $path) = @_;
+    return 'sig'   if $path =~ /\.asc$|\.txt$/;
+    return 'linux' if $path =~ /linux/;
+    return 'macos' if $path =~ /macos/;
+    return 'win'   if $path =~ /windows/;
     $exts{($path =~ /(.[^.]+)$/)[0]//''}//''
 };
 helper third_party => sub {

@@ -31,6 +31,8 @@
     <div class="tab-content">
       <h4>Binary Releases</h4>
       Archives and installers contain a precompiled Rakudo and the Zef module manager.
+      The filenames follow the pattern
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>
       <p>
       % my $win_files = $binaries->all('rakudo', 'win');
       % if ($win_files->size > 0) {
@@ -39,11 +41,11 @@
       </p>
       <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
       
-      <h5>Use a package manager to install the binary release</h5>
+      <h5>Scoop</h5>
 
       <p>Install Rakudo-on-MoarVM with Scoop:
       <code>scoop install rakudo-moar</code></p>
-      <a class="btn btn-dark" href="https://scoop.sh/">Scoop</a>
+      <a class="btn btn-dark kick-b" href="https://scoop.sh/">Scoop</a>
       
       <h4>Rakudo Star Bundle</h4>
 
@@ -53,7 +55,7 @@
       <h5>Chocolatey</h5>
       <p>Install the Rakudo Star Bundle with chocolatey:
       <code>choco install rakudostar</code></p>
-      <a class="btn btn-dark" href="https://chocolatey.org/packages/rakudostar">Chocolatey</a>
+      <a class="btn btn-dark kick-b" href="https://chocolatey.org/packages/rakudostar">Chocolatey</a>
       
       <h5>Scoop</h5>
       <p>Install the Rakudo Star Bundle with Scoop:
@@ -70,6 +72,8 @@
     <div class="tab-content">
       <h4>Binary Releases</h4>
       Archives contain a precompiled Rakudo and the Zef module manager.
+      The filenames follow the pattern
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>
       <p>
       % my $linux_files = $binaries->all('rakudo', 'linux');
       % if ($linux_files->size > 0) {
@@ -133,6 +137,8 @@
     <div class="tab-content">
       <h4>Binary Releases</h4>
       Archives contain a precompiled Rakudo and the Zef module manager.
+      The filenames follow the pattern
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>
       <p>
       % my $mac_files = $binaries->all('rakudo', 'macos');
       % if ($mac_files->size > 0) {

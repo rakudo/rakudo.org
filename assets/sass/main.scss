@@ -543,6 +543,10 @@ pre, code {
     background-image: url(/asset/pics/os-icon-windows.png)
 }
 
+[class^="file-icon-linux"] {
+    background-image: url(/asset/pics/os-icon-linux.png)
+}
+
 [class^="file-icon-macos"] {
     background-image: url(/asset/pics/os-icon-apple.png)
 }
