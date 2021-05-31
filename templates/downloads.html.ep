@@ -173,7 +173,7 @@
     </label>
     <div class="tab-content">
       <h4>BSD</h4>
-      <p>Pkgsrc.se provides rakudo packages for NetBSD and other BSD flavors.<br/>
+      <p>pkgsrc provides rakudo packages for NetBSD and other Unix flavors.<br/>
       </p>
       <a class="btn btn-dark" href="http://pkgsrc.se/lang/rakudo">pkgsrc.se</a>
     </div>
