@@ -32,7 +32,10 @@
       <h4>Binary Releases</h4>
       Archives and installers contain a precompiled Rakudo and the Zef module manager.
       The filenames follow the pattern
-      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.
+      The archives have executables located in <code>bin/</code> and
+      <code>share/perl6/site/bin/</code>. See the contained <code>README.md</code>
+      file for further information.
       <p>
       % my $win_files = $binaries->all('rakudo', 'win');
       % if ($win_files->size > 0) {
@@ -73,7 +76,10 @@
       <h4>Binary Releases</h4>
       Archives contain a precompiled Rakudo and the Zef module manager.
       The filenames follow the pattern
-      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.
+      The archives have executables located in <code>bin/</code> and
+      <code>share/perl6/site/bin/</code>. See the contained <code>README.md</code>
+      file for further information.
       <p>
       % my $linux_files = $binaries->all('rakudo', 'linux');
       % if ($linux_files->size > 0) {
@@ -138,7 +144,10 @@
       <h4>Binary Releases</h4>
       Archives contain a precompiled Rakudo and the Zef module manager.
       The filenames follow the pattern
-      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.
+      The archives have executables located in <code>bin/</code> and
+      <code>share/perl6/site/bin/</code>. See the contained <code>README.md</code>
+      file for further information.
       <p>
       % my $mac_files = $binaries->all('rakudo', 'macos');
       % if ($mac_files->size > 0) {
