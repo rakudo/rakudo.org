@@ -1,5 +1,5 @@
 %% title: Announce: Rakudo compiler, Release #147 (2021.06)
-%% date: 2020-06-19
+%% date: 2021-06-19
 
 On behalf of the Rakudo development team, I’m very happy to announce the
 June 2021 release of Rakudo #147. Rakudo is an implementation of
