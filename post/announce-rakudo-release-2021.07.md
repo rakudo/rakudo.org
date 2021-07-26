@@ -81,7 +81,7 @@ Additionally, we invite you to make a donation to The Perl Foundation
 to sponsor Raku development: <https://donate.perlfoundation.org/>
 (put “Raku Core Development Fund” in the ‘Purpose’ text field)
 
-The next release of Rakudo (#149), is tentatively scheduled for 2021-07-23.
+The next release of Rakudo (#149), is tentatively scheduled for 2021-08-21.
 
 A list of the other planned release dates is available in the
 “docs/release_guide.pod” file.
