@@ -1,8 +1,0 @@
-% layout 'default';
-% title 'Rakudo Star Releases';
-% make_crumbs home => 'Home', star => 'Star Bundle',
-%   'Rakudo Star Releases';
-
-<h2 class="h1">Rakudo Star Releases</h2>
-
-%= include '_files-list', product => 'star', archive_filter => 0;
