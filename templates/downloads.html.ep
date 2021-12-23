@@ -179,14 +179,3 @@
 
 <p>A download, installation and version management tool for Rakudo. Works on all major platforms.</p>
 <a class="kick-b btn btn-dark" href="https://rakubrew.org/">Rakubrew</a>
-
-<h5>Rakudo Star Bundle</h5>
-
-<p>This option contains the Rakudo Compiler,
-a <a href="https://github.com/rakudo/star/blob/master/etc/modules.txt">collection
-of modules</a> from the <%== p6 %>
-<a href="http://modules.perl6.org/">ecosystem</a>,
-and <a href="https://docs.perl6.org/">language documentation</a>.
-The Rakudo Star Bundle is released quarterly.</p>
-<a class="btn btn-dark" href="<%= url_for 'star' %>">Rakudo Star Bundle</a>
-
