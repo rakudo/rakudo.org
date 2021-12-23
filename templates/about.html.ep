@@ -16,15 +16,3 @@
 
 <p>The compiler is released monthly, around the third Saturday of
   the month.</p>
-
-<h2>Rakudo Star</h2>
-The Rakudo Star distribution combines the Rakudo
-<%== p6 %> compiler with additional resources, such
-as <a href="https://docs.perl6.org/">documentation</a>,
-<a href="http://perl6intro.com/">introductory materials</a>,
-and a selection of modules.
-
-<p>Rakudo Star is the most thoroughly tested option and is the recommended
-choice for most users.</p>
-
-<p>Rakudo Star is released quarterly.</p>
