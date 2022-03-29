@@ -21,6 +21,9 @@
       <a class="btn btn-dark"
         href="<%= url_for 'downloads-rakudo-source' %>"
         >Build Instructions</a>
+      <a class="btn btn-dark"
+        href="<%= url_for 'downloads-verifying' %>"
+        >Verifying</a>
     </div>
 
     <input type="radio" id="download-tab-windows" name="tab-group-download" checked>
@@ -43,6 +46,9 @@
       % }
       </p>
       <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
+      <a class="btn btn-dark kick-b"
+        href="<%= url_for 'downloads-verifying' %>"
+        >Verifying</a>
       
       <h5>Scoop</h5>
 
@@ -87,6 +93,9 @@
       % }
       </p>
       <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
+      <a class="btn btn-dark kick-b"
+        href="<%= url_for 'downloads-verifying' %>"
+        >Verifying</a>
 
       <h4>Distro packages</h4>
 
@@ -155,6 +164,9 @@
       % }
       </p>
       <a class="btn btn-dark kick-b" href="<%= url_for 'downloads-rakudo' %>">All releases</a>
+      <a class="btn btn-dark kick-b"
+        href="<%= url_for 'downloads-verifying' %>"
+        >Verifying</a>
 
       <h4>Homebrew</h4>
       <p>There is a  Homebrew package available:<br/>

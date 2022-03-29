@@ -1,0 +1,67 @@
+% layout 'default';
+% title 'Verifying Downloads';
+% make_crumbs home => 'Home', downloads => 'Downloads',
+%   'Verifying Downloads';
+
+<h2>How to verify downloads</h2>
+
+<p>To verify that a downloaded file is not corrupted, download the
+<code>*.checksums.txt</code> corresponding to the download you want to verify.
+Then run</p>
+
+<p><code>sha256 -c file_you_downloaded</code></p>
+
+<p>In adition one can verify the download is authentic by checking its
+signature. One can either validate the checksum file which contains a self
+contained signature or alternatively validate the downloaded file directly
+using the separate <code>*.asc</code> file.</p>
+
+<p>To verify via the checksum file do</p>
+
+<p><code>gpg2 --verify file_you_downloaded.checksums.txt</code></p>
+
+<p>To verify via the signature file do</p>
+
+<p><code>gpg2 --verify file_you_downloaded.asc file_you_downloaded</code></p>
+
+<p>Should you miss the public key matching the signature (that's expected and
+normal the first time one validates a download) import the respective key from
+<a href="gpg2-key-list">the list of Keys of the releasers</a>.</p>
+
+<h2 id="gpg2-key-list">Keys of the releasers</h2>
+<p>The following people have released and signed files on rakudo.org. You are
+encouraged, to not just download the keys from here, but cross-check the
+keys / fingerprints with other sources. Devs are encouraged to list their
+fingerprints at least on their GitHub profile.</p>
+
+<ul>
+  <li>Justin DeVuyst
+    <ul>
+      <li>Fingerprint: <code>59E6 3473 6AFD CF9C 6DBA C382 602D 51EA CA88 7C01</code>
+      <li>Key: <a href="/keys/justin_devuyst-59E634736AFDCF9C6DBAC382602D51EACA887C01.asc">justin_devuyst-59E634736AFDCF9C6DBAC382602D51EACA887C01.asc</a>
+      <li><a href="https://github.com/jdv">GitHub</a>
+    </ul>
+  </li>
+  <li>Patrick Böker
+    <ul>
+      <li>Fingerprint: <code>DB2B A39D 1ED9 67B5 84D6 5D71 C09F F113 BB64 10D0</code>
+      <li>Key: <a href="/keys/patrick_boeker-DB2BA39D1ED967B584D65D71C09FF113BB6410D0.asc">patrick_boeker-DB2BA39D1ED967B584D65D71C09FF113BB6410D0.asc</a>
+      <li><a href="https://boekernet.de/~patrick/">Homepage</a>
+      <li><a href="https://github.com/patrickbkr">GitHub</a>
+    </ul>
+  </li>
+  <li>Rakudo GitHub automation
+    <ul>
+      <li>Fingerprint: <code>3E7E 3C6E AF91 6676 AC54 9285 A291 9382 E961 E2EE</code>
+      <li>Key: <a href="/keys/rakudo_github_automation-3E7E3C6EAF916676AC549285A2919382E961E2EE.asc">rakudo_github_automation-3E7E3C6EAF916676AC549285A2919382E961E2EE.asc</a>
+    </ul>
+  </li>
+  <li>Alexander Kiryuhin
+    <ul>
+      <li>Fingerprint: <code>FE75 0D15 2426 F3E5 0953 176A DE8F 8F5E 97A8 FCDE</code>
+      <li>Key: <a href="/keys/alexander_kiryuhin-FE750D152426F3E50953176ADE8F8F5E97A8FCDE.asc">alexander_kiryuhin-FE750D152426F3E50953176ADE8F8F5E97A8FCDE.asc</a>
+      <li><a href="https://github.com/altai-man">GitHub</a>
+    </ul>
+  </li>
+</ul>
+

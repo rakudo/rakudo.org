@@ -61,6 +61,7 @@ get '/star/source'              => 'star-source';
 get '/star/third-party'         => 'star-third-party';
 get '/downloads/rakudo/third-party' => 'downloads-rakudo-third-party';
 get '/downloads/rakudo/source'      => 'downloads-rakudo-source';
+get '/downloads/verifying'      => 'downloads-verifying';
 
 get '/downloads' => sub {
     my $self = shift;
