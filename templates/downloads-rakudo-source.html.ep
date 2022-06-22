@@ -176,7 +176,7 @@ make install
 make test
 make spectest
 
-echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH" \\
+echo "export PATH=$(pwd)/install/bin:$(pwd)/install/share/perl6/site/bin:\$PATH" \\
     >> ~/.bashrc
 source ~/.bashrc</code></pre>
         <p>You'll likely want to also install
