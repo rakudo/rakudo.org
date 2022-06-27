@@ -8,8 +8,9 @@ a <a href="https://github.com/rakudo/star/blob/master/etc/modules.txt">collectio
 of modules</a> from the <%== p6 %>
 <a href="https://modules.raku.org/">ecosystem</a>,
 and the <a href="https://docs.raku.org/">language documentation</a>.
-It is released roughly quarterly and is the most thoroughly
-tested release.</p>
+It is released shortly after new Rakudo releases and can also be found on
+<a href="https://github.com/rakudo/star">GitHub</a>.
+</p>
 
 <div class="row downloads-panel">
 <div class="col-sm-6 col-md-4">

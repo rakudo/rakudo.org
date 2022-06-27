@@ -59,7 +59,7 @@
       <h4>Rakudo Star Bundle</h4>
 
       <p>This is a packaging of Rakudo itself, MoarVM, NQP and the modules of the Rakudo Star Bundle
-      It's built straight from the Rakudo Star Bundle Windows MSI usually released quarterly.</p>
+      It's built straight from the Rakudo Star Bundle Windows MSI usually shortly after a Rakudo release.</p>
       
       <h5>Chocolatey</h5>
       <p>Install the Rakudo Star Bundle with chocolatey:
@@ -214,6 +214,6 @@ a <a href="https://github.com/rakudo/star/blob/master/etc/modules.txt">collectio
 of modules</a> from the <%== p6 %>
 <a href="http://modules.perl6.org/">ecosystem</a>,
 and <a href="https://docs.perl6.org/">language documentation</a>.
-The Rakudo Star Bundle is released quarterly.</p>
+The Rakudo Star Bundle is released shortly after a Rakudo release.</p>
 <a class="btn btn-dark" href="<%= url_for 'star' %>">Rakudo Star Bundle</a>
 
