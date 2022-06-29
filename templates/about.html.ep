@@ -20,8 +20,8 @@
 <h2>Rakudo Star</h2>
 The Rakudo Star distribution combines the Rakudo
 <%== p6 %> compiler with additional resources, such
-as <a href="https://docs.perl6.org/">documentation</a>,
-<a href="http://perl6intro.com/">introductory materials</a>,
+as <a href="https://docs.raku.org/">documentation</a>,
+<a href="http://raku.guide/">introductory materials</a>,
 and a selection of modules.
 
 <p>Rakudo Star is the most thoroughly tested option and is the recommended

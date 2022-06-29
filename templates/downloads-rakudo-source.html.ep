@@ -53,12 +53,12 @@ echo "export PATH=$(pwd)/install/bin:$(pwd)/install/share/perl6/site/bin:\$PATH"
     >> ~/.bashrc
 source ~/.bashrc</code></pre>
         <p>You'll likely want to also install
-          <a href="https://modules.perl6.org/dist/zef:github"><code
+          <a href="https://modules.raku.org/dist/zef:github"><code
             >zef</code></a> module manager:</p>
           <pre class="suck-b"><code>cd /tmp/ &amp;&amp;
 git clone https://github.com/ugexe/zef.git &amp;&amp;
 cd zef &amp;&amp;
-perl6 -Ilib bin/zef install .</code></pre>
+raku -Ilib bin/zef install .</code></pre>
       </div>
     </div>
   </div
@@ -107,19 +107,19 @@ gmake
             to your <code>PATH</code> env var</a> paths
             <code>C:\rakudo\bin\</code> and <code>C:\rakudo\share\perl6\site\bin</code></li>
           <li>Close the command prompt and open a new one.
-            Type <code>perl6 -v</code> to test the newly-installed
+            Type <code>raku -v</code> to test the newly-installed
             Rakudo works.</li>
         </ul>
 
         <p>You'll likely want to also install
-          <a href="https://modules.perl6.org/dist/zef:github"><code
+          <a href="https://modules.raku.org/dist/zef:github"><code
             >zef</code></a> module manager. In a newly-opened command prompt,
             run these commands:</p>
           <pre class="suck-b"><code>C:
 cd C:\Temp
 git clone https://github.com/ugexe/zef.git
 cd zef
-perl6 -Ilib bin/zef install .</code></pre>
+raku -Ilib bin/zef install .</code></pre>
       </div>
     </div>
   </div
@@ -145,7 +145,7 @@ mv rakudo-*/* .
 rm -fr rakudo-*
 
 RAK_INSTALL_DIR=$(pwd)/install
-git clone https://github.com/perl6/nqp/
+git clone https://github.com/Raku/nqp/
 cd nqp
 git checkout $(cat ../tools/build/NQP_REVISION)
 git clone https://github.com/MoarVM/MoarVM
@@ -180,12 +180,12 @@ echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH
     >> ~/.bashrc
 source ~/.bashrc</code></pre>
         <p>You'll likely want to also install
-          <a href="https://modules.perl6.org/dist/zef:github"><code
+          <a href="https://modules.raku.org/dist/zef:github"><code
             >zef</code></a> module manager:</p>
           <pre class="suck-b"><code>cd /tmp/ &amp;&amp;
 git clone https://github.com/ugexe/zef.git &amp;&amp;
 cd zef &amp;&amp;
-perl6 -Ilib bin/zef install .</code></pre>
+raku -Ilib bin/zef install .</code></pre>
       </div>
     </div>
   </div

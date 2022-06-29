@@ -95,7 +95,7 @@ gmake
             to your <code>PATH</code> env var</a> paths
             <code>C:\rakudo\bin\</code> and <code>C:\rakudo\share\perl6\site\bin</code></li>
           <li>Close the command prompt and open a new one.
-            Type <code>perl6 -v</code> to test the newly-installed
+            Type <code>raku -v</code> to test the newly-installed
             Rakudo works.</li>
         </ul>
       </div>
