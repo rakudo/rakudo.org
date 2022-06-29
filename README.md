@@ -29,6 +29,14 @@ If you need to stop it entirely later, run `hypnotoad app.pl --stop`
 
 The servers listen on localhost, port `4242`: http://localhost:4242
 
+The production server automatically updates itself using the
+`update-rakudo.org.sh` script. That script updates the git checkout on the
+server and hot-reloads hypnotoad.
+Some changes require a full restart of the application to function properly.
+If the website behaves strangely after a change, try a cold restart of
+hypnotoad by manually stopping the server and starting it again as described
+above.
+
 ### SASS
 
 Note that running the site requires sass - you can either install
