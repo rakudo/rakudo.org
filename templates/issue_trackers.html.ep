@@ -17,19 +17,11 @@
   there instead.</p>
 
 <ul class="flush-list">
-  <li><a href="https://github.com/perl6/user-experience/issues/new">User Experience Repo</a></li>
-  <li><a href="https://github.com/perl6/nqp/issues/new">NQP</a></li>
+  <li><a href="https://github.com/Raku/user-experience/issues/new">User Experience Repo</a></li>
+  <li><a href="https://github.com/Raku/nqp/issues/new">NQP</a></li>
   <li><a href="https://github.com/MoarVM/MoarVM/issues/new">MoarVM</a></li>
-  <li><a href="https://github.com/perl6/doc/issues/new">Documentation</a></li>
-  <li><a href="https://github.com/perl6/roast/issues/new">Raku spec tests</a></li>
-  <li><a href="https://github.com/perl6/rakudo.org/issues/new">This website</a></li>
+  <li><a href="https://github.com/Raku/doc/issues/new">Documentation</a></li>
+  <li><a href="https://github.com/Raku/roast/issues/new">Raku spec tests</a></li>
+  <li><a href="https://github.com/rakudo/rakudo.org/issues/new">This website</a></li>
   <li><i>RT Issue Tracker - these tickets have been migrated to github issues</i></li>
 </ul>
-
-
-<h3 class="h4">Alerts</h3>
-
-<p>We maintain <a href="https://alerts.perl6.org/">alerts.perl6.org</a>
-  service where we publish information on critical issues. There are
-  <a href="https://rakudo.party/post/Announcing-P6lert-Perl-6-Alerts-Directly-From-Core-Developers">several
-    ways to follow</a> these alerts.</p>

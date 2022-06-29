@@ -6,7 +6,7 @@ This is the source code for <https://rakudo.org>.
 
 To install into `rakudo.org` dir in current directory run:
 
-    git clone https://github.com/perl6/rakudo.org &&
+    git clone https://github.com/rakudo/rakudo.org &&
     cd rakudo.org &&
     cpanm -vn --installdeps .
 
