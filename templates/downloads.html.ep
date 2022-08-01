@@ -86,6 +86,8 @@
       The archives have executables located in <code>bin/</code> and
       <code>share/perl6/site/bin/</code>. See the contained <code>README.md</code>
       file for further information.
+      <br/>
+      These don't work on <b>Alpine</b>. See below.
       <p>
       % my $linux_files = $binaries->all('rakudo', 'linux');
       % if ($linux_files->size > 0) {
@@ -113,6 +115,15 @@
       <p><code>zypper install rakudo</code></p>
       <h6>openSUSE Leap (stable)</h6>
       <a class="kick-b btn btn-dark" href="https://software.opensuse.org/package/rakudo">Click on "1 Click Install" under experimental packages</a>
+
+      <h5>Alpine</h5>
+      The compiled tarballs above don't work on Alpine because they are built with <code>glibc</code>, but Alpine
+      provides <code>musl</code> instead. When trying to run the executables one receives a highly misleading
+      <code>/bin/sh: ./rakudo: not found</code> error.
+      Installing the <code>gcompat</code> glib compatibility wrapper allows running those tarballs.
+      But it's a lot easier and provides for a smaller installation size to just use the distro
+      packages Alpine provides. They are usually up-to-date.
+      <p><code>apk add rakudo zef</code></p>
       
       <h5>Gentoo (rolling release)</h5>
       <p><code>emerge --ask --verbose dev-lang/rakudo</code></p>
