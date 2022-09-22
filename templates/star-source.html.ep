@@ -41,7 +41,7 @@ rm -fr rakudo-star-*
 
 ./bin/rstar install
 
-echo "export PATH=$(pwd)/bin/:$(pwd)/share/perl6/site/bin:$(pwd)/share/perl6/vendor/bin:$(pwd)/share/perl6/core/bin:\$PATH" >> ~/.bashrc
+echo "export PATH=$(pwd)/bin:$(pwd)/share/perl6/site/bin:$(pwd)/share/perl6/vendor/bin:$(pwd)/share/perl6/core/bin:\$PATH" >> ~/.bashrc
 source ~/.bashrc
 
 # If you wish, you can run the tests
@@ -156,7 +156,7 @@ make rakudo-spectest
 # Install Rakudo and all the modules
 make install
 
-echo "export PATH=$(pwd)/install/bin/:$(pwd)/install/share/perl6/site/bin:\$PATH" \\
+echo "export PATH=$(pwd)/install/bin:$(pwd)/install/share/perl6/site/bin:\$PATH" \\
     >> ~/.bashrc
 source ~/.bashrc</code></pre>
       </div>
