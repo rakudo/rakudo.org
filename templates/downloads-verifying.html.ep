@@ -26,7 +26,7 @@ using the separate <code>*.asc</code> file.</p>
 
 <p>Should you miss the public key matching the signature (that's expected and
 normal the first time one validates a download) import the respective key from
-<a href="gpg2-key-list">the list of Keys of the releasers</a>.</p>
+<a href="#gpg2-key-list">the list of Keys of the releasers</a>.</p>
 
 <h2 id="gpg2-key-list">Keys of the releasers</h2>
 <p>The following people have released and signed files on rakudo.org. You are
