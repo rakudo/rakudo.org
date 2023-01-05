@@ -138,7 +138,7 @@ raku -Ilib bin/zef install .</code></pre>
     <div id="collapse-build-wsl" class="collapse"
       aria-labelledby="collapse-build-wsl" data-parent="#build-accordion">
       <div class="card-body">
-        <pre><code>mkdir ~/rakudo &amp;&amp; cd $_
+        <pre><code>mkdir ~/rakudo &amp;&amp; cd ~/rakudo
 curl -LJO <%= url_for('latest', product => 'rakudo', platform => 'src')->to_abs %>
 tar -xzf rakudo-*.tar.gz
 mv rakudo-*/* .
