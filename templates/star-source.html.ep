@@ -33,7 +33,7 @@
         <p>The exact steps required may differ, depending on
   your operating system:</p>
 
-        <pre class="suck-b"><code>mkdir ~/rakudo &amp;&amp; cd $_
+        <pre class="suck-b"><code>mkdir ~/rakudo &amp;&amp; cd ~/rakudo
 curl -LJO <%= url_for('latest', product => 'star', platform => 'src')->to_abs %>
 tar -xzf rakudo-star-*.tar.gz
 mv rakudo-star-*/* .
@@ -118,7 +118,7 @@ gmake
         <p>The exact steps required may differ, depending on
   your operating system:</p>
 
-        <pre class="suck-b"><code>mkdir ~/rakudo &amp;&amp; cd $_
+        <pre class="suck-b"><code>mkdir ~/rakudo &amp;&amp; cd ~/rakudo
 curl -LJO <%= url_for('latest', product => 'star', platform => 'src')->to_abs %>
 tar -xzf rakudo-star-*.tar.gz
 mv rakudo-star-*/* .
