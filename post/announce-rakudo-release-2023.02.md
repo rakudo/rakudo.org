@@ -1,4 +1,4 @@
-%% Announce: Rakudo compiler, Release #159 (2023.02)
+%% title: Announce: Rakudo compiler, Release #159 (2023.02)
 %% date: 2023-02-22
 
 On behalf of the Rakudo development team, I’m very happy to announce the
