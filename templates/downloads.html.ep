@@ -102,8 +102,8 @@
       <h4>Distro packages</h4>
 
       <p>When on *nix, the easiest way to install Rakudo is to use the packages provided by your distribution. However 
-      <i>distro packages can be out of date</i> (the Rakudo that gets installed may be more than a year old), and if that's the case, 
-      and no binary is listed above, the best option is usually to build from source or to use a raku specific manager such as rakubrew. 
+      <i>distro packages can be out of date</i> (the Rakudo that gets installed may be more than a year old), and if that's 
+      the case, the best option is usually to build from source or to use a raku specific manager such as rakubrew. 
       You may wish to try a user-maintained repository (see below).
       </p>
 
