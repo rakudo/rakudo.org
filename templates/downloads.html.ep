@@ -191,16 +191,6 @@
       <code>sudo port install rakudo</code></p>
     </div>
 
-    <input type="radio" id="download-tab-javascript" name="tab-group-download">
-    <label class="btn-dark" for="download-tab-javascript">
-      <img src="/asset/pics/os-icon-javascript.png" alt=""></img>
-      JavaScript
-    </label>
-    <div class="tab-content">
-      <p>Rakudo can run on Node.JS and in modern browsers.</p>
-      <a class="btn btn-dark" href="https://www.npmjs.com/package/rakudo">Rakudo.js</a>
-    </div>
-
     <input type="radio" id="download-tab-other-platforms" name="tab-group-download">
     <label class="btn-dark" for="download-tab-other-platforms">
       <img src="/asset/pics/os-icon-other-platforms.png" alt=""></img>
