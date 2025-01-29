@@ -59,4 +59,18 @@
       </div>
     </div>
   </div>
+  <div class="col-md-4">
+    <div class="card bg-dark">
+      <div class="card-body">
+        <h5 class="card-title">Nix</h5>
+        <div class="card-text">
+          <p>To try, run: <br> <code>nix-shell -p rakudo</code></p>
+          <p>To install locally, run: <br> <code>nix-env -iA nixpkgs.rakudo</code></p>
+          <p>To install on NixOS, edit <var>/etc/nixos/configuration.nix</var> <br> <code>environment.systemPackages = [ pkgs.rakudo ];
+          <a href="https://nixos.org/"
+            class="btn btn-dark border-secondary">Visit Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
