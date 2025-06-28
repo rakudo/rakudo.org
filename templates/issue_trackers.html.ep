@@ -4,7 +4,7 @@
 <h2 class="h1">Issue Trackers</h2>
 
 <p class="lead">Our
-  <a href="https://github.com/rakudo/rakudo/issues/new"
+  <a href="https://github.com/rakudo/rakudo/issues"
     class="btn btn-dark btn-sm">GitHub Issue
   Tracker</a> is the main place to report problems with Rakudo
   or to submit possible feature suggestions. You can use it even if you're
@@ -17,11 +17,11 @@
   there instead.</p>
 
 <ul class="flush-list">
-  <li><a href="https://github.com/Raku/user-experience/issues/new">User Experience Repo</a></li>
-  <li><a href="https://github.com/Raku/nqp/issues/new">NQP</a></li>
-  <li><a href="https://github.com/MoarVM/MoarVM/issues/new">MoarVM</a></li>
-  <li><a href="https://github.com/Raku/doc/issues/new">Documentation</a></li>
-  <li><a href="https://github.com/Raku/roast/issues/new">Raku spec tests</a></li>
-  <li><a href="https://github.com/rakudo/rakudo.org/issues/new">This website</a></li>
+  <li><a href="https://github.com/Raku/user-experience/issues">User Experience Repo</a></li>
+  <li><a href="https://github.com/Raku/nqp/issues">NQP</a></li>
+  <li><a href="https://github.com/MoarVM/MoarVM/issues">MoarVM</a></li>
+  <li><a href="https://github.com/Raku/doc/issues">Documentation</a></li>
+  <li><a href="https://github.com/Raku/roast/issues">Raku spec tests</a></li>
+  <li><a href="https://github.com/rakudo/rakudo.org/issues">This website</a></li>
   <li><i>RT Issue Tracker - these tickets have been migrated to github issues</i></li>
 </ul>
