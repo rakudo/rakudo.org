@@ -145,6 +145,10 @@
       <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo/">rakudo</a>
       <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo-git/">rakudo-git</a>
       
+
+      <h5>Slackware Linux (SBo)</h5>
+      <a class="kick-b btn btn-dark" href="https://slackbuilds.org/repository/15.0/perl/rakudo/">rakudo</a>
+
       <h5>rakudo-pkg distro packages</h5>
 
       <p>These are often more up to date than the packages provided by the
