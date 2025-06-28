@@ -40,9 +40,9 @@ above.
 ### SASS
 
 Note that running the site requires sass - you can either install
-the sass binary (e.g. with ``` gem install sass```, or using the
+the sass binary (e.g. with ```gem install sass```, or using the
 perl module ```CSS::Sass```). Sass is not installed automatically
-using the cpanm command above.
+using the ```cpanm``` command above.
 
 ### Debug Aid
 
