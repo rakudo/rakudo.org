@@ -152,10 +152,10 @@ get '/dl/:product/*bin' => sub {
 ### </DOWNLOADS ROUTES>
 
 get '/community/irc' => sub {
-    shift->redirect_to('https://kiwiirc.com/client/irc.libera.chat/#raku');
+    shift->redirect_to('https://web.libera.chat/#raku');
 } => 'community-irc';
 get '/community/irc-dev' => sub {
-    shift->redirect_to('https://kiwiirc.com/client/irc.libera.chat/#raku-dev');
+    shift->redirect_to('https://web.libera.chat/#raku-dev');
 } => 'community-irc-dev';
 
 any $_ => sub {
