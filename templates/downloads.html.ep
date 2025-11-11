@@ -33,12 +33,13 @@
     </label>
     <div class="tab-content">
       <h4>Binary Releases</h4>
-      Archives and installers contain a precompiled Rakudo and the Zef module manager.
+      <p>Archives and installers contain a precompiled Rakudo and the Zef module manager.
       The filenames follow the pattern
-      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.
-      The archives have executables located in <code>bin/</code> and
-      <code>share/perl6/site/bin/</code>. See the contained <code>README.md</code>
-      file for further information.
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.</p>
+
+      <p><b>The archives have executables located in BOTH <code>bin/</code> and
+      <code>share/perl6/site/bin/</code>.</b> See the contained <code>README.md</code>
+      file for further information.</p>
       <p>
       % my $win_files = $binaries->all('rakudo', 'win');
       % if ($win_files->size > 0) {
@@ -55,22 +56,6 @@
       <p>Install Rakudo-on-MoarVM with Scoop:
       <code>scoop install rakudo-moar</code></p>
       <a class="btn btn-dark kick-b" href="https://scoop.sh/">Scoop</a>
-      
-      <h4>Rakudo Star Bundle</h4>
-
-      <p>This is a packaging of Rakudo itself, MoarVM, NQP and the modules of the Rakudo Star Bundle
-      It's built straight from the Rakudo Star Bundle Windows MSI usually shortly after a Rakudo release.</p>
-      
-      <h5>Chocolatey</h5>
-      <p>Install the Rakudo Star Bundle with chocolatey:
-      <code>choco install rakudostar</code></p>
-      <a class="btn btn-dark kick-b" href="https://chocolatey.org/packages/rakudostar">Chocolatey</a>
-      
-      <h5>Scoop</h5>
-      <p>Install the Rakudo Star Bundle with Scoop:
-      <code>scoop install rakudo-star</code></p>
-      <a class="btn btn-dark" href="https://scoop.sh/">Scoop</a>
-      
     </div>
 
     <input type="radio" id="download-tab-linux" name="tab-group-download">
@@ -80,14 +65,16 @@
     </label>
     <div class="tab-content">
       <h4>Binary Releases</h4>
-      Archives contain a precompiled Rakudo and the Zef module manager.
+      <p>Archives contain a precompiled Rakudo and the Zef module manager.
       The filenames follow the pattern
-      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.
-      The archives have executables located in <code>bin/</code> and
-      <code>share/perl6/site/bin/</code>. See the contained <code>README.md</code>
-      file for further information.
-      <br/>
-      These don't work on <b>Alpine</b>. See below.
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.</p>
+
+      <p><b>The archives have executables located in BOTH <code>bin/</code> and
+      <code>share/perl6/site/bin/</code>.</b> See the contained <code>README.md</code>
+      file for further information.</p>
+
+      <p>These don't work on <b>Alpine</b>. See below.</p>
+
       <p>
       % my $linux_files = $binaries->all('rakudo', 'linux');
       % if ($linux_files->size > 0) {
@@ -169,12 +156,13 @@
     </label>
     <div class="tab-content">
       <h4>Binary Releases</h4>
-      Archives contain a precompiled Rakudo and the Zef module manager.
+      <p>Archives contain a precompiled Rakudo and the Zef module manager.
       The filenames follow the pattern
-      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.
-      The archives have executables located in <code>bin/</code> and
-      <code>share/perl6/site/bin/</code>. See the contained <code>README.md</code>
-      file for further information.
+      <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.</p>
+
+      <p><b>The archives have executables located in BOTH <code>bin/</code> and
+      <code>share/perl6/site/bin/</code>.</b> See the contained <code>README.md</code>
+      file for further information.</p>
       <p>
       % my $mac_files = $binaries->all('rakudo', 'macos');
       % if ($mac_files->size > 0) {
