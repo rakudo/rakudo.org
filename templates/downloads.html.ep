@@ -50,12 +50,6 @@
       <a class="btn btn-dark kick-b"
         href="<%= url_for 'downloads-verifying' %>"
         >Verifying</a>
-      
-      <h5>Scoop</h5>
-
-      <p>Install Rakudo-on-MoarVM with Scoop:
-      <code>scoop install rakudo-moar</code></p>
-      <a class="btn btn-dark kick-b" href="https://scoop.sh/">Scoop</a>
     </div>
 
     <input type="radio" id="download-tab-linux" name="tab-group-download">
@@ -86,27 +80,7 @@
         href="<%= url_for 'downloads-verifying' %>"
         >Verifying</a>
 
-      <h4>Distro packages</h4>
-
-      <p>When on *nix, the easiest way to install Rakudo is to use the packages provided by your distribution. However 
-      <i>distro packages can be out of date</i> (the Rakudo that gets installed may be more than a year old), and if that's 
-      the case, the best option is usually to build from source or to use a raku specific manager such as rakubrew. 
-      You may wish to try a user-maintained repository (see below).
-      </p>
-
-      <h5>Fedora</h5>
-      <p><code>dnf install rakudo</code></p>
-
-      <h5>Ubuntu / Debian</h5>
-      <p><code>apt-get install rakudo</code></p>
-
-      <h5>openSUSE</h5>
-      <h6>openSUSE Tumbleweed (rolling release)</h6>
-      <p><code>zypper install rakudo</code></p>
-      <h6>openSUSE Leap (stable)</h6>
-      <a class="kick-b btn btn-dark" href="https://software.opensuse.org/package/rakudo">Click on "1 Click Install" under experimental packages</a>
-
-      <h5>Alpine</h5>
+      <h4>Alpine</h4>
       The compiled tarballs above don't work on Alpine because they are built with <code>glibc</code>, but Alpine
       provides <code>musl</code> instead. When trying to run the executables one receives a highly misleading
       <code>/bin/sh: ./rakudo: not found</code> error.
@@ -114,29 +88,8 @@
       But it's a lot easier and provides for a smaller installation size to just use the distro
       packages Alpine provides. They are usually up-to-date.
       <p><code>apk add rakudo zef</code></p>
-      
-      <h5>Gentoo (rolling release)</h5>
-      <p><code>emerge --ask --verbose dev-lang/rakudo</code></p>
 
-      <h5>Alpine Linux</h5>
-      <p><code>apk add rakudo</code></p>
-      
-      <h5>NixOS</h5>
-      <p>NixOS: <code>nix-env -iA nixos.rakudo</code></p>
-      <p>Non-NixOS: <code>nix-env -iA nixpkgs.rakudo</code></p>
-
-      <h4>User repositories</h4>
-      
-      <h5>Arch Linux (AUR)</h5>
-      <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo-bin/">rakudo-bin</a>
-      <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo/">rakudo</a>
-      <a class="kick-b btn btn-dark" href="https://aur.archlinux.org/packages/rakudo-git/">rakudo-git</a>
-      
-
-      <h5>Slackware Linux (SBo)</h5>
-      <a class="kick-b btn btn-dark" href="https://slackbuilds.org/repository/15.0/perl/rakudo/">rakudo</a>
-
-      <h5>rakudo-pkg distro packages</h5>
+      <h4>rakudo-pkg distro packages</h4>
 
       <p>These are often more up to date than the packages provided by the
       distribution itself, but require adding a third party repository.<br/>
@@ -146,7 +99,7 @@
         <li>One single package used for Rakudo, NQP and MoarVM
         <li>Includes zef (Raku Module Installer) and helper scripts (e.g. zef install as user).
       </ul>
-      <a class="btn btn-dark" href="https://nxadm.github.io/rakudo-pkg">Rakudo-Pkg package repositories</a>
+      <a class="btn btn-dark" href="https://nxadm.github.io/rakudo-pkg">rakudo-pkg package repositories</a>
     </div>
 
     <input type="radio" id="download-tab-macos" name="tab-group-download">
@@ -173,26 +126,6 @@
       <a class="btn btn-dark kick-b"
         href="<%= url_for 'downloads-verifying' %>"
         >Verifying</a>
-
-      <h4>Homebrew</h4>
-      <p>There is a  Homebrew package available:<br/>
-      <code>brew install rakudo</code></p>
-
-      <h4>MacPorts</h4>
-      <p>There is a rakudo MacPort available:<br/>
-      <code>sudo port install rakudo</code></p>
-    </div>
-
-    <input type="radio" id="download-tab-other-platforms" name="tab-group-download">
-    <label class="btn-dark" for="download-tab-other-platforms">
-      <img src="/asset/pics/os-icon-other-platforms.png" alt=""></img>
-      Other Platforms
-    </label>
-    <div class="tab-content">
-      <h4>BSD</h4>
-      <p>pkgsrc provides rakudo packages for NetBSD and other Unix flavors.<br/>
-      </p>
-      <a class="btn btn-dark" href="http://pkgsrc.se/lang/rakudo">pkgsrc.se</a>
     </div>
 </div>
 
