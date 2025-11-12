@@ -38,7 +38,7 @@
       <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.</p>
 
       <p><b>The archives have executables located in BOTH <code>bin/</code> and
-      <code>share/perl6/site/bin/</code>.</b> See the contained <code>README.md</code>
+      <code>share/perl6/site/bin/</code>.</b> See the contained <a href='https://raw.githubusercontent.com/rakudo/rakudo/refs/heads/main/tools/build/binary-release/assets/Windows/README.txt'><code>README.txt</code></a>
       file for further information.</p>
       <p>
       % my $win_files = $binaries->all('rakudo', 'win');
@@ -70,7 +70,7 @@
       <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.</p>
 
       <p><b>The archives have executables located in BOTH <code>bin/</code> and
-      <code>share/perl6/site/bin/</code>.</b> See the contained <code>README.md</code>
+      <code>share/perl6/site/bin/</code>.</b> See the contained <a href='https://raw.githubusercontent.com/rakudo/rakudo/refs/heads/main/tools/build/binary-release/assets/Linux/README.md'><code>README.md</code></a>
       file for further information.</p>
 
       <p>These don't work on <b>Alpine</b>. See below.</p>
@@ -161,7 +161,7 @@
       <code>rakudo-[backend]-[version]-[build revision]-[OS]-[architecture]-[toolchain]</code>.</p>
 
       <p><b>The archives have executables located in BOTH <code>bin/</code> and
-      <code>share/perl6/site/bin/</code>.</b> See the contained <code>README.md</code>
+      <code>share/perl6/site/bin/</code>.</b> See the contained <a href='https://raw.githubusercontent.com/rakudo/rakudo/refs/heads/main/tools/build/binary-release/assets/MacOS/README.md'><code>README.md</code></a>
       file for further information.</p>
       <p>
       % my $mac_files = $binaries->all('rakudo', 'macos');
