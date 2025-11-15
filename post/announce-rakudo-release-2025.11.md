@@ -36,7 +36,7 @@ New in 2025.11:
 
 The following people contributed to this release:
 
-Will Coleda, David Simon Schultz, Elizabeth Mattijsen, Eric Forste,
+Will Coleda, Elizabeth Mattijsen, Eric Forste,
 Patrick Böker, librasteve, David Schultz, Timo Paulssen, Anton Oks,
 Daniel Green, Geoffrey Broadwell, Jake Boeckerman, Jimmy Zhuo,
 Nahuel Pacheco (NaP), Sizhe Zhao, jubilatious1
