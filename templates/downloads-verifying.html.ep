@@ -65,8 +65,10 @@ fingerprints at least on their GitHub profile.</p>
   </li>
   <li>Will Coleda
     <ul>
-      <li>Fingerprint: <code>F5CB 0A76 99EC 8902 4DA6 186A 7DC7 8276 09AA CD53</code>
-      <li>Key: <a href="/keys/will_coleda-F5CB0A7699EC89024DA6186A7DC7827609AACD53.asc">/keys/will_coleda-F5CB0A7699EC89024DA6186A7DC7827609AACD53.asc</a>
+      <li>Fingerprint: <code>2832 BDB3 3241 A14E FCCA  6147 0F09 888F E017 A4C2</code>
+      <li>Key: <a href="/keys/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc">will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc</a>
+      <li>Old Fingerprint: <code>F5CB 0A76 99EC 8902 4DA6 186A 7DC7 8276 09AA CD53</code>
+      <li>Old Key: <a href="/keys/will_coleda-F5CB0A7699EC89024DA6186A7DC7827609AACD53.asc">will_coleda-F5CB0A7699EC89024DA6186A7DC7827609AACD53.asc</a>
       <li><a href="https://github.com/coke">GitHub</a>
     </ul>
   </li>
