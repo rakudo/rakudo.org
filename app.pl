@@ -9,6 +9,8 @@ use Time::Moment;
 use RakudoOrg::News;
 use Perl6Org::Binaries;
 
+$ENV{MOJO_REVERSE_PROXY} = 1;
+
 plugin Config => { file => 'conf.conf' };
 
 my $news    = RakudoOrg::News->new;
