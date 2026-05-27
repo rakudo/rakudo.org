@@ -33,6 +33,14 @@ app->asset->process('app.js' => qw{
     js/main.js
 });
 
+# change 'scheme' of request url
+# https://stackoverflow.com/questions/47009434/how-to-make-mojoliciouss-url-for-to-abs-return-correct-scheme-http-or-htt
+hook 'before_dispatch' => sub {
+  my $c = shift;
+  $c->req->url->base->scheme( $c->req->headers->header('X-Forwarded-Proto'))
+    if $c->req->headers->header('X-Forwarded-Proto');
+};
+
 ### Routes
 get '/' => sub {
     my $self = shift;
@@ -103,6 +111,7 @@ get '/dl/:product' => sub {
 
     my @data;
     my $vers = $binaries->all($self->stash('product'));
+    say join($vers,' ');
     for my $ver ($vers->each) {
         for my $bin ($ver->bins->each) {
             (my $format = $bin->ext) =~ s/^\.//;
