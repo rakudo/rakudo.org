@@ -88,7 +88,7 @@ sub _get_vers_for {
         # Star Bundle src: rakudo-star-2019.11.02-01.tar.gz
         # Star Bundle:     rakudo-star-2019.11.02-01-win-x86_64-msvc.msi
         # Releases prior to 2020.11 miss the toolchain bit.
-        unless ($file =~ /^(.+)[.-](\d{4}\.\d{2}(?:\.\d+)?)(?:-(\d\d)(?:-([^.-]+)-([^.-]+)(?:-([^.-]+))?(?:-[^.]+)?)?)?\..+$/) {
+        unless ($file =~ /^(.+)[.-](\d{4}[\.-]\d{2}(?:\.\d+)?)(?:-(\d\d)(?:-([^.-]+)-([^.-]+)(?:-([^.-]+))?(?:-[^.]+)?)?)?\..+$/) {
             warn "Strange filename \"$file\" on file $full_path; skipping";
             next;
         }
